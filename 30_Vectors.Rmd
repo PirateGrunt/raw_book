@@ -10,35 +10,42 @@ In this chapter, we're going to learn about vectors, one of the key building blo
 
 ## What is a vector?
 
-In R, every variable is a vector. Think of a set of contiguous cells in a spreadsheet. 
+Enter a value at the console and hit enter. What do we see?
 
-```{r eval=TRUE}
-set.seed(1234)
-e  <- rnorm(100)
-X1 <- 1:10
+![Console returning one value](images/ConsoleVector.png)
+
+This makes a bit of sense. We entered 2 and we got back 2. But what's that 1 in brackets? Things get even weirder when we ask R to return more than one value. Type "letters" (without the quotes) and have a look.
+
+![Console returning more than one value](images/ConsoleVector2.png)
+
+Now there's not only a 1 in brackets, there's also a 16 on the second line. (Note that your console may appear a bit different than mine.) You're probably clever enough to have figured out that the numbers in brackets have something to do with the number of outputs generated. In the second case, "p" is the 16th letter of the alphabet and the bracketed 16 helps us know where we are in the sequence when it spills onto multiple lines.
+
+OK, cool. So what? 
+
+So everything! In R, every variable is a vector. When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1."letters" is a special vector with one element for each letter of the English alphabet. Vectors allow us to reason about a lot of data at once. The variable "letters" for instance enables us to store 26 values in one place. Further, it allows us to make changes to all of the elements of the vector at the same time. For example:
+
+```{r }
+paste("Letter", letters)
 ```
 
-Here, `e` is a vector with `N` values. `X1` is the sequence of integers from 1 through 10. 
-
-Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges.
+Using the `paste0` command, we took each element of "letters" and prefixed it with the text "Letter". This is similar to applyinig the same function to a set of contiguous cells in a spreadsheet. But in this case, I didn't need to copy and paste something 26 times. I didn't even need to worry about how many times the command needed to be repeated. Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges. R just did it. (Note that by default the `paste` function will automatically add a blank space between elements. The function `paste0` will concatenate elements without a space. Try it.) 
 
 ### Vector properties
+
+All vectors share some basic properties
 
 * Every element in a vector must be the same type. 
     * R will change data types if they are not!
     * Different types are possible by using a list or a data frame (later)
+* It's possible to add metadata (like names) via attributes
 * Vectors have one dimension
-    * Higher dimensions are possible via matrices and arrays
-* Possible to add metadata (like names) via attributes
+* Higher dimensions are possible via matrices and arrays
+
+As we'll see later, the issue of dimension is a bit arbitrary. At this point, the key thing to bear in mind is that _all of the data is of the same type_. Later on, we'll talk about the various data types that R supports. For now, it should be fairly clear from the context.
 
 ### Vector construction
 
-Vectors are constructed in one of several ways:
-
-* Return from a function or operation
-    * `seq`, `rep`, `sample`, `rnorm`,  etc.
-* Concatenation
-* Growth by assignment
+There's no real trick here. You'll be constructing vectors whether you want to be or not. But let's talk about a few core functions for vector construction and manipulation.
 
 ### `seq`
 
@@ -574,3 +581,7 @@ sum(myLogical)
 
 sample(LastName, 100, replace = TRUE)
 ```
+
+### Next
+
+Having sorted out vectors, we're next going to turn out attention to lists. Lists are similar to vectors in that they enable us to bundle large amounts of data in a single construct. However, they're far more flexible and require a bit more thought.
