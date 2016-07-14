@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="raw - R Actuarial Workshops" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="This is a companion to actuarial workshops." />
+<meta name="github-repo" content="PirateGrunt/raw_book" />
+
+<meta name="author" content="Brian A. Fannin, ACAS" />
+
+<meta name="date" content="2016-07-13" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="This is a companion to actuarial workshops.">
+
+<title>raw - R Actuarial Workshops</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="1-1-why-does-this-book-exist.html#why-does-this-book-exist"><span class="toc-section-number">1.1</span> Why does this book exist?</a></li>
+<li><a href="1-2-who-should-use-this.html#who-should-use-this"><span class="toc-section-number">1.2</span> Who should use this?</a></li>
+<li><a href="1-3-other-stuff.html#other-stuff"><span class="toc-section-number">1.3</span> Other stuff</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-setup.html#setup"><span class="toc-section-number">2</span> Setup</a><ul>
+<li class="has-sub"><a href="2-1-installation.html#installation"><span class="toc-section-number">2.1</span> Installation</a><ul>
+<li><a href="2-1-installation.html#it"><span class="toc-section-number">2.1.1</span> IT</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-2-the-operating-environment.html#the-operating-environment"><span class="toc-section-number">2.2</span> The Operating Environment</a><ul>
+<li><a href="2-2-the-operating-environment.html#command-line-interface"><span class="toc-section-number">2.2.1</span> Command-line interface</a></li>
+</ul></li>
+<li><a href="2-3-entering-commands.html#entering-commands"><span class="toc-section-number">2.3</span> Entering Commands</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-getting-started.html#getting-started"><span class="toc-section-number">3</span> Getting started</a><ul>
+<li><a href="3-getting-started.html#mathematical-operators"><span class="toc-section-number">3.0.1</span> Mathematical Operators</a></li>
+<li><a href="3-getting-started.html#logical-operators"><span class="toc-section-number">3.0.2</span> Logical Operators</a></li>
+<li><a href="3-getting-started.html#assignment"><span class="toc-section-number">3.0.3</span> Assignment</a></li>
+<li><a href="3-getting-started.html#functions"><span class="toc-section-number">3.0.4</span> Functions</a></li>
+<li><a href="3-getting-started.html#a-few-mathematical-functions"><span class="toc-section-number">3.0.5</span> A few mathematical functions</a></li>
+<li><a href="3-1-getting-help.html#getting-help"><span class="toc-section-number">3.1</span> Getting help</a></li>
+<li class="has-sub"><a href="3-2-the-working-directory.html#the-working-directory"><span class="toc-section-number">3.2</span> The working directory</a><ul>
+<li><a href="3-2-the-working-directory.html#directory-paths"><span class="toc-section-number">3.2.1</span> Directory paths</a></li>
+<li><a href="3-2-the-working-directory.html#source-files"><span class="toc-section-number">3.2.2</span> Source files</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-3-your-first-script.html#your-first-script"><span class="toc-section-number">3.3</span> Your first script</a><ul>
+<li><a href="3-3-your-first-script.html#executing-a-script"><span class="toc-section-number">3.3.1</span> Executing a script</a></li>
+<li><a href="3-3-your-first-script.html#comments"><span class="toc-section-number">3.3.2</span> Comments</a></li>
+</ul></li>
+<li><a href="3-4-quiz.html#quiz"><span class="toc-section-number">3.4</span> Quiz</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-vectors.html#vectors"><span class="toc-section-number">4</span> Vectors</a><ul>
+<li class="has-sub"><a href="4-1-what-is-a-vector.html#what-is-a-vector"><span class="toc-section-number">4.1</span> What is a vector?</a><ul>
+<li><a href="4-1-what-is-a-vector.html#vector-properties"><span class="toc-section-number">4.1.1</span> Vector properties</a></li>
+<li><a href="4-1-what-is-a-vector.html#vector-construction"><span class="toc-section-number">4.1.2</span> Vector construction</a></li>
+<li><a href="4-1-what-is-a-vector.html#seq"><span class="toc-section-number">4.1.3</span> <code>seq</code></a></li>
+<li><a href="4-1-what-is-a-vector.html#rep"><span class="toc-section-number">4.1.4</span> <code>rep</code></a></li>
+<li><a href="4-1-what-is-a-vector.html#concatenation"><span class="toc-section-number">4.1.5</span> Concatenation</a></li>
+<li><a href="4-1-what-is-a-vector.html#growth-by-assignment"><span class="toc-section-number">4.1.6</span> Growth by assignment</a></li>
+<li><a href="4-1-what-is-a-vector.html#vector-access---by-index"><span class="toc-section-number">4.1.7</span> Vector access - by index</a></li>
+<li><a href="4-1-what-is-a-vector.html#vector-access---logical-access"><span class="toc-section-number">4.1.8</span> Vector access - logical access</a></li>
+<li><a href="4-1-what-is-a-vector.html#which"><span class="toc-section-number">4.1.9</span> <code>which</code></a></li>
+<li><a href="4-1-what-is-a-vector.html#sample"><span class="toc-section-number">4.1.10</span> <code>sample</code></a></li>
+<li><a href="4-1-what-is-a-vector.html#sample-ii"><span class="toc-section-number">4.1.11</span> <code>sample</code> II</a></li>
+<li><a href="4-1-what-is-a-vector.html#order"><span class="toc-section-number">4.1.12</span> <code>order</code></a></li>
+<li><a href="4-1-what-is-a-vector.html#vector-arithmetic"><span class="toc-section-number">4.1.13</span> Vector arithmetic</a></li>
+<li><a href="4-1-what-is-a-vector.html#recycling"><span class="toc-section-number">4.1.14</span> Recycling</a></li>
+<li><a href="4-1-what-is-a-vector.html#set-theory---part-i"><span class="toc-section-number">4.1.15</span> Set theory - Part I</a></li>
+<li><a href="4-1-what-is-a-vector.html#set-theory---part-ii"><span class="toc-section-number">4.1.16</span> Set theory - Part II</a></li>
+<li><a href="4-1-what-is-a-vector.html#summarization"><span class="toc-section-number">4.1.17</span> Summarization</a></li>
+<li><a href="4-1-what-is-a-vector.html#vectors-1"><span class="toc-section-number">4.1.18</span> Vectors</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-2-from-data.html#from-data"><span class="toc-section-number">4.2</span> From data</a><ul>
+<li><a href="4-2-from-data.html#data-types"><span class="toc-section-number">4.2.1</span> Data types</a></li>
+<li><a href="4-2-from-data.html#what-is-it"><span class="toc-section-number">4.2.2</span> What is it?</a></li>
+<li><a href="4-2-from-data.html#data-conversion"><span class="toc-section-number">4.2.3</span> Data conversion</a></li>
+<li><a href="4-2-from-data.html#class"><span class="toc-section-number">4.2.4</span> Class</a></li>
+<li><a href="4-2-from-data.html#mode"><span class="toc-section-number">4.2.5</span> Mode</a></li>
+<li><a href="4-2-from-data.html#dates-and-times"><span class="toc-section-number">4.2.6</span> Dates and times</a></li>
+<li><a href="4-2-from-data.html#more-on-dates"><span class="toc-section-number">4.2.7</span> More on dates</a></li>
+<li><a href="4-2-from-data.html#what-day-is-it"><span class="toc-section-number">4.2.8</span> What day is it?</a></li>
+<li><a href="4-2-from-data.html#more-reading-on-dates"><span class="toc-section-number">4.2.9</span> More reading on dates</a></li>
+<li><a href="4-2-from-data.html#factors"><span class="toc-section-number">4.2.10</span> Factors</a></li>
+<li><a href="4-2-from-data.html#altering-factors"><span class="toc-section-number">4.2.11</span> Altering factors</a></li>
+<li><a href="4-2-from-data.html#avoid-factors"><span class="toc-section-number">4.2.12</span> Avoid factors</a></li>
+<li><a href="4-2-from-data.html#questions"><span class="toc-section-number">4.2.13</span> Questions</a></li>
+<li><a href="4-2-from-data.html#answers"><span class="toc-section-number">4.2.14</span> Answers</a></li>
+<li><a href="4-2-from-data.html#from-vectors-to-matrices-and-lists"><span class="toc-section-number">4.2.15</span> From vectors to matrices and lists</a></li>
+<li><a href="4-2-from-data.html#a-matrix"><span class="toc-section-number">4.2.16</span> A matrix</a></li>
+<li><a href="4-2-from-data.html#section"><span class="toc-section-number">4.2.17</span> </a></li>
+<li><a href="4-2-from-data.html#section-1"><span class="toc-section-number">4.2.18</span> </a></li>
+<li><a href="4-2-from-data.html#matrix-metadata"><span class="toc-section-number">4.2.19</span> Matrix metadata</a></li>
+<li><a href="4-2-from-data.html#data-access-for-a-matrix"><span class="toc-section-number">4.2.20</span> Data access for a matrix</a></li>
+<li><a href="4-2-from-data.html#data-access-continued"><span class="toc-section-number">4.2.21</span> Data access continued</a></li>
+<li><a href="4-2-from-data.html#matrix-summary"><span class="toc-section-number">4.2.22</span> Matrix summary</a></li>
+<li><a href="4-2-from-data.html#more-than-two-dimensions"><span class="toc-section-number">4.2.23</span> More than two dimensions</a></li>
+</ul></li>
+<li><a href="4-3-exercise.html#exercise"><span class="toc-section-number">4.3</span> Exercise</a></li>
+<li class="has-sub"><a href="4-4-answers-1.html#answers-1"><span class="toc-section-number">4.4</span> Answers</a><ul>
+<li><a href="4-4-answers-1.html#next"><span class="toc-section-number">4.4.1</span> Next</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="5-lists.html#lists"><span class="toc-section-number">5</span> Lists</a><ul>
+<li><a href="5-lists.html#lists-1"><span class="toc-section-number">5.0.1</span> Lists</a></li>
+<li><a href="5-lists.html#vs."><span class="toc-section-number">5.0.2</span> [ vs. [[</a></li>
+<li><a href="5-lists.html#recursive-storage"><span class="toc-section-number">5.0.3</span> Recursive storage</a></li>
+<li><a href="5-lists.html#list-metadata"><span class="toc-section-number">5.0.4</span> List metadata</a></li>
+<li><a href="5-lists.html#lapply"><span class="toc-section-number">5.0.5</span> <code>lapply</code></a></li>
+<li><a href="5-lists.html#why-lapply"><span class="toc-section-number">5.0.6</span> Why <code>lapply</code>?</a></li>
+<li><a href="5-lists.html#summary-functions"><span class="toc-section-number">5.0.7</span> Summary functions</a></li>
+<li><a href="5-1-questions-1.html#questions-1"><span class="toc-section-number">5.1</span> Questions</a></li>
+<li><a href="5-2-answers-2.html#answers-2"><span class="toc-section-number">5.2</span> Answers</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-data-frames.html#data-frames"><span class="toc-section-number">6</span> Data Frames</a><ul>
+<li class="has-sub"><a href="6-1-whats-a-data-frame.html#whats-a-data-frame"><span class="toc-section-number">6.1</span> What’s a data frame?</a><ul>
+<li><a href="6-1-whats-a-data-frame.html#creating-a-data-frame"><span class="toc-section-number">6.1.1</span> Creating a data frame</a></li>
+<li><a href="6-1-whats-a-data-frame.html#basic-properties-of-a-data-frame"><span class="toc-section-number">6.1.2</span> Basic properties of a data frame</a></li>
+<li><a href="6-1-whats-a-data-frame.html#referencing"><span class="toc-section-number">6.1.3</span> Referencing</a></li>
+<li><a href="6-1-whats-a-data-frame.html#ordering"><span class="toc-section-number">6.1.4</span> Ordering</a></li>
+<li><a href="6-1-whats-a-data-frame.html#altering-and-adding-columns"><span class="toc-section-number">6.1.5</span> Altering and adding columns</a></li>
+<li><a href="6-1-whats-a-data-frame.html#eliminating-columns"><span class="toc-section-number">6.1.6</span> Eliminating columns</a></li>
+<li><a href="6-1-whats-a-data-frame.html#rbind-cbind"><span class="toc-section-number">6.1.7</span> rbind, cbind</a></li>
+<li><a href="6-1-whats-a-data-frame.html#merging"><span class="toc-section-number">6.1.8</span> Merging</a></li>
+<li><a href="6-1-whats-a-data-frame.html#altering-column-names"><span class="toc-section-number">6.1.9</span> Altering column names</a></li>
+<li><a href="6-1-whats-a-data-frame.html#subsetting---the-easy-way"><span class="toc-section-number">6.1.10</span> Subsetting - The easy way</a></li>
+<li><a href="6-1-whats-a-data-frame.html#subsetting---the-hardish-way"><span class="toc-section-number">6.1.11</span> Subsetting - The hard(ish) way</a></li>
+<li><a href="6-1-whats-a-data-frame.html#subsetting---yet-another-way"><span class="toc-section-number">6.1.12</span> Subsetting - Yet another way</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-2-summarizing.html#summarizing"><span class="toc-section-number">6.2</span> Summarizing</a><ul>
+<li><a href="6-2-summarizing.html#summarizing-visually---1"><span class="toc-section-number">6.2.1</span> Summarizing visually - 1</a></li>
+<li><a href="6-2-summarizing.html#summarizing-visually---2"><span class="toc-section-number">6.2.2</span> Summarizing visually - 2</a></li>
+<li><a href="6-2-summarizing.html#advanced-data-frame-tools"><span class="toc-section-number">6.2.3</span> Advanced data frame tools</a></li>
+<li><a href="6-2-summarizing.html#reading-data"><span class="toc-section-number">6.2.4</span> Reading data</a></li>
+<li><a href="6-2-summarizing.html#reading-from-excel"><span class="toc-section-number">6.2.5</span> Reading from Excel</a></li>
+<li><a href="6-2-summarizing.html#reading-from-the-web---1"><span class="toc-section-number">6.2.6</span> Reading from the web - 1</a></li>
+<li><a href="6-2-summarizing.html#reading-from-the-web---2"><span class="toc-section-number">6.2.7</span> Reading from the web - 2</a></li>
+<li><a href="6-2-summarizing.html#reading-from-a-database"><span class="toc-section-number">6.2.8</span> Reading from a database</a></li>
+<li><a href="6-2-summarizing.html#read-some-data"><span class="toc-section-number">6.2.9</span> Read some data</a></li>
+<li><a href="6-2-summarizing.html#questions-2"><span class="toc-section-number">6.2.10</span> Questions</a></li>
+<li><a href="6-2-summarizing.html#answer"><span class="toc-section-number">6.2.11</span> Answer</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="7-basic-visualization.html#basic-visualization"><span class="toc-section-number">7</span> Basic Visualization</a><ul>
+<li><a href="7-basic-visualization.html#visualization-in-r"><span class="toc-section-number">7.0.1</span> Visualization in R</a></li>
+<li><a href="7-basic-visualization.html#common-geometric-objects"><span class="toc-section-number">7.0.2</span> Common geometric objects</a></li>
+<li><a href="7-basic-visualization.html#a-basic-scatter-plot"><span class="toc-section-number">7.0.3</span> A basic scatter plot</a></li>
+<li><a href="7-basic-visualization.html#add-lines"><span class="toc-section-number">7.0.4</span> Add lines</a></li>
+<li><a href="7-basic-visualization.html#histogram"><span class="toc-section-number">7.0.5</span> Histogram</a></li>
+<li><a href="7-basic-visualization.html#density-plot"><span class="toc-section-number">7.0.6</span> Density plot</a></li>
+<li><a href="7-basic-visualization.html#boxplot"><span class="toc-section-number">7.0.7</span> Boxplot</a></li>
+<li><a href="7-basic-visualization.html#plotting-a-formula"><span class="toc-section-number">7.0.8</span> Plotting a formula</a></li>
+<li><a href="7-basic-visualization.html#emphasizing-outliers"><span class="toc-section-number">7.0.9</span> Emphasizing outliers</a></li>
+<li><a href="7-basic-visualization.html#other-ways-to-emphasize-outliers"><span class="toc-section-number">7.0.10</span> Other ways to emphasize outliers</a></li>
+<li><a href="7-1-exercise-1.html#exercise-1"><span class="toc-section-number">7.1</span> Exercise</a></li>
+<li><a href="7-2-answer-1.html#answer-1"><span class="toc-section-number">7.2</span> Answer</a></li>
+<li><a href="7-3-resources.html#resources"><span class="toc-section-number">7.3</span> Resources</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-loss-distributions.html#loss-distributions"><span class="toc-section-number">8</span> Loss Distributions</a><ul>
+<li><a href="8-loss-distributions.html#packages-well-use"><span class="toc-section-number">8.0.1</span> Packages we’ll use</a></li>
+<li><a href="8-loss-distributions.html#statistical-distributions-in-r"><span class="toc-section-number">8.0.2</span> Statistical distributions in R</a></li>
+<li><a href="8-loss-distributions.html#examples"><span class="toc-section-number">8.0.3</span> Examples</a></li>
+<li><a href="8-loss-distributions.html#generate-some-loss-data"><span class="toc-section-number">8.0.4</span> Generate some loss data</a></li>
+<li><a href="8-loss-distributions.html#histograms"><span class="toc-section-number">8.0.5</span> Histograms</a></li>
+<li><a href="8-loss-distributions.html#density"><span class="toc-section-number">8.0.6</span> Density</a></li>
+<li><a href="8-loss-distributions.html#fitdistr"><span class="toc-section-number">8.0.7</span> <code>fitdistr</code></a></li>
+<li><a href="8-loss-distributions.html#q-q-plot"><span class="toc-section-number">8.0.8</span> q-q plot</a></li>
+<li><a href="8-loss-distributions.html#compare-fit-to-histogram"><span class="toc-section-number">8.0.9</span> Compare fit to histogram</a></li>
+<li><a href="8-loss-distributions.html#kolmogorov-smirnov"><span class="toc-section-number">8.0.10</span> Kolmogorov-Smirnov</a></li>
+<li><a href="8-loss-distributions.html#more-k-s"><span class="toc-section-number">8.0.11</span> More K-S</a></li>
+<li><a href="8-loss-distributions.html#direct-optimization"><span class="toc-section-number">8.0.12</span> Direct optimization</a></li>
+<li><a href="8-loss-distributions.html#direct-optimization-1"><span class="toc-section-number">8.0.13</span> Direct optimization</a></li>
+<li class="has-sub"><a href="8-1-direct-optimization-2.html#direct-optimization-2"><span class="toc-section-number">8.1</span> Direct optimization</a><ul>
+<li><a href="8-1-direct-optimization-2.html#direct-optimization-3"><span class="toc-section-number">8.1.1</span> Direct optimization</a></li>
+<li><a href="8-1-direct-optimization-2.html#questions-3"><span class="toc-section-number">8.1.2</span> Questions</a></li>
+<li><a href="8-1-direct-optimization-2.html#answers-3"><span class="toc-section-number">8.1.3</span> Answers</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="9-simulation.html#simulation"><span class="toc-section-number">9</span> Simulation</a><ul>
+<li><a href="9-simulation.html#probability-distributions"><span class="toc-section-number">9.0.1</span> Probability distributions</a></li>
+<li><a href="9-simulation.html#density-function"><span class="toc-section-number">9.0.2</span> Density function</a></li>
+<li><a href="9-simulation.html#a-couple-more"><span class="toc-section-number">9.0.3</span> A couple more</a></li>
+<li><a href="9-simulation.html#distribution-function"><span class="toc-section-number">9.0.4</span> Distribution function</a></li>
+<li><a href="9-simulation.html#density-and-distribution"><span class="toc-section-number">9.0.5</span> Density and distribution</a></li>
+<li><a href="9-simulation.html#random-number-generation"><span class="toc-section-number">9.0.6</span> Random number generation</a></li>
+<li><a href="9-simulation.html#more-random-number-generation"><span class="toc-section-number">9.0.7</span> More random number generation</a></li>
+<li><a href="9-simulation.html#sample-revisited"><span class="toc-section-number">9.0.8</span> <code>sample</code> revisited</a></li>
+<li><a href="9-simulation.html#compound-loss-distribution"><span class="toc-section-number">9.0.9</span> Compound loss distribution</a></li>
+<li><a href="9-1-questions-4.html#questions-4"><span class="toc-section-number">9.1</span> Questions</a></li>
+<li><a href="9-2-answers-4.html#answers-4"><span class="toc-section-number">9.2</span> Answers</a></li>
+<li><a href="9-3-section-2.html#section-2"><span class="toc-section-number">9.3</span> </a></li>
+</ul></li>
+<li class="has-sub"><a href="10-advanced-visualization.html#advanced-visualization"><span class="toc-section-number">10</span> Advanced Visualization</a><ul>
+<li><a href="10-advanced-visualization.html#ggplot2"><span class="toc-section-number">10.0.1</span> ggplot2</a></li>
+<li><a href="10-advanced-visualization.html#data"><span class="toc-section-number">10.0.2</span> Data</a></li>
+<li><a href="10-advanced-visualization.html#mapping"><span class="toc-section-number">10.0.3</span> Mapping</a></li>
+<li><a href="10-advanced-visualization.html#adding-layers"><span class="toc-section-number">10.0.4</span> Adding layers</a></li>
+<li><a href="10-advanced-visualization.html#typical-geoms"><span class="toc-section-number">10.0.5</span> Typical geoms</a></li>
+<li><a href="10-advanced-visualization.html#one-step"><span class="toc-section-number">10.0.6</span> One step</a></li>
+<li><a href="10-advanced-visualization.html#nothing-wrong-with-adding-two-layers"><span class="toc-section-number">10.0.7</span> Nothing wrong with adding two layers</a></li>
+<li><a href="10-advanced-visualization.html#facets"><span class="toc-section-number">10.0.8</span> Facets</a></li>
+<li><a href="10-advanced-visualization.html#statistical-transformations"><span class="toc-section-number">10.0.9</span> Statistical transformations</a></li>
+<li><a href="10-advanced-visualization.html#scales"><span class="toc-section-number">10.0.10</span> Scales</a></li>
+<li><a href="10-advanced-visualization.html#other-visual-elements"><span class="toc-section-number">10.0.11</span> Other visual elements</a></li>
+<li><a href="10-1-questions-5.html#questions-5"><span class="toc-section-number">10.1</span> Questions</a></li>
+<li><a href="10-2-answers-5.html#answers-5"><span class="toc-section-number">10.2</span> Answers</a></li>
+<li class="has-sub"><a href="10-3-maps.html#maps"><span class="toc-section-number">10.3</span> Maps!</a><ul>
+<li><a href="10-3-maps.html#hurricanes"><span class="toc-section-number">10.3.1</span> Hurricanes</a></li>
+<li><a href="10-3-maps.html#choropleths-the-easy-way"><span class="toc-section-number">10.3.2</span> Choropleths the easy way</a></li>
+<li><a href="10-3-maps.html#choropleths-the-harder-way"><span class="toc-section-number">10.3.3</span> Choropleths the harder way</a></li>
+<li><a href="10-3-maps.html#choropleths-the-really-hard-way"><span class="toc-section-number">10.3.4</span> Choropleths the really hard way</a></li>
+</ul></li>
+<li><a href="10-4-summary.html#summary"><span class="toc-section-number">10.4</span> Summary</a></li>
+<li><a href="10-5-reference.html#reference"><span class="toc-section-number">10.5</span> Reference</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="answer-1" class="section level2">
+<h2><span class="header-section-number">7.2</span> Answer</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(raw)
+<span class="kw">data</span>(COTOR2)
+<span class="kw">hist</span>(COTOR2)</code></pre></div>
+<p><img src="raw_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(COTOR2)</code></pre></div>
+<p><img src="raw_files/figure-html/unnamed-chunk-103-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(COTOR2))</code></pre></div>
+<p><img src="raw_files/figure-html/unnamed-chunk-103-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">log</span>(COTOR2)))</code></pre></div>
+<p><img src="raw_files/figure-html/unnamed-chunk-103-4.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">log</span>(COTOR2))</code></pre></div>
+<p><img src="raw_files/figure-html/unnamed-chunk-103-5.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(COTOR2, <span class="dt">breaks=</span><span class="dv">80</span>)</code></pre></div>
+<p><img src="raw_files/figure-html/unnamed-chunk-103-6.png" width="672" /></p>
+</div>
+<p style="text-align: center;">
+<a href="7-1-exercise-1.html"><button class="btn btn-default">Previous</button></a>
+<a href="7-3-resources.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
