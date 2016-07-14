@@ -94,12 +94,12 @@ lines(X1, yHat-1, lty="dotted", lwd=0.5)
 ```{r }
 library(raw)
 data(COTOR2)
-hist(COTOR2$Claim)
-boxplot(COTOR2$Claim)
-plot(density(COTOR2$Claim))
-plot(density(log(COTOR2$Claim)))
-hist(log(COTOR2$Claim))
-hist(COTOR2$Claim, breaks=80)
+hist(COTOR2)
+boxplot(COTOR2)
+plot(density(COTOR2))
+plot(density(log(COTOR2)))
+hist(log(COTOR2))
+hist(COTOR2, breaks=80)
 ```
 
 ## Resources

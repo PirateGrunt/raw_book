@@ -202,13 +202,13 @@ library(choroplethrMaps)
 
 mapData <- subset(StateExperience, PolicyYear == 2010)
 mapData$value <- mapData$NumClaims
-mapData$region <- mapData$Fullname
+mapData$region <- tolower(mapData$Fullname)
 state_choropleth(mapData)
 ```
 
 ### Choropleths the harder way
 
-```{r}
+```{r eval=FALSE}
 states_map <- map_data("state")
 
 plt <- ggplot(subset(StateExperience, PolicyYear == 2010), aes(map_id = Fullname))
@@ -220,7 +220,7 @@ plt
 
 ### Choropleths the really hard way
 
-```{r }
+```{r eval=FALSE}
 plt <- ggplot(StateExperience, aes(map_id = Fullname))
 plt <- plt + geom_map(aes(fill = NumClaims), color = "black", map = states_map)
 plt <- plt + expand_limits(x = states_map$long, y = states_map$lat)

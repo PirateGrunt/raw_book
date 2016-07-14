@@ -1,3 +1,7 @@
+```{r echo=FALSE, results='hide'}
+library(rblocks)
+```
+
 # Lists
 
 In this chapter, we're going to learn about lists. Lists can be a bit confusing the first time you begin to use them. Heaven knows it took me ages to get comfortable with them. However, they're a very powerful way to structure data and, once mastered, will give you all kinds of control over pretty much anything the world can throw at you. If vectors are R's atom, lists are molecules. 
