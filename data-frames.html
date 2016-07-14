@@ -8,7 +8,7 @@
   <title>raw - R Actuarial Workshops</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is a companion to actuarial workshops.">
-  <meta name="generator" content="bookdown 0.0.63 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="raw - R Actuarial Workshops" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-04-12">
+<meta name="date" content="2016-07-13">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -486,12 +486,12 @@ dfBigPolicies =<span class="st"> </span>df[whichEP, ]</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfByState =<span class="st"> </span><span class="kw">aggregate</span>(df$EarnedPremium, <span class="kw">list</span>(df$State), sum)
 <span class="kw">colnames</span>(dfByState) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;State&quot;</span>, <span class="st">&quot;EarnedPremium&quot;</span>)
 <span class="kw">barplot</span>(dfByState$EarnedPremium, <span class="dt">names.arg=</span>dfByState$State, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-83-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
 </div>
 <div id="summarizing-visually---2" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Summarizing visually - 2</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotchart</span>(dfByState$EarnedPremium, dfByState$State, <span class="dt">pch=</span><span class="dv">19</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-84-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
 </div>
 <div id="advanced-data-frame-tools" class="section level3">
 <h3><span class="header-section-number">6.2.3</span> Advanced data frame tools</h3>
@@ -557,7 +557,7 @@ df =<span class="st"> </span><span class="kw">sqlQuery</span>(myChannel, <span c
 <a href="lists.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="basic-visualization.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
-<script src="libs/gitbook-2.6.7/js/app.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -585,7 +585,7 @@ gitbook.start({
 "link": "https://github.com/PirateGrunt/raw_book/edit/master/40_Data.Rmd",
 "text": null
 },
-"download": null,
+"download": ["raw.pdf"],
 "toc": {
 "collapse": "subsection"
 }

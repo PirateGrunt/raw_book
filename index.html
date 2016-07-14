@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html >
 
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="raw - R Actuarial Workshops" />
-<meta property="og:type" content="book" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>raw - R Actuarial Workshops</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This is a companion to actuarial workshops.">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
 
+  <meta property="og:title" content="raw - R Actuarial Workshops" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a companion to actuarial workshops." />
+  <meta name="github-repo" content="PirateGrunt/raw_book" />
 
-<meta property="og:description" content="This is a companion to actuarial workshops." />
-<meta name="github-repo" content="PirateGrunt/raw_book" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="raw - R Actuarial Workshops" />
+  
+  <meta name="twitter:description" content="This is a companion to actuarial workshops." />
+  
 
-<meta name="author" content="Brian A. Fannin, ACAS" />
+<meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-07-13" />
+<meta name="date" content="2016-07-13">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 
-<meta name="description" content="This is a companion to actuarial workshops.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
 
-<title>raw - R Actuarial Workshops</title>
+<link rel="next" href="setup.html">
 
-<script src="libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
+
+
+
+
+
+
+
 <style type="text/css">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -76,265 +93,310 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-</style>
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
 
-<div class="container-fluid main-container">
 
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
-<div class="row">
-<div class="col-sm-12">
-<div id="TOC">
-<ul>
-<li class="has-sub"><a href="index.html#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
-<li><a href="1-1-why-does-this-book-exist.html#why-does-this-book-exist"><span class="toc-section-number">1.1</span> Why does this book exist?</a></li>
-<li><a href="1-2-who-should-use-this.html#who-should-use-this"><span class="toc-section-number">1.2</span> Who should use this?</a></li>
-<li><a href="1-3-other-stuff.html#other-stuff"><span class="toc-section-number">1.3</span> Other stuff</a></li>
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">raw - Raw Actuarial Workshops</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-does-this-book-exist"><i class="fa fa-check"></i><b>1.1</b> Why does this book exist?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#who-should-use-this"><i class="fa fa-check"></i><b>1.2</b> Who should use this?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#other-stuff"><i class="fa fa-check"></i><b>1.3</b> Other stuff</a></li>
 </ul></li>
-<li class="has-sub"><a href="2-setup.html#setup"><span class="toc-section-number">2</span> Setup</a><ul>
-<li class="has-sub"><a href="2-1-installation.html#installation"><span class="toc-section-number">2.1</span> Installation</a><ul>
-<li><a href="2-1-installation.html#it"><span class="toc-section-number">2.1.1</span> IT</a></li>
+<li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup</a><ul>
+<li class="chapter" data-level="2.1" data-path="setup.html"><a href="setup.html#installation"><i class="fa fa-check"></i><b>2.1</b> Installation</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="setup.html"><a href="setup.html#it"><i class="fa fa-check"></i><b>2.1.1</b> IT</a></li>
 </ul></li>
-<li class="has-sub"><a href="2-2-the-operating-environment.html#the-operating-environment"><span class="toc-section-number">2.2</span> The Operating Environment</a><ul>
-<li><a href="2-2-the-operating-environment.html#command-line-interface"><span class="toc-section-number">2.2.1</span> Command-line interface</a></li>
+<li class="chapter" data-level="2.2" data-path="setup.html"><a href="setup.html#the-operating-environment"><i class="fa fa-check"></i><b>2.2</b> The Operating Environment</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="setup.html"><a href="setup.html#command-line-interface"><i class="fa fa-check"></i><b>2.2.1</b> Command-line interface</a></li>
 </ul></li>
-<li><a href="2-3-entering-commands.html#entering-commands"><span class="toc-section-number">2.3</span> Entering Commands</a></li>
+<li class="chapter" data-level="2.3" data-path="setup.html"><a href="setup.html#entering-commands"><i class="fa fa-check"></i><b>2.3</b> Entering Commands</a></li>
 </ul></li>
-<li class="has-sub"><a href="3-getting-started.html#getting-started"><span class="toc-section-number">3</span> Getting started</a><ul>
-<li><a href="3-getting-started.html#mathematical-operators"><span class="toc-section-number">3.0.1</span> Mathematical Operators</a></li>
-<li><a href="3-getting-started.html#logical-operators"><span class="toc-section-number">3.0.2</span> Logical Operators</a></li>
-<li><a href="3-getting-started.html#assignment"><span class="toc-section-number">3.0.3</span> Assignment</a></li>
-<li><a href="3-getting-started.html#functions"><span class="toc-section-number">3.0.4</span> Functions</a></li>
-<li><a href="3-getting-started.html#a-few-mathematical-functions"><span class="toc-section-number">3.0.5</span> A few mathematical functions</a></li>
-<li><a href="3-1-getting-help.html#getting-help"><span class="toc-section-number">3.1</span> Getting help</a></li>
-<li class="has-sub"><a href="3-2-the-working-directory.html#the-working-directory"><span class="toc-section-number">3.2</span> The working directory</a><ul>
-<li><a href="3-2-the-working-directory.html#directory-paths"><span class="toc-section-number">3.2.1</span> Directory paths</a></li>
-<li><a href="3-2-the-working-directory.html#source-files"><span class="toc-section-number">3.2.2</span> Source files</a></li>
+<li class="chapter" data-level="3" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>3</b> Getting started</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="getting-started.html"><a href="getting-started.html#mathematical-operators"><i class="fa fa-check"></i><b>3.0.1</b> Mathematical Operators</a></li>
+<li class="chapter" data-level="3.0.2" data-path="getting-started.html"><a href="getting-started.html#logical-operators"><i class="fa fa-check"></i><b>3.0.2</b> Logical Operators</a></li>
+<li class="chapter" data-level="3.0.3" data-path="getting-started.html"><a href="getting-started.html#assignment"><i class="fa fa-check"></i><b>3.0.3</b> Assignment</a></li>
+<li class="chapter" data-level="3.0.4" data-path="getting-started.html"><a href="getting-started.html#functions"><i class="fa fa-check"></i><b>3.0.4</b> Functions</a></li>
+<li class="chapter" data-level="3.0.5" data-path="getting-started.html"><a href="getting-started.html#a-few-mathematical-functions"><i class="fa fa-check"></i><b>3.0.5</b> A few mathematical functions</a></li>
+<li class="chapter" data-level="3.1" data-path="getting-started.html"><a href="getting-started.html#getting-help"><i class="fa fa-check"></i><b>3.1</b> Getting help</a></li>
+<li class="chapter" data-level="3.2" data-path="getting-started.html"><a href="getting-started.html#the-working-directory"><i class="fa fa-check"></i><b>3.2</b> The working directory</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="getting-started.html"><a href="getting-started.html#directory-paths"><i class="fa fa-check"></i><b>3.2.1</b> Directory paths</a></li>
+<li class="chapter" data-level="3.2.2" data-path="getting-started.html"><a href="getting-started.html#source-files"><i class="fa fa-check"></i><b>3.2.2</b> Source files</a></li>
 </ul></li>
-<li class="has-sub"><a href="3-3-your-first-script.html#your-first-script"><span class="toc-section-number">3.3</span> Your first script</a><ul>
-<li><a href="3-3-your-first-script.html#executing-a-script"><span class="toc-section-number">3.3.1</span> Executing a script</a></li>
-<li><a href="3-3-your-first-script.html#comments"><span class="toc-section-number">3.3.2</span> Comments</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-started.html"><a href="getting-started.html#your-first-script"><i class="fa fa-check"></i><b>3.3</b> Your first script</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="getting-started.html"><a href="getting-started.html#executing-a-script"><i class="fa fa-check"></i><b>3.3.1</b> Executing a script</a></li>
+<li class="chapter" data-level="3.3.2" data-path="getting-started.html"><a href="getting-started.html#comments"><i class="fa fa-check"></i><b>3.3.2</b> Comments</a></li>
 </ul></li>
-<li><a href="3-4-quiz.html#quiz"><span class="toc-section-number">3.4</span> Quiz</a></li>
+<li class="chapter" data-level="3.4" data-path="getting-started.html"><a href="getting-started.html#quiz"><i class="fa fa-check"></i><b>3.4</b> Quiz</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-vectors.html#vectors"><span class="toc-section-number">4</span> Vectors</a><ul>
-<li class="has-sub"><a href="4-1-what-is-a-vector.html#what-is-a-vector"><span class="toc-section-number">4.1</span> What is a vector?</a><ul>
-<li><a href="4-1-what-is-a-vector.html#vector-properties"><span class="toc-section-number">4.1.1</span> Vector properties</a></li>
-<li><a href="4-1-what-is-a-vector.html#vector-construction"><span class="toc-section-number">4.1.2</span> Vector construction</a></li>
-<li><a href="4-1-what-is-a-vector.html#seq"><span class="toc-section-number">4.1.3</span> <code>seq</code></a></li>
-<li><a href="4-1-what-is-a-vector.html#rep"><span class="toc-section-number">4.1.4</span> <code>rep</code></a></li>
-<li><a href="4-1-what-is-a-vector.html#concatenation"><span class="toc-section-number">4.1.5</span> Concatenation</a></li>
-<li><a href="4-1-what-is-a-vector.html#growth-by-assignment"><span class="toc-section-number">4.1.6</span> Growth by assignment</a></li>
-<li><a href="4-1-what-is-a-vector.html#vector-access---by-index"><span class="toc-section-number">4.1.7</span> Vector access - by index</a></li>
-<li><a href="4-1-what-is-a-vector.html#vector-access---logical-access"><span class="toc-section-number">4.1.8</span> Vector access - logical access</a></li>
-<li><a href="4-1-what-is-a-vector.html#which"><span class="toc-section-number">4.1.9</span> <code>which</code></a></li>
-<li><a href="4-1-what-is-a-vector.html#sample"><span class="toc-section-number">4.1.10</span> <code>sample</code></a></li>
-<li><a href="4-1-what-is-a-vector.html#sample-ii"><span class="toc-section-number">4.1.11</span> <code>sample</code> II</a></li>
-<li><a href="4-1-what-is-a-vector.html#order"><span class="toc-section-number">4.1.12</span> <code>order</code></a></li>
-<li><a href="4-1-what-is-a-vector.html#vector-arithmetic"><span class="toc-section-number">4.1.13</span> Vector arithmetic</a></li>
-<li><a href="4-1-what-is-a-vector.html#recycling"><span class="toc-section-number">4.1.14</span> Recycling</a></li>
-<li><a href="4-1-what-is-a-vector.html#set-theory---part-i"><span class="toc-section-number">4.1.15</span> Set theory - Part I</a></li>
-<li><a href="4-1-what-is-a-vector.html#set-theory---part-ii"><span class="toc-section-number">4.1.16</span> Set theory - Part II</a></li>
-<li><a href="4-1-what-is-a-vector.html#summarization"><span class="toc-section-number">4.1.17</span> Summarization</a></li>
-<li><a href="4-1-what-is-a-vector.html#vectors-1"><span class="toc-section-number">4.1.18</span> Vectors</a></li>
+<li class="chapter" data-level="4" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>4</b> Vectors</a><ul>
+<li class="chapter" data-level="4.1" data-path="vectors.html"><a href="vectors.html#what-is-a-vector"><i class="fa fa-check"></i><b>4.1</b> What is a vector?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="vectors.html"><a href="vectors.html#vector-properties"><i class="fa fa-check"></i><b>4.1.1</b> Vector properties</a></li>
+<li class="chapter" data-level="4.1.2" data-path="vectors.html"><a href="vectors.html#vector-construction"><i class="fa fa-check"></i><b>4.1.2</b> Vector construction</a></li>
+<li class="chapter" data-level="4.1.3" data-path="vectors.html"><a href="vectors.html#seq"><i class="fa fa-check"></i><b>4.1.3</b> <code>seq</code></a></li>
+<li class="chapter" data-level="4.1.4" data-path="vectors.html"><a href="vectors.html#rep"><i class="fa fa-check"></i><b>4.1.4</b> <code>rep</code></a></li>
+<li class="chapter" data-level="4.1.5" data-path="vectors.html"><a href="vectors.html#concatenation"><i class="fa fa-check"></i><b>4.1.5</b> Concatenation</a></li>
+<li class="chapter" data-level="4.1.6" data-path="vectors.html"><a href="vectors.html#growth-by-assignment"><i class="fa fa-check"></i><b>4.1.6</b> Growth by assignment</a></li>
+<li class="chapter" data-level="4.1.7" data-path="vectors.html"><a href="vectors.html#vector-access---by-index"><i class="fa fa-check"></i><b>4.1.7</b> Vector access - by index</a></li>
+<li class="chapter" data-level="4.1.8" data-path="vectors.html"><a href="vectors.html#vector-access---logical-access"><i class="fa fa-check"></i><b>4.1.8</b> Vector access - logical access</a></li>
+<li class="chapter" data-level="4.1.9" data-path="vectors.html"><a href="vectors.html#which"><i class="fa fa-check"></i><b>4.1.9</b> <code>which</code></a></li>
+<li class="chapter" data-level="4.1.10" data-path="vectors.html"><a href="vectors.html#sample"><i class="fa fa-check"></i><b>4.1.10</b> <code>sample</code></a></li>
+<li class="chapter" data-level="4.1.11" data-path="vectors.html"><a href="vectors.html#sample-ii"><i class="fa fa-check"></i><b>4.1.11</b> <code>sample</code> II</a></li>
+<li class="chapter" data-level="4.1.12" data-path="vectors.html"><a href="vectors.html#order"><i class="fa fa-check"></i><b>4.1.12</b> <code>order</code></a></li>
+<li class="chapter" data-level="4.1.13" data-path="vectors.html"><a href="vectors.html#vector-arithmetic"><i class="fa fa-check"></i><b>4.1.13</b> Vector arithmetic</a></li>
+<li class="chapter" data-level="4.1.14" data-path="vectors.html"><a href="vectors.html#recycling"><i class="fa fa-check"></i><b>4.1.14</b> Recycling</a></li>
+<li class="chapter" data-level="4.1.15" data-path="vectors.html"><a href="vectors.html#set-theory---part-i"><i class="fa fa-check"></i><b>4.1.15</b> Set theory - Part I</a></li>
+<li class="chapter" data-level="4.1.16" data-path="vectors.html"><a href="vectors.html#set-theory---part-ii"><i class="fa fa-check"></i><b>4.1.16</b> Set theory - Part II</a></li>
+<li class="chapter" data-level="4.1.17" data-path="vectors.html"><a href="vectors.html#summarization"><i class="fa fa-check"></i><b>4.1.17</b> Summarization</a></li>
+<li class="chapter" data-level="4.1.18" data-path="vectors.html"><a href="vectors.html#vectors-1"><i class="fa fa-check"></i><b>4.1.18</b> Vectors</a></li>
 </ul></li>
-<li class="has-sub"><a href="4-2-from-data.html#from-data"><span class="toc-section-number">4.2</span> From data</a><ul>
-<li><a href="4-2-from-data.html#data-types"><span class="toc-section-number">4.2.1</span> Data types</a></li>
-<li><a href="4-2-from-data.html#what-is-it"><span class="toc-section-number">4.2.2</span> What is it?</a></li>
-<li><a href="4-2-from-data.html#data-conversion"><span class="toc-section-number">4.2.3</span> Data conversion</a></li>
-<li><a href="4-2-from-data.html#class"><span class="toc-section-number">4.2.4</span> Class</a></li>
-<li><a href="4-2-from-data.html#mode"><span class="toc-section-number">4.2.5</span> Mode</a></li>
-<li><a href="4-2-from-data.html#dates-and-times"><span class="toc-section-number">4.2.6</span> Dates and times</a></li>
-<li><a href="4-2-from-data.html#more-on-dates"><span class="toc-section-number">4.2.7</span> More on dates</a></li>
-<li><a href="4-2-from-data.html#what-day-is-it"><span class="toc-section-number">4.2.8</span> What day is it?</a></li>
-<li><a href="4-2-from-data.html#more-reading-on-dates"><span class="toc-section-number">4.2.9</span> More reading on dates</a></li>
-<li><a href="4-2-from-data.html#factors"><span class="toc-section-number">4.2.10</span> Factors</a></li>
-<li><a href="4-2-from-data.html#altering-factors"><span class="toc-section-number">4.2.11</span> Altering factors</a></li>
-<li><a href="4-2-from-data.html#avoid-factors"><span class="toc-section-number">4.2.12</span> Avoid factors</a></li>
-<li><a href="4-2-from-data.html#questions"><span class="toc-section-number">4.2.13</span> Questions</a></li>
-<li><a href="4-2-from-data.html#answers"><span class="toc-section-number">4.2.14</span> Answers</a></li>
-<li><a href="4-2-from-data.html#from-vectors-to-matrices-and-lists"><span class="toc-section-number">4.2.15</span> From vectors to matrices and lists</a></li>
-<li><a href="4-2-from-data.html#a-matrix"><span class="toc-section-number">4.2.16</span> A matrix</a></li>
-<li><a href="4-2-from-data.html#section"><span class="toc-section-number">4.2.17</span> </a></li>
-<li><a href="4-2-from-data.html#section-1"><span class="toc-section-number">4.2.18</span> </a></li>
-<li><a href="4-2-from-data.html#matrix-metadata"><span class="toc-section-number">4.2.19</span> Matrix metadata</a></li>
-<li><a href="4-2-from-data.html#data-access-for-a-matrix"><span class="toc-section-number">4.2.20</span> Data access for a matrix</a></li>
-<li><a href="4-2-from-data.html#data-access-continued"><span class="toc-section-number">4.2.21</span> Data access continued</a></li>
-<li><a href="4-2-from-data.html#matrix-summary"><span class="toc-section-number">4.2.22</span> Matrix summary</a></li>
-<li><a href="4-2-from-data.html#more-than-two-dimensions"><span class="toc-section-number">4.2.23</span> More than two dimensions</a></li>
+<li class="chapter" data-level="4.2" data-path="vectors.html"><a href="vectors.html#from-data"><i class="fa fa-check"></i><b>4.2</b> From data</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="vectors.html"><a href="vectors.html#data-types"><i class="fa fa-check"></i><b>4.2.1</b> Data types</a></li>
+<li class="chapter" data-level="4.2.2" data-path="vectors.html"><a href="vectors.html#what-is-it"><i class="fa fa-check"></i><b>4.2.2</b> What is it?</a></li>
+<li class="chapter" data-level="4.2.3" data-path="vectors.html"><a href="vectors.html#data-conversion"><i class="fa fa-check"></i><b>4.2.3</b> Data conversion</a></li>
+<li class="chapter" data-level="4.2.4" data-path="vectors.html"><a href="vectors.html#class"><i class="fa fa-check"></i><b>4.2.4</b> Class</a></li>
+<li class="chapter" data-level="4.2.5" data-path="vectors.html"><a href="vectors.html#mode"><i class="fa fa-check"></i><b>4.2.5</b> Mode</a></li>
+<li class="chapter" data-level="4.2.6" data-path="vectors.html"><a href="vectors.html#dates-and-times"><i class="fa fa-check"></i><b>4.2.6</b> Dates and times</a></li>
+<li class="chapter" data-level="4.2.7" data-path="vectors.html"><a href="vectors.html#more-on-dates"><i class="fa fa-check"></i><b>4.2.7</b> More on dates</a></li>
+<li class="chapter" data-level="4.2.8" data-path="vectors.html"><a href="vectors.html#what-day-is-it"><i class="fa fa-check"></i><b>4.2.8</b> What day is it?</a></li>
+<li class="chapter" data-level="4.2.9" data-path="vectors.html"><a href="vectors.html#more-reading-on-dates"><i class="fa fa-check"></i><b>4.2.9</b> More reading on dates</a></li>
+<li class="chapter" data-level="4.2.10" data-path="vectors.html"><a href="vectors.html#factors"><i class="fa fa-check"></i><b>4.2.10</b> Factors</a></li>
+<li class="chapter" data-level="4.2.11" data-path="vectors.html"><a href="vectors.html#altering-factors"><i class="fa fa-check"></i><b>4.2.11</b> Altering factors</a></li>
+<li class="chapter" data-level="4.2.12" data-path="vectors.html"><a href="vectors.html#avoid-factors"><i class="fa fa-check"></i><b>4.2.12</b> Avoid factors</a></li>
+<li class="chapter" data-level="4.2.13" data-path="vectors.html"><a href="vectors.html#questions"><i class="fa fa-check"></i><b>4.2.13</b> Questions</a></li>
+<li class="chapter" data-level="4.2.14" data-path="vectors.html"><a href="vectors.html#answers"><i class="fa fa-check"></i><b>4.2.14</b> Answers</a></li>
+<li class="chapter" data-level="4.2.15" data-path="vectors.html"><a href="vectors.html#from-vectors-to-matrices-and-lists"><i class="fa fa-check"></i><b>4.2.15</b> From vectors to matrices and lists</a></li>
+<li class="chapter" data-level="4.2.16" data-path="vectors.html"><a href="vectors.html#a-matrix"><i class="fa fa-check"></i><b>4.2.16</b> A matrix</a></li>
+<li class="chapter" data-level="4.2.17" data-path="vectors.html"><a href="vectors.html#section"><i class="fa fa-check"></i><b>4.2.17</b> </a></li>
+<li class="chapter" data-level="4.2.18" data-path="vectors.html"><a href="vectors.html#section-1"><i class="fa fa-check"></i><b>4.2.18</b> </a></li>
+<li class="chapter" data-level="4.2.19" data-path="vectors.html"><a href="vectors.html#matrix-metadata"><i class="fa fa-check"></i><b>4.2.19</b> Matrix metadata</a></li>
+<li class="chapter" data-level="4.2.20" data-path="vectors.html"><a href="vectors.html#data-access-for-a-matrix"><i class="fa fa-check"></i><b>4.2.20</b> Data access for a matrix</a></li>
+<li class="chapter" data-level="4.2.21" data-path="vectors.html"><a href="vectors.html#data-access-continued"><i class="fa fa-check"></i><b>4.2.21</b> Data access continued</a></li>
+<li class="chapter" data-level="4.2.22" data-path="vectors.html"><a href="vectors.html#matrix-summary"><i class="fa fa-check"></i><b>4.2.22</b> Matrix summary</a></li>
+<li class="chapter" data-level="4.2.23" data-path="vectors.html"><a href="vectors.html#more-than-two-dimensions"><i class="fa fa-check"></i><b>4.2.23</b> More than two dimensions</a></li>
 </ul></li>
-<li><a href="4-3-exercise.html#exercise"><span class="toc-section-number">4.3</span> Exercise</a></li>
-<li class="has-sub"><a href="4-4-answers-1.html#answers-1"><span class="toc-section-number">4.4</span> Answers</a><ul>
-<li><a href="4-4-answers-1.html#next"><span class="toc-section-number">4.4.1</span> Next</a></li>
-</ul></li>
-</ul></li>
-<li class="has-sub"><a href="5-lists.html#lists"><span class="toc-section-number">5</span> Lists</a><ul>
-<li><a href="5-lists.html#lists-1"><span class="toc-section-number">5.0.1</span> Lists</a></li>
-<li><a href="5-lists.html#vs."><span class="toc-section-number">5.0.2</span> [ vs. [[</a></li>
-<li><a href="5-lists.html#recursive-storage"><span class="toc-section-number">5.0.3</span> Recursive storage</a></li>
-<li><a href="5-lists.html#list-metadata"><span class="toc-section-number">5.0.4</span> List metadata</a></li>
-<li><a href="5-lists.html#lapply"><span class="toc-section-number">5.0.5</span> <code>lapply</code></a></li>
-<li><a href="5-lists.html#why-lapply"><span class="toc-section-number">5.0.6</span> Why <code>lapply</code>?</a></li>
-<li><a href="5-lists.html#summary-functions"><span class="toc-section-number">5.0.7</span> Summary functions</a></li>
-<li><a href="5-1-questions-1.html#questions-1"><span class="toc-section-number">5.1</span> Questions</a></li>
-<li><a href="5-2-answers-2.html#answers-2"><span class="toc-section-number">5.2</span> Answers</a></li>
-</ul></li>
-<li class="has-sub"><a href="6-data-frames.html#data-frames"><span class="toc-section-number">6</span> Data Frames</a><ul>
-<li class="has-sub"><a href="6-1-whats-a-data-frame.html#whats-a-data-frame"><span class="toc-section-number">6.1</span> What’s a data frame?</a><ul>
-<li><a href="6-1-whats-a-data-frame.html#creating-a-data-frame"><span class="toc-section-number">6.1.1</span> Creating a data frame</a></li>
-<li><a href="6-1-whats-a-data-frame.html#basic-properties-of-a-data-frame"><span class="toc-section-number">6.1.2</span> Basic properties of a data frame</a></li>
-<li><a href="6-1-whats-a-data-frame.html#referencing"><span class="toc-section-number">6.1.3</span> Referencing</a></li>
-<li><a href="6-1-whats-a-data-frame.html#ordering"><span class="toc-section-number">6.1.4</span> Ordering</a></li>
-<li><a href="6-1-whats-a-data-frame.html#altering-and-adding-columns"><span class="toc-section-number">6.1.5</span> Altering and adding columns</a></li>
-<li><a href="6-1-whats-a-data-frame.html#eliminating-columns"><span class="toc-section-number">6.1.6</span> Eliminating columns</a></li>
-<li><a href="6-1-whats-a-data-frame.html#rbind-cbind"><span class="toc-section-number">6.1.7</span> rbind, cbind</a></li>
-<li><a href="6-1-whats-a-data-frame.html#merging"><span class="toc-section-number">6.1.8</span> Merging</a></li>
-<li><a href="6-1-whats-a-data-frame.html#altering-column-names"><span class="toc-section-number">6.1.9</span> Altering column names</a></li>
-<li><a href="6-1-whats-a-data-frame.html#subsetting---the-easy-way"><span class="toc-section-number">6.1.10</span> Subsetting - The easy way</a></li>
-<li><a href="6-1-whats-a-data-frame.html#subsetting---the-hardish-way"><span class="toc-section-number">6.1.11</span> Subsetting - The hard(ish) way</a></li>
-<li><a href="6-1-whats-a-data-frame.html#subsetting---yet-another-way"><span class="toc-section-number">6.1.12</span> Subsetting - Yet another way</a></li>
-</ul></li>
-<li class="has-sub"><a href="6-2-summarizing.html#summarizing"><span class="toc-section-number">6.2</span> Summarizing</a><ul>
-<li><a href="6-2-summarizing.html#summarizing-visually---1"><span class="toc-section-number">6.2.1</span> Summarizing visually - 1</a></li>
-<li><a href="6-2-summarizing.html#summarizing-visually---2"><span class="toc-section-number">6.2.2</span> Summarizing visually - 2</a></li>
-<li><a href="6-2-summarizing.html#advanced-data-frame-tools"><span class="toc-section-number">6.2.3</span> Advanced data frame tools</a></li>
-<li><a href="6-2-summarizing.html#reading-data"><span class="toc-section-number">6.2.4</span> Reading data</a></li>
-<li><a href="6-2-summarizing.html#reading-from-excel"><span class="toc-section-number">6.2.5</span> Reading from Excel</a></li>
-<li><a href="6-2-summarizing.html#reading-from-the-web---1"><span class="toc-section-number">6.2.6</span> Reading from the web - 1</a></li>
-<li><a href="6-2-summarizing.html#reading-from-the-web---2"><span class="toc-section-number">6.2.7</span> Reading from the web - 2</a></li>
-<li><a href="6-2-summarizing.html#reading-from-a-database"><span class="toc-section-number">6.2.8</span> Reading from a database</a></li>
-<li><a href="6-2-summarizing.html#read-some-data"><span class="toc-section-number">6.2.9</span> Read some data</a></li>
-<li><a href="6-2-summarizing.html#questions-2"><span class="toc-section-number">6.2.10</span> Questions</a></li>
-<li><a href="6-2-summarizing.html#answer"><span class="toc-section-number">6.2.11</span> Answer</a></li>
+<li class="chapter" data-level="4.3" data-path="vectors.html"><a href="vectors.html#exercise"><i class="fa fa-check"></i><b>4.3</b> Exercise</a></li>
+<li class="chapter" data-level="4.4" data-path="vectors.html"><a href="vectors.html#answers-1"><i class="fa fa-check"></i><b>4.4</b> Answers</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="vectors.html"><a href="vectors.html#next"><i class="fa fa-check"></i><b>4.4.1</b> Next</a></li>
 </ul></li>
 </ul></li>
-<li class="has-sub"><a href="7-basic-visualization.html#basic-visualization"><span class="toc-section-number">7</span> Basic Visualization</a><ul>
-<li><a href="7-basic-visualization.html#visualization-in-r"><span class="toc-section-number">7.0.1</span> Visualization in R</a></li>
-<li><a href="7-basic-visualization.html#common-geometric-objects"><span class="toc-section-number">7.0.2</span> Common geometric objects</a></li>
-<li><a href="7-basic-visualization.html#a-basic-scatter-plot"><span class="toc-section-number">7.0.3</span> A basic scatter plot</a></li>
-<li><a href="7-basic-visualization.html#add-lines"><span class="toc-section-number">7.0.4</span> Add lines</a></li>
-<li><a href="7-basic-visualization.html#histogram"><span class="toc-section-number">7.0.5</span> Histogram</a></li>
-<li><a href="7-basic-visualization.html#density-plot"><span class="toc-section-number">7.0.6</span> Density plot</a></li>
-<li><a href="7-basic-visualization.html#boxplot"><span class="toc-section-number">7.0.7</span> Boxplot</a></li>
-<li><a href="7-basic-visualization.html#plotting-a-formula"><span class="toc-section-number">7.0.8</span> Plotting a formula</a></li>
-<li><a href="7-basic-visualization.html#emphasizing-outliers"><span class="toc-section-number">7.0.9</span> Emphasizing outliers</a></li>
-<li><a href="7-basic-visualization.html#other-ways-to-emphasize-outliers"><span class="toc-section-number">7.0.10</span> Other ways to emphasize outliers</a></li>
-<li><a href="7-1-exercise-1.html#exercise-1"><span class="toc-section-number">7.1</span> Exercise</a></li>
-<li><a href="7-2-answer-1.html#answer-1"><span class="toc-section-number">7.2</span> Answer</a></li>
-<li><a href="7-3-resources.html#resources"><span class="toc-section-number">7.3</span> Resources</a></li>
+<li class="chapter" data-level="5" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>5</b> Lists</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="lists.html"><a href="lists.html#lists-1"><i class="fa fa-check"></i><b>5.0.1</b> Lists</a></li>
+<li class="chapter" data-level="5.0.2" data-path="lists.html"><a href="lists.html#vs."><i class="fa fa-check"></i><b>5.0.2</b> [ vs. [[</a></li>
+<li class="chapter" data-level="5.0.3" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>5.0.3</b> Recursive storage</a></li>
+<li class="chapter" data-level="5.0.4" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>5.0.4</b> List metadata</a></li>
+<li class="chapter" data-level="5.0.5" data-path="lists.html"><a href="lists.html#lapply"><i class="fa fa-check"></i><b>5.0.5</b> <code>lapply</code></a></li>
+<li class="chapter" data-level="5.0.6" data-path="lists.html"><a href="lists.html#why-lapply"><i class="fa fa-check"></i><b>5.0.6</b> Why <code>lapply</code>?</a></li>
+<li class="chapter" data-level="5.0.7" data-path="lists.html"><a href="lists.html#summary-functions"><i class="fa fa-check"></i><b>5.0.7</b> Summary functions</a></li>
+<li class="chapter" data-level="5.1" data-path="lists.html"><a href="lists.html#questions-1"><i class="fa fa-check"></i><b>5.1</b> Questions</a></li>
+<li class="chapter" data-level="5.2" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>5.2</b> Answers</a></li>
 </ul></li>
-<li class="has-sub"><a href="8-loss-distributions.html#loss-distributions"><span class="toc-section-number">8</span> Loss Distributions</a><ul>
-<li><a href="8-loss-distributions.html#packages-well-use"><span class="toc-section-number">8.0.1</span> Packages we’ll use</a></li>
-<li><a href="8-loss-distributions.html#statistical-distributions-in-r"><span class="toc-section-number">8.0.2</span> Statistical distributions in R</a></li>
-<li><a href="8-loss-distributions.html#examples"><span class="toc-section-number">8.0.3</span> Examples</a></li>
-<li><a href="8-loss-distributions.html#generate-some-loss-data"><span class="toc-section-number">8.0.4</span> Generate some loss data</a></li>
-<li><a href="8-loss-distributions.html#histograms"><span class="toc-section-number">8.0.5</span> Histograms</a></li>
-<li><a href="8-loss-distributions.html#density"><span class="toc-section-number">8.0.6</span> Density</a></li>
-<li><a href="8-loss-distributions.html#fitdistr"><span class="toc-section-number">8.0.7</span> <code>fitdistr</code></a></li>
-<li><a href="8-loss-distributions.html#q-q-plot"><span class="toc-section-number">8.0.8</span> q-q plot</a></li>
-<li><a href="8-loss-distributions.html#compare-fit-to-histogram"><span class="toc-section-number">8.0.9</span> Compare fit to histogram</a></li>
-<li><a href="8-loss-distributions.html#kolmogorov-smirnov"><span class="toc-section-number">8.0.10</span> Kolmogorov-Smirnov</a></li>
-<li><a href="8-loss-distributions.html#more-k-s"><span class="toc-section-number">8.0.11</span> More K-S</a></li>
-<li><a href="8-loss-distributions.html#direct-optimization"><span class="toc-section-number">8.0.12</span> Direct optimization</a></li>
-<li><a href="8-loss-distributions.html#direct-optimization-1"><span class="toc-section-number">8.0.13</span> Direct optimization</a></li>
-<li class="has-sub"><a href="8-1-direct-optimization-2.html#direct-optimization-2"><span class="toc-section-number">8.1</span> Direct optimization</a><ul>
-<li><a href="8-1-direct-optimization-2.html#direct-optimization-3"><span class="toc-section-number">8.1.1</span> Direct optimization</a></li>
-<li><a href="8-1-direct-optimization-2.html#questions-3"><span class="toc-section-number">8.1.2</span> Questions</a></li>
-<li><a href="8-1-direct-optimization-2.html#answers-3"><span class="toc-section-number">8.1.3</span> Answers</a></li>
+<li class="chapter" data-level="6" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>6</b> Data Frames</a><ul>
+<li class="chapter" data-level="6.1" data-path="data-frames.html"><a href="data-frames.html#whats-a-data-frame"><i class="fa fa-check"></i><b>6.1</b> What’s a data frame?</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="data-frames.html"><a href="data-frames.html#creating-a-data-frame"><i class="fa fa-check"></i><b>6.1.1</b> Creating a data frame</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-frames.html"><a href="data-frames.html#basic-properties-of-a-data-frame"><i class="fa fa-check"></i><b>6.1.2</b> Basic properties of a data frame</a></li>
+<li class="chapter" data-level="6.1.3" data-path="data-frames.html"><a href="data-frames.html#referencing"><i class="fa fa-check"></i><b>6.1.3</b> Referencing</a></li>
+<li class="chapter" data-level="6.1.4" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>6.1.4</b> Ordering</a></li>
+<li class="chapter" data-level="6.1.5" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>6.1.5</b> Altering and adding columns</a></li>
+<li class="chapter" data-level="6.1.6" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>6.1.6</b> Eliminating columns</a></li>
+<li class="chapter" data-level="6.1.7" data-path="data-frames.html"><a href="data-frames.html#rbind-cbind"><i class="fa fa-check"></i><b>6.1.7</b> rbind, cbind</a></li>
+<li class="chapter" data-level="6.1.8" data-path="data-frames.html"><a href="data-frames.html#merging"><i class="fa fa-check"></i><b>6.1.8</b> Merging</a></li>
+<li class="chapter" data-level="6.1.9" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>6.1.9</b> Altering column names</a></li>
+<li class="chapter" data-level="6.1.10" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-easy-way"><i class="fa fa-check"></i><b>6.1.10</b> Subsetting - The easy way</a></li>
+<li class="chapter" data-level="6.1.11" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-hardish-way"><i class="fa fa-check"></i><b>6.1.11</b> Subsetting - The hard(ish) way</a></li>
+<li class="chapter" data-level="6.1.12" data-path="data-frames.html"><a href="data-frames.html#subsetting---yet-another-way"><i class="fa fa-check"></i><b>6.1.12</b> Subsetting - Yet another way</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>6.2</b> Summarizing</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---1"><i class="fa fa-check"></i><b>6.2.1</b> Summarizing visually - 1</a></li>
+<li class="chapter" data-level="6.2.2" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---2"><i class="fa fa-check"></i><b>6.2.2</b> Summarizing visually - 2</a></li>
+<li class="chapter" data-level="6.2.3" data-path="data-frames.html"><a href="data-frames.html#advanced-data-frame-tools"><i class="fa fa-check"></i><b>6.2.3</b> Advanced data frame tools</a></li>
+<li class="chapter" data-level="6.2.4" data-path="data-frames.html"><a href="data-frames.html#reading-data"><i class="fa fa-check"></i><b>6.2.4</b> Reading data</a></li>
+<li class="chapter" data-level="6.2.5" data-path="data-frames.html"><a href="data-frames.html#reading-from-excel"><i class="fa fa-check"></i><b>6.2.5</b> Reading from Excel</a></li>
+<li class="chapter" data-level="6.2.6" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web---1"><i class="fa fa-check"></i><b>6.2.6</b> Reading from the web - 1</a></li>
+<li class="chapter" data-level="6.2.7" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web---2"><i class="fa fa-check"></i><b>6.2.7</b> Reading from the web - 2</a></li>
+<li class="chapter" data-level="6.2.8" data-path="data-frames.html"><a href="data-frames.html#reading-from-a-database"><i class="fa fa-check"></i><b>6.2.8</b> Reading from a database</a></li>
+<li class="chapter" data-level="6.2.9" data-path="data-frames.html"><a href="data-frames.html#read-some-data"><i class="fa fa-check"></i><b>6.2.9</b> Read some data</a></li>
+<li class="chapter" data-level="6.2.10" data-path="data-frames.html"><a href="data-frames.html#questions-2"><i class="fa fa-check"></i><b>6.2.10</b> Questions</a></li>
+<li class="chapter" data-level="6.2.11" data-path="data-frames.html"><a href="data-frames.html#answer"><i class="fa fa-check"></i><b>6.2.11</b> Answer</a></li>
 </ul></li>
 </ul></li>
-<li class="has-sub"><a href="9-simulation.html#simulation"><span class="toc-section-number">9</span> Simulation</a><ul>
-<li><a href="9-simulation.html#probability-distributions"><span class="toc-section-number">9.0.1</span> Probability distributions</a></li>
-<li><a href="9-simulation.html#density-function"><span class="toc-section-number">9.0.2</span> Density function</a></li>
-<li><a href="9-simulation.html#a-couple-more"><span class="toc-section-number">9.0.3</span> A couple more</a></li>
-<li><a href="9-simulation.html#distribution-function"><span class="toc-section-number">9.0.4</span> Distribution function</a></li>
-<li><a href="9-simulation.html#density-and-distribution"><span class="toc-section-number">9.0.5</span> Density and distribution</a></li>
-<li><a href="9-simulation.html#random-number-generation"><span class="toc-section-number">9.0.6</span> Random number generation</a></li>
-<li><a href="9-simulation.html#more-random-number-generation"><span class="toc-section-number">9.0.7</span> More random number generation</a></li>
-<li><a href="9-simulation.html#sample-revisited"><span class="toc-section-number">9.0.8</span> <code>sample</code> revisited</a></li>
-<li><a href="9-simulation.html#compound-loss-distribution"><span class="toc-section-number">9.0.9</span> Compound loss distribution</a></li>
-<li><a href="9-1-questions-4.html#questions-4"><span class="toc-section-number">9.1</span> Questions</a></li>
-<li><a href="9-2-answers-4.html#answers-4"><span class="toc-section-number">9.2</span> Answers</a></li>
-<li><a href="9-3-section-2.html#section-2"><span class="toc-section-number">9.3</span> </a></li>
+<li class="chapter" data-level="7" data-path="basic-visualization.html"><a href="basic-visualization.html"><i class="fa fa-check"></i><b>7</b> Basic Visualization</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="basic-visualization.html"><a href="basic-visualization.html#visualization-in-r"><i class="fa fa-check"></i><b>7.0.1</b> Visualization in R</a></li>
+<li class="chapter" data-level="7.0.2" data-path="basic-visualization.html"><a href="basic-visualization.html#common-geometric-objects"><i class="fa fa-check"></i><b>7.0.2</b> Common geometric objects</a></li>
+<li class="chapter" data-level="7.0.3" data-path="basic-visualization.html"><a href="basic-visualization.html#a-basic-scatter-plot"><i class="fa fa-check"></i><b>7.0.3</b> A basic scatter plot</a></li>
+<li class="chapter" data-level="7.0.4" data-path="basic-visualization.html"><a href="basic-visualization.html#add-lines"><i class="fa fa-check"></i><b>7.0.4</b> Add lines</a></li>
+<li class="chapter" data-level="7.0.5" data-path="basic-visualization.html"><a href="basic-visualization.html#histogram"><i class="fa fa-check"></i><b>7.0.5</b> Histogram</a></li>
+<li class="chapter" data-level="7.0.6" data-path="basic-visualization.html"><a href="basic-visualization.html#density-plot"><i class="fa fa-check"></i><b>7.0.6</b> Density plot</a></li>
+<li class="chapter" data-level="7.0.7" data-path="basic-visualization.html"><a href="basic-visualization.html#boxplot"><i class="fa fa-check"></i><b>7.0.7</b> Boxplot</a></li>
+<li class="chapter" data-level="7.0.8" data-path="basic-visualization.html"><a href="basic-visualization.html#plotting-a-formula"><i class="fa fa-check"></i><b>7.0.8</b> Plotting a formula</a></li>
+<li class="chapter" data-level="7.0.9" data-path="basic-visualization.html"><a href="basic-visualization.html#emphasizing-outliers"><i class="fa fa-check"></i><b>7.0.9</b> Emphasizing outliers</a></li>
+<li class="chapter" data-level="7.0.10" data-path="basic-visualization.html"><a href="basic-visualization.html#other-ways-to-emphasize-outliers"><i class="fa fa-check"></i><b>7.0.10</b> Other ways to emphasize outliers</a></li>
+<li class="chapter" data-level="7.1" data-path="basic-visualization.html"><a href="basic-visualization.html#exercise-1"><i class="fa fa-check"></i><b>7.1</b> Exercise</a></li>
+<li class="chapter" data-level="7.2" data-path="basic-visualization.html"><a href="basic-visualization.html#answer-1"><i class="fa fa-check"></i><b>7.2</b> Answer</a></li>
+<li class="chapter" data-level="7.3" data-path="basic-visualization.html"><a href="basic-visualization.html#resources"><i class="fa fa-check"></i><b>7.3</b> Resources</a></li>
 </ul></li>
-<li class="has-sub"><a href="10-advanced-visualization.html#advanced-visualization"><span class="toc-section-number">10</span> Advanced Visualization</a><ul>
-<li><a href="10-advanced-visualization.html#ggplot2"><span class="toc-section-number">10.0.1</span> ggplot2</a></li>
-<li><a href="10-advanced-visualization.html#data"><span class="toc-section-number">10.0.2</span> Data</a></li>
-<li><a href="10-advanced-visualization.html#mapping"><span class="toc-section-number">10.0.3</span> Mapping</a></li>
-<li><a href="10-advanced-visualization.html#adding-layers"><span class="toc-section-number">10.0.4</span> Adding layers</a></li>
-<li><a href="10-advanced-visualization.html#typical-geoms"><span class="toc-section-number">10.0.5</span> Typical geoms</a></li>
-<li><a href="10-advanced-visualization.html#one-step"><span class="toc-section-number">10.0.6</span> One step</a></li>
-<li><a href="10-advanced-visualization.html#nothing-wrong-with-adding-two-layers"><span class="toc-section-number">10.0.7</span> Nothing wrong with adding two layers</a></li>
-<li><a href="10-advanced-visualization.html#facets"><span class="toc-section-number">10.0.8</span> Facets</a></li>
-<li><a href="10-advanced-visualization.html#statistical-transformations"><span class="toc-section-number">10.0.9</span> Statistical transformations</a></li>
-<li><a href="10-advanced-visualization.html#scales"><span class="toc-section-number">10.0.10</span> Scales</a></li>
-<li><a href="10-advanced-visualization.html#other-visual-elements"><span class="toc-section-number">10.0.11</span> Other visual elements</a></li>
-<li><a href="10-1-questions-5.html#questions-5"><span class="toc-section-number">10.1</span> Questions</a></li>
-<li><a href="10-2-answers-5.html#answers-5"><span class="toc-section-number">10.2</span> Answers</a></li>
-<li class="has-sub"><a href="10-3-maps.html#maps"><span class="toc-section-number">10.3</span> Maps!</a><ul>
-<li><a href="10-3-maps.html#hurricanes"><span class="toc-section-number">10.3.1</span> Hurricanes</a></li>
-<li><a href="10-3-maps.html#choropleths-the-easy-way"><span class="toc-section-number">10.3.2</span> Choropleths the easy way</a></li>
-<li><a href="10-3-maps.html#choropleths-the-harder-way"><span class="toc-section-number">10.3.3</span> Choropleths the harder way</a></li>
-<li><a href="10-3-maps.html#choropleths-the-really-hard-way"><span class="toc-section-number">10.3.4</span> Choropleths the really hard way</a></li>
+<li class="chapter" data-level="8" data-path="loss-distributions.html"><a href="loss-distributions.html"><i class="fa fa-check"></i><b>8</b> Loss Distributions</a><ul>
+<li class="chapter" data-level="8.0.1" data-path="loss-distributions.html"><a href="loss-distributions.html#packages-well-use"><i class="fa fa-check"></i><b>8.0.1</b> Packages we’ll use</a></li>
+<li class="chapter" data-level="8.0.2" data-path="loss-distributions.html"><a href="loss-distributions.html#statistical-distributions-in-r"><i class="fa fa-check"></i><b>8.0.2</b> Statistical distributions in R</a></li>
+<li class="chapter" data-level="8.0.3" data-path="loss-distributions.html"><a href="loss-distributions.html#examples"><i class="fa fa-check"></i><b>8.0.3</b> Examples</a></li>
+<li class="chapter" data-level="8.0.4" data-path="loss-distributions.html"><a href="loss-distributions.html#generate-some-loss-data"><i class="fa fa-check"></i><b>8.0.4</b> Generate some loss data</a></li>
+<li class="chapter" data-level="8.0.5" data-path="loss-distributions.html"><a href="loss-distributions.html#histograms"><i class="fa fa-check"></i><b>8.0.5</b> Histograms</a></li>
+<li class="chapter" data-level="8.0.6" data-path="loss-distributions.html"><a href="loss-distributions.html#density"><i class="fa fa-check"></i><b>8.0.6</b> Density</a></li>
+<li class="chapter" data-level="8.0.7" data-path="loss-distributions.html"><a href="loss-distributions.html#fitdistr"><i class="fa fa-check"></i><b>8.0.7</b> <code>fitdistr</code></a></li>
+<li class="chapter" data-level="8.0.8" data-path="loss-distributions.html"><a href="loss-distributions.html#q-q-plot"><i class="fa fa-check"></i><b>8.0.8</b> q-q plot</a></li>
+<li class="chapter" data-level="8.0.9" data-path="loss-distributions.html"><a href="loss-distributions.html#compare-fit-to-histogram"><i class="fa fa-check"></i><b>8.0.9</b> Compare fit to histogram</a></li>
+<li class="chapter" data-level="8.0.10" data-path="loss-distributions.html"><a href="loss-distributions.html#kolmogorov-smirnov"><i class="fa fa-check"></i><b>8.0.10</b> Kolmogorov-Smirnov</a></li>
+<li class="chapter" data-level="8.0.11" data-path="loss-distributions.html"><a href="loss-distributions.html#more-k-s"><i class="fa fa-check"></i><b>8.0.11</b> More K-S</a></li>
+<li class="chapter" data-level="8.0.12" data-path="loss-distributions.html"><a href="loss-distributions.html#direct-optimization"><i class="fa fa-check"></i><b>8.0.12</b> Direct optimization</a></li>
+<li class="chapter" data-level="8.0.13" data-path="loss-distributions.html"><a href="loss-distributions.html#direct-optimization-1"><i class="fa fa-check"></i><b>8.0.13</b> Direct optimization</a></li>
+<li class="chapter" data-level="8.1" data-path="loss-distributions.html"><a href="loss-distributions.html#direct-optimization-2"><i class="fa fa-check"></i><b>8.1</b> Direct optimization</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="loss-distributions.html"><a href="loss-distributions.html#direct-optimization-3"><i class="fa fa-check"></i><b>8.1.1</b> Direct optimization</a></li>
+<li class="chapter" data-level="8.1.2" data-path="loss-distributions.html"><a href="loss-distributions.html#questions-3"><i class="fa fa-check"></i><b>8.1.2</b> Questions</a></li>
+<li class="chapter" data-level="8.1.3" data-path="loss-distributions.html"><a href="loss-distributions.html#answers-3"><i class="fa fa-check"></i><b>8.1.3</b> Answers</a></li>
 </ul></li>
-<li><a href="10-4-summary.html#summary"><span class="toc-section-number">10.4</span> Summary</a></li>
-<li><a href="10-5-reference.html#reference"><span class="toc-section-number">10.5</span> Reference</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="simulation.html"><a href="simulation.html"><i class="fa fa-check"></i><b>9</b> Simulation</a><ul>
+<li class="chapter" data-level="9.0.1" data-path="simulation.html"><a href="simulation.html#probability-distributions"><i class="fa fa-check"></i><b>9.0.1</b> Probability distributions</a></li>
+<li class="chapter" data-level="9.0.2" data-path="simulation.html"><a href="simulation.html#density-function"><i class="fa fa-check"></i><b>9.0.2</b> Density function</a></li>
+<li class="chapter" data-level="9.0.3" data-path="simulation.html"><a href="simulation.html#a-couple-more"><i class="fa fa-check"></i><b>9.0.3</b> A couple more</a></li>
+<li class="chapter" data-level="9.0.4" data-path="simulation.html"><a href="simulation.html#distribution-function"><i class="fa fa-check"></i><b>9.0.4</b> Distribution function</a></li>
+<li class="chapter" data-level="9.0.5" data-path="simulation.html"><a href="simulation.html#density-and-distribution"><i class="fa fa-check"></i><b>9.0.5</b> Density and distribution</a></li>
+<li class="chapter" data-level="9.0.6" data-path="simulation.html"><a href="simulation.html#random-number-generation"><i class="fa fa-check"></i><b>9.0.6</b> Random number generation</a></li>
+<li class="chapter" data-level="9.0.7" data-path="simulation.html"><a href="simulation.html#more-random-number-generation"><i class="fa fa-check"></i><b>9.0.7</b> More random number generation</a></li>
+<li class="chapter" data-level="9.0.8" data-path="simulation.html"><a href="simulation.html#sample-revisited"><i class="fa fa-check"></i><b>9.0.8</b> <code>sample</code> revisited</a></li>
+<li class="chapter" data-level="9.0.9" data-path="simulation.html"><a href="simulation.html#compound-loss-distribution"><i class="fa fa-check"></i><b>9.0.9</b> Compound loss distribution</a></li>
+<li class="chapter" data-level="9.1" data-path="simulation.html"><a href="simulation.html#questions-4"><i class="fa fa-check"></i><b>9.1</b> Questions</a></li>
+<li class="chapter" data-level="9.2" data-path="simulation.html"><a href="simulation.html#answers-4"><i class="fa fa-check"></i><b>9.2</b> Answers</a></li>
+<li class="chapter" data-level="9.3" data-path="simulation.html"><a href="simulation.html#section-2"><i class="fa fa-check"></i><b>9.3</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="advanced-visualization.html"><a href="advanced-visualization.html"><i class="fa fa-check"></i><b>10</b> Advanced Visualization</a><ul>
+<li class="chapter" data-level="10.0.1" data-path="advanced-visualization.html"><a href="advanced-visualization.html#ggplot2"><i class="fa fa-check"></i><b>10.0.1</b> ggplot2</a></li>
+<li class="chapter" data-level="10.0.2" data-path="advanced-visualization.html"><a href="advanced-visualization.html#data"><i class="fa fa-check"></i><b>10.0.2</b> Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="advanced-visualization.html"><a href="advanced-visualization.html#mapping"><i class="fa fa-check"></i><b>10.0.3</b> Mapping</a></li>
+<li class="chapter" data-level="10.0.4" data-path="advanced-visualization.html"><a href="advanced-visualization.html#adding-layers"><i class="fa fa-check"></i><b>10.0.4</b> Adding layers</a></li>
+<li class="chapter" data-level="10.0.5" data-path="advanced-visualization.html"><a href="advanced-visualization.html#typical-geoms"><i class="fa fa-check"></i><b>10.0.5</b> Typical geoms</a></li>
+<li class="chapter" data-level="10.0.6" data-path="advanced-visualization.html"><a href="advanced-visualization.html#one-step"><i class="fa fa-check"></i><b>10.0.6</b> One step</a></li>
+<li class="chapter" data-level="10.0.7" data-path="advanced-visualization.html"><a href="advanced-visualization.html#nothing-wrong-with-adding-two-layers"><i class="fa fa-check"></i><b>10.0.7</b> Nothing wrong with adding two layers</a></li>
+<li class="chapter" data-level="10.0.8" data-path="advanced-visualization.html"><a href="advanced-visualization.html#facets"><i class="fa fa-check"></i><b>10.0.8</b> Facets</a></li>
+<li class="chapter" data-level="10.0.9" data-path="advanced-visualization.html"><a href="advanced-visualization.html#statistical-transformations"><i class="fa fa-check"></i><b>10.0.9</b> Statistical transformations</a></li>
+<li class="chapter" data-level="10.0.10" data-path="advanced-visualization.html"><a href="advanced-visualization.html#scales"><i class="fa fa-check"></i><b>10.0.10</b> Scales</a></li>
+<li class="chapter" data-level="10.0.11" data-path="advanced-visualization.html"><a href="advanced-visualization.html#other-visual-elements"><i class="fa fa-check"></i><b>10.0.11</b> Other visual elements</a></li>
+<li class="chapter" data-level="10.1" data-path="advanced-visualization.html"><a href="advanced-visualization.html#questions-5"><i class="fa fa-check"></i><b>10.1</b> Questions</a></li>
+<li class="chapter" data-level="10.2" data-path="advanced-visualization.html"><a href="advanced-visualization.html#answers-5"><i class="fa fa-check"></i><b>10.2</b> Answers</a></li>
+<li class="chapter" data-level="10.3" data-path="advanced-visualization.html"><a href="advanced-visualization.html#maps"><i class="fa fa-check"></i><b>10.3</b> Maps!</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="advanced-visualization.html"><a href="advanced-visualization.html#hurricanes"><i class="fa fa-check"></i><b>10.3.1</b> Hurricanes</a></li>
+<li class="chapter" data-level="10.3.2" data-path="advanced-visualization.html"><a href="advanced-visualization.html#choropleths-the-easy-way"><i class="fa fa-check"></i><b>10.3.2</b> Choropleths the easy way</a></li>
+<li class="chapter" data-level="10.3.3" data-path="advanced-visualization.html"><a href="advanced-visualization.html#choropleths-the-harder-way"><i class="fa fa-check"></i><b>10.3.3</b> Choropleths the harder way</a></li>
+<li class="chapter" data-level="10.3.4" data-path="advanced-visualization.html"><a href="advanced-visualization.html#choropleths-the-really-hard-way"><i class="fa fa-check"></i><b>10.3.4</b> Choropleths the really hard way</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="advanced-visualization.html"><a href="advanced-visualization.html#summary"><i class="fa fa-check"></i><b>10.4</b> Summary</a></li>
+<li class="chapter" data-level="10.5" data-path="advanced-visualization.html"><a href="advanced-visualization.html#reference"><i class="fa fa-check"></i><b>10.5</b> Reference</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/PirateGrunt/raw_book" target="blank">Published with bookdown</a></li>
+
 </ul>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12">
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">raw - R Actuarial Workshops</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">raw - R Actuarial Workshops</h1>
 <h4 class="author"><em>Brian A. Fannin, ACAS</em></h4>
 <h4 class="date"><em>2016-07-13</em></h4>
 </div>
 <div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1> 
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="why-does-this-book-exist" class="section level2">
+<h2><span class="header-section-number">1.1</span> Why does this book exist?</h2>
 </div>
-<p style="text-align: center;">
-<a href="1-1-why-does-this-book-exist.html"><button class="btn btn-default">Next</button></a>
-</p>
+<div id="who-should-use-this" class="section level2">
+<h2><span class="header-section-number">1.2</span> Who should use this?</h2>
 </div>
-</div>
+<div id="other-stuff" class="section level2">
+<h2><span class="header-section-number">1.3</span> Other stuff</h2>
+<p>So, that’s all the preliminaries. Away we go!</p>
 
-
 </div>
+</div>
+            </section>
 
+          </div>
+        </div>
+      </div>
+
+<a href="setup.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-
-// add bootstrap table styles to pandoc tables
-$(document).ready(function () {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/PirateGrunt/raw_book/edit/master/index.Rmd",
+"text": null
+},
+"download": ["raw.pdf"],
+"toc": {
+"collapse": "subsection"
+}
 });
-
+});
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
+
 </html>

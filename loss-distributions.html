@@ -8,7 +8,7 @@
   <title>raw - R Actuarial Workshops</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is a companion to actuarial workshops.">
-  <meta name="generator" content="bookdown 0.0.63 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="raw - R Actuarial Workshops" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-04-12">
+<meta name="date" content="2016-07-13">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -398,7 +398,7 @@ p &lt;-<span class="st"> </span><span class="kw">seq</span>(.<span class="dv">05
 ##  [8] 0.4865345 0.4923631 0.4975820 0.5023061 0.5066205 0.5105903 0.5142660
 ## [15] 0.5176879 0.5208885 0.5238944 0.5267278 0.5294071 0.5319482</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(function(x) {<span class="kw">dnorm</span>(x, <span class="dv">10</span>, <span class="dv">4</span>)}, <span class="dv">0</span>, <span class="dv">20</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-102-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
 </div>
 <div id="generate-some-loss-data" class="section level3">
 <h3><span class="header-section-number">8.0.4</span> Generate some loss data</h3>
@@ -419,19 +419,19 @@ severity &lt;-<span class="st"> </span><span class="kw">rgamma</span>(<span clas
 <div id="histograms" class="section level3">
 <h3><span class="header-section-number">8.0.5</span> Histograms</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(severity)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-104-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(severity, <span class="dt">breaks =</span> <span class="dv">50</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-104-2.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-106-2.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(<span class="kw">log</span>(severity), <span class="dt">breaks =</span> <span class="dv">50</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-104-3.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-106-3.png" width="672" /></p>
 </div>
 <div id="density" class="section level3">
 <h3><span class="header-section-number">8.0.6</span> Density</h3>
 <p>The kernel density is effectively a smoothed histogram.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(severity))</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-105-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(<span class="kw">log</span>(severity)))</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-105-2.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-107-2.png" width="672" /></p>
 </div>
 <div id="fitdistr" class="section level3">
 <h3><span class="header-section-number">8.0.7</span> <code>fitdistr</code></h3>
@@ -476,7 +476,7 @@ oldPar &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt
 
 <span class="kw">plot</span>(<span class="kw">sort</span>(gammaQ), sortedSeverity, <span class="dt">xlab =</span> <span class="st">&#39;Theoretical Quantiles&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Sample Quantiles&#39;</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">main =</span> <span class="st">&quot;Gamma Fit&quot;</span>)
 <span class="kw">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-107-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(oldPar)</code></pre></div>
 </div>
 <div id="compare-fit-to-histogram" class="section level3">
@@ -500,7 +500,7 @@ yWeibull &lt;-<span class="st"> </span><span class="kw">dweibull</span>(x, sampl
 <span class="kw">lines</span>(x, yLN, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
 <span class="kw">lines</span>(x, yGamma, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 <span class="kw">lines</span>(x, yWeibull, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-108-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
 </div>
 <div id="kolmogorov-smirnov" class="section level3">
 <h3><span class="header-section-number">8.0.10</span> Kolmogorov-Smirnov</h3>
@@ -513,13 +513,13 @@ yLN &lt;-<span class="st"> </span><span class="kw">plnorm</span>(sortedSeverity,
 
 <span class="kw">plot</span>(stepSample, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;K-S Gamma&quot;</span>)
 <span class="kw">lines</span>(sortedSeverity, yGamma, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-109-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(stepSample, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;K-S Weibull&quot;</span>)
 <span class="kw">lines</span>(sortedSeverity, yWeibull, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-109-2.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-111-2.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(stepSample, <span class="dt">col=</span><span class="st">&quot;black&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;K-S Lognormal&quot;</span>)
 <span class="kw">lines</span>(sortedSeverity, yLN, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-109-3.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-111-3.png" width="672" /></p>
 </div>
 <div id="more-k-s" class="section level3">
 <h3><span class="header-section-number">8.0.11</span> More K-S</h3>
@@ -559,7 +559,7 @@ testGamma</code></pre></div>
 
 myQuad &lt;-<span class="st"> </span><span class="kw">quadraticFun</span>(<span class="dt">a=</span><span class="dv">4</span>, <span class="dt">b=</span>-<span class="dv">3</span>, <span class="dt">c=</span><span class="dv">3</span>)
 <span class="kw">plot</span>(myQuad, -<span class="dv">10</span>, <span class="dv">10</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-111-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
 </div>
 <div id="direct-optimization-1" class="section level3">
 <h3><span class="header-section-number">8.0.13</span> Direct optimization</h3>
@@ -589,7 +589,7 @@ myQuad &lt;-<span class="st"> </span><span class="kw">quadraticFun</span>(<span 
 <p>Default is to minimize. Set the parameter <code>fnscale</code> to something negative to convert to a maximization problem.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myOtherQuad &lt;-<span class="st"> </span><span class="kw">quadraticFun</span>(-<span class="dv">6</span>, <span class="dv">20</span>, -<span class="dv">5</span>)
 <span class="kw">plot</span>(myOtherQuad, -<span class="dv">10</span>, <span class="dv">10</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-113-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-115-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myResult &lt;-<span class="st"> </span><span class="kw">optim</span>(<span class="dv">8</span>, myOtherQuad)</code></pre></div>
 <pre><code>## Warning in optim(8, myOtherQuad): one-dimensional optimization by Nelder-Mead is unreliable:
 ## use &quot;Brent&quot; or optimize() directly</code></pre>
@@ -621,7 +621,7 @@ CV &lt;-<span class="st"> </span>.<span class="dv">3</span>
 sigma &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">log</span>(<span class="dv">1</span> +<span class="st"> </span>CV^<span class="dv">2</span>))
 mu &lt;-<span class="st"> </span><span class="kw">log</span>(severity) -<span class="st"> </span>sigma^<span class="dv">2</span>/<span class="dv">2</span>
 <span class="kw">plot</span>(function(x) <span class="kw">dlnorm</span>(x), mu, sigma, <span class="dt">ylab=</span><span class="st">&quot;LN f(x)&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-114-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
 <!-- ## Basic question
 
     What is the cost of a 1 million xs 1 million layer?
@@ -643,7 +643,7 @@ A few other questions:
 <a href="basic-visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="simulation.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
-<script src="libs/gitbook-2.6.7/js/app.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -671,7 +671,7 @@ gitbook.start({
 "link": "https://github.com/PirateGrunt/raw_book/edit/master/50_LossDistributions.Rmd",
 "text": null
 },
-"download": null,
+"download": ["raw.pdf"],
 "toc": {
 "collapse": "subsection"
 }

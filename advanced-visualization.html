@@ -8,7 +8,7 @@
   <title>raw - R Actuarial Workshops</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is a companion to actuarial workshops.">
-  <meta name="generator" content="bookdown 0.0.63 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="raw - R Actuarial Workshops" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-04-12">
+<meta name="date" content="2016-07-13">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -365,7 +365,7 @@ basePlot &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df)</code>
 <p>We’re almost there. Although we have data and we’ve mapped to elements of a coordinate system, we haven’t specified what the visual elements should be. The <code>geom_*</code> family of functions add geometric shapes.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">basePlot &lt;-<span class="st"> </span>basePlot +<span class="st"> </span><span class="kw">geom_point</span>()
 basePlot</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-130-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
 </div>
 <div id="typical-geoms" class="section level3">
 <h3><span class="header-section-number">10.0.5</span> Typical geoms</h3>
@@ -384,14 +384,14 @@ basePlot</code></pre></div>
 <p>Typically we don’t do this in steps.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plt &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">y =</span> weight, <span class="dt">color =</span> Cohort)) +<span class="st"> </span><span class="kw">geom_point</span>()
 plt</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-131-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
 </div>
 <div id="nothing-wrong-with-adding-two-layers" class="section level3">
 <h3><span class="header-section-number">10.0.7</span> Nothing wrong with adding two layers</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">y =</span> weight, <span class="dt">color =</span> Cohort)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_rug</span>()</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-132-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">y =</span> weight, <span class="dt">color =</span> Cohort)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_density2d</span>()</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-132-2.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-134-2.png" width="672" /></p>
 </div>
 <div id="facets" class="section level3">
 <h3><span class="header-section-number">10.0.8</span> Facets</h3>
@@ -400,23 +400,23 @@ plt</code></pre></div>
 
 plt &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">y =</span> weight, <span class="dt">color =</span> Cohort)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>weight)
 plt</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-133-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
 </div>
 <div id="statistical-transformations" class="section level3">
 <h3><span class="header-section-number">10.0.9</span> Statistical transformations</h3>
 <p>We can also add all manner of statistical smoothers.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plt &lt;-<span class="st"> </span><span class="kw">ggplot</span>(df, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">y =</span> weight, <span class="dt">color =</span> Cohort)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)
 plt</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-134-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
 <p>See <code>? stat_smooth</code> for more on smoothers.</p>
 </div>
 <div id="scales" class="section level3">
 <h3><span class="header-section-number">10.0.10</span> Scales</h3>
 <p>Scales control how things render on the plot. We must scale our numbers to the plotting device (typically a section of a computer screen.) We can also map things like color and axes to data values and control formatting.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plt +<span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">labels =</span> scales::comma)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-135-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plt +<span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">labels =</span> scales::<span class="kw">unit_format</span>(<span class="dt">unit =</span> <span class="st">&quot;in&quot;</span>, <span class="dt">nsmall =</span> <span class="dv">2</span>))</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-135-2.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-137-2.png" width="672" /></p>
 <p><em>Very</em> detailed topic, particularly when we start talking about color. Your specific problem will likely require a bit of research and experimentation. StackOverflow.com is your friend.</p>
 </div>
 <div id="other-visual-elements" class="section level3">
@@ -451,28 +451,28 @@ plt</code></pre></div>
 <span class="kw">data</span>(<span class="st">&quot;RegionExperience&quot;</span>)
 plt1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(RegionExperience, <span class="kw">aes</span>(<span class="dt">x =</span> PolicyYear, <span class="dt">y =</span> NumClaims)) +<span class="st"> </span><span class="kw">geom_point</span>()
 plt1</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-136-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plt2 &lt;-<span class="st"> </span>plt1 +<span class="st"> </span><span class="kw">aes</span>(<span class="dt">color =</span> Region)
 plt2</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-136-2.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-138-2.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plt3 &lt;-<span class="st"> </span>plt2 +<span class="st"> </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)
 plt3</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-136-3.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-138-3.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">RegionExperience$Frequency &lt;-<span class="st"> </span><span class="kw">with</span>(RegionExperience, NumClaims /<span class="st"> </span>NumPolicies)
 
 plt4 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(RegionExperience, <span class="kw">aes</span>(<span class="dt">x =</span> PolicyYear, <span class="dt">y =</span> Frequency, <span class="dt">color =</span> Region)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">stat_smooth</span>(<span class="dt">method =</span> lm)
 plt4</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-136-4.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-138-4.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;StateExperience&quot;</span>)
 pltExtra &lt;-<span class="st"> </span><span class="kw">ggplot</span>(StateExperience, <span class="kw">aes</span>(<span class="dt">x =</span> PolicyYear, <span class="dt">y =</span> NumClaims, <span class="dt">color =</span> Postal)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_line</span>()
 pltExtra +<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>Region)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-137-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 </div>
 <div id="maps" class="section level2">
 <h2><span class="header-section-number">10.3</span> Maps!</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(maps)
 <span class="kw">map</span>(<span class="st">&#39;state&#39;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-138-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
 <div id="hurricanes" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> Hurricanes</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(raw)
@@ -486,22 +486,39 @@ dfHugo =<span class="st"> </span>dfHugo[dfHugo$Year ==<span class="st"> </span><
  
 dfDonna =<span class="st"> </span>Hurricane[Hurricane$Name ==<span class="st"> &#39;DONNA&#39;</span>, ]
 dfDonna =<span class="st"> </span>dfDonna[dfDonna$Year ==<span class="st"> </span><span class="kw">max</span>(dfDonna$Year), ]</code></pre></div>
+<pre><code>## Warning in max(dfDonna$Year): no non-missing arguments to max; returning -
+## Inf</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">map</span>(<span class="st">&#39;state&#39;</span>)
 <span class="kw">points</span>(dfKatrina$Longitude, dfKatrina$Latitude, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&#39;red&#39;</span>)
 <span class="kw">points</span>(dfHugo$Longitude, dfHugo$Latitude, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&#39;blue&#39;</span>)
 <span class="kw">points</span>(dfDonna$Longitude, dfDonna$Latitude, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&#39;green&#39;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-140-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
 </div>
 <div id="choropleths-the-easy-way" class="section level3">
 <h3><span class="header-section-number">10.3.2</span> Choropleths the easy way</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(choroplethr)
-<span class="kw">library</span>(choroplethrMaps)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(choroplethr)</code></pre></div>
+<pre><code>## Loading required package: acs</code></pre>
+<pre><code>## Loading required package: stringr</code></pre>
+<pre><code>## Loading required package: methods</code></pre>
+<pre><code>## Loading required package: plyr</code></pre>
+<pre><code>## 
+## Attaching package: &#39;plyr&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:maps&#39;:
+## 
+##     ozone</code></pre>
+<pre><code>## Loading required package: XML</code></pre>
+<pre><code>## 
+## Attaching package: &#39;acs&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     apply</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(choroplethrMaps)
 
 mapData &lt;-<span class="st"> </span><span class="kw">subset</span>(StateExperience, PolicyYear ==<span class="st"> </span><span class="dv">2010</span>)
 mapData$value &lt;-<span class="st"> </span>mapData$NumClaims
-mapData$region &lt;-<span class="st"> </span>mapData$Fullname
+mapData$region &lt;-<span class="st"> </span><span class="kw">tolower</span>(mapData$Fullname)
 <span class="kw">state_choropleth</span>(mapData)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-141-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
 </div>
 <div id="choropleths-the-harder-way" class="section level3">
 <h3><span class="header-section-number">10.3.3</span> Choropleths the harder way</h3>
@@ -512,7 +529,6 @@ plt &lt;-<span class="st"> </span>plt +<span class="st"> </span><span class="kw"
 plt &lt;-<span class="st"> </span>plt +<span class="st"> </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> states_map$long, <span class="dt">y =</span> states_map$lat)
 plt &lt;-<span class="st"> </span>plt +<span class="st"> </span><span class="kw">coord_map</span>()
 plt</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-142-1.png" alt="" /><!-- --></p>
 </div>
 <div id="choropleths-the-really-hard-way" class="section level3">
 <h3><span class="header-section-number">10.3.4</span> Choropleths the really hard way</h3>
@@ -522,7 +538,6 @@ plt &lt;-<span class="st"> </span>plt +<span class="st"> </span><span class="kw"
 plt &lt;-<span class="st"> </span>plt +<span class="st"> </span><span class="kw">facet_wrap</span>( ~<span class="st"> </span>PolicyYear)
 plt &lt;-<span class="st"> </span>plt +<span class="st"> </span><span class="kw">coord_map</span>()
 plt</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-143-1.png" alt="" /><!-- --></p>
 </div>
 </div>
 <div id="summary" class="section level2">
@@ -555,7 +570,7 @@ plt</code></pre></div>
 <a href="simulation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
 
-<script src="libs/gitbook-2.6.7/js/app.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -583,7 +598,7 @@ gitbook.start({
 "link": "https://github.com/PirateGrunt/raw_book/edit/master/90_AdvancedVisualization.Rmd",
 "text": null
 },
-"download": null,
+"download": ["raw.pdf"],
 "toc": {
 "collapse": "subsection"
 }

@@ -8,7 +8,7 @@
   <title>raw - R Actuarial Workshops</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is a companion to actuarial workshops.">
-  <meta name="generator" content="bookdown 0.0.63 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
 
   <meta property="og:title" content="raw - R Actuarial Workshops" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-04-12">
+<meta name="date" content="2016-07-13">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -347,40 +347,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <p>Now there’s not only a 1 in brackets, there’s also a 16 on the second line. (Note that your console may appear a bit different than mine.) You’re probably clever enough to have figured out that the numbers in brackets have something to do with the number of outputs generated. In the second case, “p” is the 16th letter of the alphabet and the bracketed 16 helps us know where we are in the sequence when it spills onto multiple lines.</p>
 <p>OK, cool. So what?</p>
-<p>So everything! In R, every variable is a vector. When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1.“letters” is a special vector with one element for each letter of the English alphabet.</p>
-<p>Let’s</p>
-<p>Think of a set of contiguous cells in a spreadsheet.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1234</span>)
-e  &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>)
-X1 &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">10</span></code></pre></div>
-<p>Here, <code>e</code> is a vector with <code>N</code> values. <code>X1</code> is the sequence of integers from 1 through 10.</p>
-<p>Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges.</p>
+<p>So everything! In R, every variable is a vector. When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1.“letters” is a special vector with one element for each letter of the English alphabet. Vectors allow us to reason about a lot of data at once. The variable “letters” for instance enables us to store 26 values in one place. Further, it allows us to make changes to all of the elements of the vector at the same time. For example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;Letter&quot;</span>, letters)</code></pre></div>
+<pre><code>##  [1] &quot;Letter a&quot; &quot;Letter b&quot; &quot;Letter c&quot; &quot;Letter d&quot; &quot;Letter e&quot; &quot;Letter f&quot;
+##  [7] &quot;Letter g&quot; &quot;Letter h&quot; &quot;Letter i&quot; &quot;Letter j&quot; &quot;Letter k&quot; &quot;Letter l&quot;
+## [13] &quot;Letter m&quot; &quot;Letter n&quot; &quot;Letter o&quot; &quot;Letter p&quot; &quot;Letter q&quot; &quot;Letter r&quot;
+## [19] &quot;Letter s&quot; &quot;Letter t&quot; &quot;Letter u&quot; &quot;Letter v&quot; &quot;Letter w&quot; &quot;Letter x&quot;
+## [25] &quot;Letter y&quot; &quot;Letter z&quot;</code></pre>
+<p>Using the <code>paste0</code> command, we took each element of “letters” and prefixed it with the text “Letter”. This is similar to applyinig the same function to a set of contiguous cells in a spreadsheet. But in this case, I didn’t need to copy and paste something 26 times. I didn’t even need to worry about how many times the command needed to be repeated. Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges. R just did it. (Note that by default the <code>paste</code> function will automatically add a blank space between elements. The function <code>paste0</code> will concatenate elements without a space. Try it.)</p>
 <div id="vector-properties" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Vector properties</h3>
+<p>All vectors share some basic properties</p>
 <ul>
 <li>Every element in a vector must be the same type.
 <ul>
 <li>R will change data types if they are not!</li>
 <li>Different types are possible by using a list or a data frame (later)</li>
 </ul></li>
-<li>Vectors have one dimension
-<ul>
+<li>It’s possible to add metadata (like names) via attributes</li>
+<li>Vectors have one dimension</li>
 <li>Higher dimensions are possible via matrices and arrays</li>
-</ul></li>
-<li>Possible to add metadata (like names) via attributes</li>
 </ul>
+<p>As we’ll see later, the issue of dimension is a bit arbitrary. At this point, the key thing to bear in mind is that <em>all of the data is of the same type</em>. Later on, we’ll talk about the various data types that R supports. For now, it should be fairly clear from the context.</p>
 </div>
 <div id="vector-construction" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Vector construction</h3>
-<p>Vectors are constructed in one of several ways:</p>
-<ul>
-<li>Return from a function or operation
-<ul>
-<li><code>seq</code>, <code>rep</code>, <code>sample</code>, <code>rnorm</code>, etc.</li>
-</ul></li>
-<li>Concatenation</li>
-<li>Growth by assignment</li>
-</ul>
+<p>There’s no real trick here. You’ll be constructing vectors whether you want to be or not. But let’s talk about a few core functions for vector construction and manipulation.</p>
 </div>
 <div id="seq" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> <code>seq</code></h3>
@@ -388,7 +380,7 @@ X1 &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">10</
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pies =<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">by =</span> pi, <span class="dt">length.out =</span> <span class="dv">5</span>)
 i &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
 year =<span class="st"> </span><span class="dv">2000</span>:<span class="dv">2004</span></code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-19-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="rep" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> <code>rep</code></h3>
@@ -404,7 +396,7 @@ year =<span class="st"> </span><span class="dv">2000</span>:<span class="dv">200
 j &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)
 k &lt;-<span class="st"> </span><span class="kw">c</span>(i, j)
 l &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">5</span>, <span class="dv">6</span>:<span class="dv">10</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-22-1.png" alt="" /><!-- --><img src="raw_files/figure-html/unnamed-chunk-22-2.png" alt="" /><!-- --><img src="raw_files/figure-html/unnamed-chunk-22-3.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-23-1.png" width="672" /><img src="raw_files/figure-html/unnamed-chunk-23-2.png" width="672" /><img src="raw_files/figure-html/unnamed-chunk-23-3.png" width="672" /></p>
 </div>
 <div id="growth-by-assignment" class="section level3">
 <h3><span class="header-section-number">4.1.6</span> Growth by assignment</h3>
@@ -754,12 +746,12 @@ myOtherMatrix &lt;-<span class="st"> </span>myVector
 <div id="section" class="section level3">
 <h3><span class="header-section-number">4.2.17</span> </h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myMatrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow=</span><span class="dv">10</span>, <span class="dt">ncol=</span><span class="dv">10</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-51-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 </div>
 <div id="section-1" class="section level3">
 <h3><span class="header-section-number">4.2.18</span> </h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(myMatrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">4</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-53-1.png" alt="" /><!-- --></p>
+<p><img src="raw_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 </div>
 <div id="matrix-metadata" class="section level3">
 <h3><span class="header-section-number">4.2.19</span> Matrix metadata</h3>
@@ -880,7 +872,7 @@ ElectionYear &lt;-<span class="st"> </span><span class="kw">seq</span>(<span cla
 <a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="lists.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
-<script src="libs/gitbook-2.6.7/js/app.js"></script>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -908,7 +900,7 @@ gitbook.start({
 "link": "https://github.com/PirateGrunt/raw_book/edit/master/30_Vectors.Rmd",
 "text": null
 },
-"download": null,
+"download": ["raw.pdf"],
 "toc": {
 "collapse": "subsection"
 }
