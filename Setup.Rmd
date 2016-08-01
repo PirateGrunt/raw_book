@@ -1,3 +1,6 @@
+# First Steps {-}
+
+The first part of this book will get you started using R. Unless you've been using R comfortably for several months, resist the tempation to skip through this quickly. We've found that one of the biggest hurdles to getting users comfortable with R is getting the software installed and running with a minimum of hassle. The next step is getting folks reconciled to the idea that R is very different from Excel. You can like that, or you can hate that, but you can't change that. Hopefully, by the end of this section, you'll be open to the idea that R can accomplish some tasks and it's something you can add to your tool kit.
 
 ```{r echo=FALSE, results='hide'}
 library(pander)
@@ -5,28 +8,44 @@ library(pander)
 
 # Setup
 
-By the end of this chapter, you should have mastered the following:
+By the end of this chapter, you will have done the following:
 
-* Install R installed
-* Choose and possibly install an operating environment
-* Enter a few basic commands
+* Install R
+* Install RStudio
+* Install the `raw` package
 
-## Installation
+## Operating systems
 
-R may be used on any of the popular operating systems available today. I've used R on a Windows system, a Mac and in a Linux environment. The experience is pretty much the same everywhere, which is one of the fantastic features of the software. In each case, what you'll do is download a file from the internet and then follow the standard process you go through to install software on whichever system you're using. For the most part, installation is quick and painless, but there may be limitations placed on you by your IT department. I have a few suggestions which I hope can help overcome any difficulties you might experience.
+Although R was developed primarily on Unix-based operating systems, it may be used on many different platforms. As I write these words, there are three major systems in use: Windows, Mac OS and Linux. I've used R and RStudio on all three and the experience is pretty much the same. This is one of the fantastic features of the software. It's meant to be as widely used and portable as possible to maximize its use. 
 
-* Installing R
+There are one or two operating system quirks, but in general I won't need to OS differences again, apart from one preliminary note. When refrring to keystroke combinationsn, I will only refer to the CTRL key. Mac OS users will understand that this key is CMD on their keyboards. 
 
-The first place to look for installation is cran.r-project.org. From there, you will see links to downloads for Windows, Mac and Linux. Clicking on the appropriate link will take you to the page that's relevant for your operating system. You may see lots of bizarre, arcane language around binaries, source and tarballs. If those words (in this context) mean nothing to you, don't panic. Some folk like to build their own version of R directly from the source code. If you're reading these instructions, you're probably not one of those people. 
+If you're curious, the version of R and system architecture being used to write this book are noted below:
 
-I reccommend getting familiar with the CRAN website and reading the documentation there. If you get totally lost, try the links below which should take you directly to the download site for Windows and Mac. (If you're running Linux, I can't imagine you need my help.)
+```{r echo = FALSE}
+sessionInfo()$platform
+```
+
+### Installing R
+
+In each case, what you'll do is download a file from the internet and then follow the standard process you go through to install software on whichever system you're using. For the most part, installation is quick and painless, but there may be limitations placed on you by your IT department. I have a few suggestions which I hope can help overcome any difficulties you might experience.
+
+The first place to look for installation is [cran.r-project.org]. From there, you will see links to downloads for Windows, Mac and Linux. Clicking on the appropriate link will take you to the page that's relevant for your operating system. You may see lots of bizarre, arcane language around binaries, source and tarballs. If those words (in this context) mean nothing to you, don't panic. Some folk like to build their own version of R directly from the source code. If you're reading these instructions, you're probably not one of those people. 
+
+I recommend getting familiar with the CRAN website and reading the documentation there. If you get totally lost, try the links below which should take you directly to the download site for Windows and Mac. (If you're running Linux, I can't imagine you need my help.)
 
 * [Windows install](http://cran.revolutionanalytics.com/bin/windows/base/)
 * [Mac install](http://cran.revolutionanalytics.com/bin/macosx/)
 
+https://cran.r-project.org/bin/windows/base/
+
 It's possible that you'll be asked to identify a "mirror". R is hosted on a number of servers throughout the world. It's all the same R, but distributing it in this way helps to minimized load on servers which host the files. 
 
-* Installing R Studio
+### Bitness
+
+32 vs 64
+
+### Installing R Studio
 
 Installing R is most of the battle. Depending on the sort of person you are, it may even be all of the battle (see the following section on environments). R comes with a fairly spartan user interface, which is sufficient to get work done. However, most folk find that they enjoy using an Integrated Development Environment (IDE). This allows one to work on several source files at the same time, read help, observe console output, see what variables are loaded in memory, etc. There are a few options, but I've not yet found anything better than RStudio.
 
@@ -65,46 +84,3 @@ In this case, your IT department really wants you all to be running terminals. O
 * The nuclear option
 
 Your IT staff won't run R on a server, won't give you a laptop with R installed. They're really against this software. I'd like to advise you to get another job, but that's defeatist. This is where we reach the nuclear option, which is to use your own computer. This will drive folks at your company nuts. Now you're transferring data from a secure machine to one which you use for personal e-mail, Facebook, sports, personal finance and other activities that we needn't dwell on here. This is an absolute last resort and the overheard of moving stuff from one device to another will obviate most of the efficiency gains that open source software will provide. Here's how to make it work: produce work that is ONLY POSSIBLE using R, or Python or any of the tools which we will discuss. Show a killer visual and then patiently explain to your boss why it can't be done in Excel and why you can't share it with other departments and why it can't be done every quarter. This is a tall order, but it just might get someone's attention.
-
-## The Operating Environment
-
-Right. So, you've got R installed. Now what? Among the first differences you'll encounter relative to Excel is that you now have several different options when it comes to using R. R is an engine designed to process R commands. Where you store those commands and how you deal with that output is something over which you have a great deal of control. Terrible, frighening control. Here are those options in a nutshell:
-
-* Command-line interface (CLI)
-* RGui
-* RStudio
-* Others
-
-### Command-line interface
-
-R, like S before it, presumed that users would interact with the program from the command line. And, if you invoke the R command from a terminal, that's exactly what you'll get. The image below is from my 
-
-![R at the command-line](images/R_CommandLine.png)
-
-Throughout this book, I will assume that you're using RStudio. You don't have to, but I will strongly recommend it. Why?
-
-* Things are easier with RStudio
-
-RStudio, keeps track of all the variables in memory
-
-* Everyone else is using it. 
-
-OK, not much of an argument. This is the exact opposite of the logic our parents used to try and discourage us from smoking. However, in this case, it makes sense. When you're talking with other people and trying to reproduce your problem or share your awesome code, they're probably using RStudio. Using the same tool reduces the amount of effort needed to communicate.
-
-## Entering Commands
-
-Now that you've got an is environment, you're ready to go. That cursor is blinking and waiting for you to tell it what to do! So what's the first thing you'll accomplish?
-
-Well, not much. We'll get into more fun stuff in the next chapter, but for now let's play it safe. You can use R a basic calculator, so take a few minutes to enter some basic mathematical expressions.
-
-```{r eval=TRUE, echo=TRUE}
-1 + 1
-
-pi
-
-2*pi*4^2
-```
-
-* I can't find the console
-
-In RStudio, the console may be reached by pressing CTRL-2 (Command-2 on Mac). 

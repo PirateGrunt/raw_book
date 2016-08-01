@@ -7,7 +7,7 @@ By the end of this chapter, you will know the following:
 * How to fit a loss distributions
 * Goodness of fit
 
-### Packages we'll use
+## Packages we'll use
   
 * `MASS` (MASS = Modern Applied Statistics in S)
     * `fitdistr` will fit a distribution to a loss distribution function
@@ -218,7 +218,7 @@ Direct optimization allows us to create another objective function to maximize, 
 
 Note that optimization is a general, solved problem. Things like the simplex method already have package solutions in R. You don't need to reinvent the wheel!
 
-###Questions
+## Exercises
 
 * Plot a lognormal distribution with a mean of $10,000 and a CV of 30%.
 * For that distribution, what is the probability of seeing a claim greater than $100,000?
@@ -229,7 +229,7 @@ Note that optimization is a general, solved problem. Things like the simplex met
 * Assuming that losses are Poisson distributed, with expected value of 200, estimate the aggregate loss distribution.
 * What is the cost of a $50,000 xs $50,000 layer of reinsurance?
 
-###Answers
+### Answers
 
 ```{r }
 severity <- 10000
@@ -243,7 +243,7 @@ plot(function(x) dlnorm(x), mu, sigma, ylab="LN f(x)")
 
     What is the cost of a 1 million xs 1 million layer?
     
-A few other questions:
+A few more exercises:
 
 * How many times has the layer been hit?
 * What is the average cost when it has been?

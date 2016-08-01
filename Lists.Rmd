@@ -23,7 +23,7 @@ summary(x)
 str(x)
 ```
 
-### Lists
+## Lists Overview
 
 ```{r echo=FALSE}
 make_block(x)
@@ -93,7 +93,7 @@ Two reasons:
 
 Because lists are arbitrary, we can't expect functions like `sum` or `mean` to work. Use `lapply` to summarize particular list elements.
 
-## Questions
+## Exercises
 
 * Create a list with two elements. Have the first element be a vector with 100 numbers. Have the second element be a vector with 100 dates. Give your list the names: "Claim" and "AccidentDate".
 * What is the average value of a claim?

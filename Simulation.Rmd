@@ -3,7 +3,8 @@
 * Probability distributions
 * Random samples
 
-### Probability distributions
+## Probability distributions
+
 All probability distributions have four basic functions:
   
 * d dist - Density function
@@ -100,7 +101,7 @@ class <- rep(class, numClaims)
 dfClaims <- data.frame(class, severity = unlist(severity))
 ```
 
-## Questions
+## Exercises
 
 * Draw a lognormal distribution with a mean of $10,000 and a CV of 30%.
 * For that distribution, what is the probability of seeing a claim greater than $100,000?
@@ -117,8 +118,6 @@ sigma <- sqrt(log(1 + CV^2))
 mu <- log(severity) - sigma^2/2
 plot(function(x) dlnorm(x), mu, sigma, ylab="LN f(x)")
 ```
-
-##
 
 ```{r }
 set.seed(1234)

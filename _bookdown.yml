@@ -1,2 +1,20 @@
 book_filename: "raw"
-chapter_name: "Chapter "
+# chapter_name: "Chapter "
+
+rmd_files: [
+  "index.Rmd",
+  
+  "Setup.Rmd",
+  "GettingStarted.Rmd",
+  "LanguageElements.Rmd",
+  
+  "Vectors.Rmd",
+  "Lists.Rmd",
+  "Data.Rmd",
+  
+  "BasicVisualization.Rmd",
+  "LossDistributions.Rmd",
+  
+  "References.Rmd",
+  
+]

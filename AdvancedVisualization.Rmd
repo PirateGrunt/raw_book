@@ -3,7 +3,7 @@
 * ggplot2
 * Maps
 
-### ggplot2
+## ggplot2
 
 ggplot2 developed by Hadley Wickham, based on the "grammar of graphics"
   
@@ -127,7 +127,7 @@ Non-data elements are things like labels. Here's a sample of a few:
 
 We won't cover this here. 
 
-## Questions
+## Exercises
 
 1. Create a scatter plot for policy year and number of claims
 2. Color each point based on region
@@ -229,7 +229,6 @@ plt <- plt + coord_map()
 plt
 
 ```
-
 
 ## Summary
 

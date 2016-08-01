@@ -1,13 +1,23 @@
 # Basic Visualization
 
-It's impossible to overstate the importance of visualization in data analysis.
+In this chapter, we're going to talk about data visualization. By the end of this chapter, you will be able to:
+
+* Create a scatter plot
+* Display categorical information in a bar plot
+* Visualize univariate sample data with histograms and density plots
+* Emphasize outliers
+* Alter visual characteristics based on your dataf
+
+## Overview
+
+It's impossible to overstate the importance of visualization in data analysis. Rendering quantitative information visually is a critical aid in understanding our data, helping to model it and communicating our results. For a non-technical audience, it's 
 
 * Helps us explore data
 * Suggest a model
 * Assess the validity of a model and its parameters
 * Vital for a non-technical audience
 
-### Visualization in R
+Although R has very powerful capabilities, its basic visualization is, well, basic. However, R's flexibility has allowed users to develop additional plotting engines that can produce some dazzling displays.
 
 4 plotting engines (at least)
 
@@ -15,8 +25,6 @@ It's impossible to overstate the importance of visualization in data analysis.
 * lattice
 * ggplot2
 * rCharts
-
-We'll look at the base plotting system now and ggplot2 after lunch.
 
 ### Common geometric objects
 
@@ -27,6 +35,8 @@ We'll look at the base plotting system now and ggplot2 after lunch.
 * boxplot
 * barplot
 * dotplot
+
+## The `plot` function
 
 plot is the most basic graphics command. There are several dozen options that you can set. Spend a lot of time reading the documentation and experimenting.
 

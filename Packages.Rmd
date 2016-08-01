@@ -1,0 +1,29 @@
+# Packages
+
+Mumble, mumble
+
+By the end of this chapter you will:
+
+* Understand what packages are and where they come from
+* Install a packages
+* Understand the difference between loading and installing a package
+
+## What are packages?
+
+Packages are one the killer features of R and one of the key elements of the language's success. Rather than having a software company hire coders to develop new capabilities, R encourages users to develop their own. There was no support for the chain ladder reserving method in R when it was originally built, but there is now, thanks to the `ChainLadder` package. 
+
+### Where are packages stored?
+
+Packages are hosted on a 
+
+## How to install a package
+
+```{r eval=FALSE, echo=TRUE}
+install.packages("raw")
+```
+
+```{r eval=FALSE, echo=TRUE}
+install.packages("raw")
+```
+
+### Where does the package get installed?

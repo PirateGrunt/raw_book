@@ -1,6 +1,8 @@
+# Data {-}
+
 # Vectors
 
-In this chapter, we're going to learn about vectors, one of the key building blocks of R programming. By the end of this chapter, you will know:
+In this chapter, we're going to learn about vectors, which are the key building blocks of R programming. By the end of this chapter, you will know:
 
 * What is a vector?
 * How are vectors created?
@@ -18,17 +20,17 @@ This makes a bit of sense. We entered 2 and we got back 2. But what's that 1 in 
 
 ![Console returning more than one value](images/ConsoleVector2.png)
 
-Now there's not only a 1 in brackets, there's also a 16 on the second line. (Note that your console may appear a bit different than mine.) You're probably clever enough to have figured out that the numbers in brackets have something to do with the number of outputs generated. In the second case, "p" is the 16th letter of the alphabet and the bracketed 16 helps us know where we are in the sequence when it spills onto multiple lines.
+Now there's not only a 1 in brackets, there's also a 16 on the second line. (Note that your console may appear a bit different than mine.) You're probably clever enough to have figured out that the numbers in brackets have something to do with the number of outputs generated. In the second case, "p" is the 16th letter of the alphabet and the bracketed 16 helps us know where we are in the sequence when it spills onto multiple lines. So, the bracketed figures are there to indicate how many numbers have been returned.
 
 OK, cool. So what? 
 
-So everything! In R, every variable is a vector. When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1."letters" is a special vector with one element for each letter of the English alphabet. Vectors allow us to reason about a lot of data at once. The variable "letters" for instance enables us to store 26 values in one place. Further, it allows us to make changes to all of the elements of the vector at the same time. For example:
+So everything! In R, every variable is a vector. Think back to [] When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1. "letters" is a special vector with one element for each letter of the English alphabet. Vectors allow us to reason about a lot of data at once. The variable "letters" for instance enables us to store 26 values in one place. Further, it allows us to make changes to all of the elements of the vector at the same time. For example:
 
 ```{r }
 paste("Letter", letters)
 ```
 
-Using the `paste0` command, we took each element of "letters" and prefixed it with the text "Letter". This is similar to applyinig the same function to a set of contiguous cells in a spreadsheet. But in this case, I didn't need to copy and paste something 26 times. I didn't even need to worry about how many times the command needed to be repeated. Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges. R just did it. (Note that by default the `paste` function will automatically add a blank space between elements. The function `paste0` will concatenate elements without a space. Try it.) 
+Using the `paste` command, we took each element of "letters" and prefixed it with the text "Letter". This is similar to applying the same function to a set of contiguous cells in a spreadsheet. But in this case, I didn't need to copy and paste something 26 times. I didn't even need to worry about how many times the command needed to be repeated. Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges. R just did it. (Note that by default the `paste` function will automatically add a blank space between elements. The function `paste0` will concatenate elements without a space. Try it.) 
 
 ### Vector properties
 
@@ -268,7 +270,7 @@ is.element(1941, y)
 
 ### Summarization
 
-Loads of functions take vector input and return scalar output. Translation of a large sest of numbers into a few, informative values is one of the cornerstones of statistics.
+Loads of functions take vector input and return scalar output. Translation of a large set of numbers into a few, informative values is one of the cornerstones of statistics.
 
 ```{r eval=FALSE}
 x = 1:50
@@ -439,7 +441,7 @@ Now that you know what they are, you can spend the next few months avoiding fact
 
 If characters aren't behaving the way you expect them to, check the variables with `is.factor`. Convert them with `as.character` and you'll be back on the road to happiness.
 
-### Questions
+## Exercises
 
 * Create a logical, integer, double and character variable.
 * Can you create a vector with both logical and character values?
@@ -545,8 +547,7 @@ colMeans(myMatrix)
 
 Like more than two dimensions? Shine on you crazy diamond.
 
-
-## Exercise
+## Exercises
 
 Create a vector of length 10, with years starting from 1980.
 

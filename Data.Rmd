@@ -232,7 +232,7 @@ df = read.csv("../data-raw/StateData.csv")
 View(df)
 ```
 
-### Questions
+### Exercises
 
 * Load the data from "StateData.csv" into a data frame.
 * Which state has the most premium?

@@ -1,0 +1,3 @@
+> "R isn't software. It's a community."
+> --- John Chambers
+
