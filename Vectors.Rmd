@@ -1,12 +1,10 @@
-# Data {-}
 
 # Vectors
 
-In this chapter, we're going to learn about vectors, which are the key building blocks of R programming. By the end of this chapter, you will know:
+In this chapter, we're going to learn about vectors, which are one of the key building blocks of R programming. By the end of this chapter, you will know the following:
 
 * What is a vector?
 * How are vectors created?
-* What are data types and how can I tell what sort of data I'm working with?
 * What is metadata?
 * How can I summarize a vector?
 
@@ -16,76 +14,103 @@ Enter a value at the console and hit enter. What do we see?
 
 ![Console returning one value](images/ConsoleVector.png)
 
-This makes a bit of sense. We entered 2 and we got back 2. But what's that 1 in brackets? Things get even weirder when we ask R to return more than one value. Type "letters" (without the quotes) and have a look.
+By now, this should make sense. We entered 2 and we got back 2. But what's that 1 in brackets? Things get even weirder when we ask R to return more than one value. Type "letters" (without the quotes) and have a look.
 
 ![Console returning more than one value](images/ConsoleVector2.png)
 
-Now there's not only a 1 in brackets, there's also a 16 on the second line. (Note that your console may appear a bit different than mine.) You're probably clever enough to have figured out that the numbers in brackets have something to do with the number of outputs generated. In the second case, "p" is the 16th letter of the alphabet and the bracketed 16 helps us know where we are in the sequence when it spills onto multiple lines. So, the bracketed figures are there to indicate how many numbers have been returned.
+Now there's not only a 1 in brackets, there's also a 16 on the second line. (Note that your console may appear a bit different than mine.) You're clever and have probably figured out that the numbers in brackets have something to do with the amount of output generated. In the second case, "p" is the 16th letter of the alphabet and the bracketed 16 helps us know where we are in the sequence when it spills onto multiple lines. So, the bracketed figures are there to indicate how many numbers have been returned.
 
 OK, cool. So what? 
 
-So everything! In R, every variable is a vector. Think back to [] When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1. "letters" is a special vector with one element for each letter of the English alphabet. Vectors allow us to reason about a lot of data at once. The variable "letters" for instance enables us to store 26 values in one place. Further, it allows us to make changes to all of the elements of the vector at the same time. For example:
+So what? So everything! In R, every variable is a vector. When we entered the number 2 at the console, we were creating (briefly) a vector which had a length of 1. The next console entry - "letters" - is a vector with 26 elements. Vectors can have many different values, but they're all associated with one thing. They allow us to reason about a lot of data at once. Let's say that again, because it's very important. __Vectors allow us to reason about a lot of data at once.__ The translation of a large volume of data into fewer values, and/or simple decision rules is the essense of statistics. This is why R - which was designed by statisticians - place vectors front and center in how the language is constructed. Statisticians -and actuaries!- are accustomed to writing mathematical formulas. Our interactions with our calculation engines should exploit that.
+
+OK, enough cheerleading. What is the practical benefit? Well, here's something for openers:
 
 ```{r }
-paste("Letter", letters)
+x <- 1:100
+b <- 1.5
+y <- x * b
 ```
 
-Using the `paste` command, we took each element of "letters" and prefixed it with the text "Letter". This is similar to applying the same function to a set of contiguous cells in a spreadsheet. But in this case, I didn't need to copy and paste something 26 times. I didn't even need to worry about how many times the command needed to be repeated. Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges. R just did it. (Note that by default the `paste` function will automatically add a blank space between elements. The function `paste0` will concatenate elements without a space. Try it.) 
+To generate 100 new values, I just applied a multiplication operation in a single line. This is similar to applying the same function to a set of contiguous cells in a spreadsheet. However, in this case, I don't have to make 100 assignments to the variable `y`. I don't even need to worry about how many times the command needs to be repeated. Vectors can grow and shrink automatically. No need to move cells around on a sheet. No need to copy formulas or change named ranges. R just did it. Moreover, there's no chance that I'll miss a cell due to operator error. 
 
 ### Vector properties
 
-All vectors share some basic properties
+So, how will I know a vector when I see one? For starters, it will have the following basic properties:
 
 * Every element in a vector must be the same type. 
-    * R will change data types if they are not!
-    * Different types are possible by using a list or a data frame (later)
-* It's possible to add metadata (like names) via attributes
-* Vectors have one dimension
-* Higher dimensions are possible via matrices and arrays
+* Vectors are ordered.
+* Vectors have one dimension. Higher dimensions are possible via matrices and arrays.
+* Vectors may have metadata like names.
 
-As we'll see later, the issue of dimension is a bit arbitrary. At this point, the key thing to bear in mind is that _all of the data is of the same type_. Later on, we'll talk about the various data types that R supports. For now, it should be fairly clear from the context.
+A quick word about dimensionality: there are folks who will make a big fuss about the difference between a vector and a matrix and an array. Further, they might insist that there's a difference between a 100 x 1 matrix and a one dimensional vector. I'm not one of those people. To me, anything that forms a countable set of elements is an array. Splitting it into dimensions is just a matter of imposing some structure to the set. I can sort my bag of M&Ms by color, put them in rows, etc. But don't listen to me. When working with R, you will almost invariably see a unidimensional set of data referred to as a "vector". Anything with two dimensions is a "matrix" and it contains the specific notion of "rows" and "columns". Anything of higher dimensions is an array.
 
-### Vector construction
+You needn't spend too much time sweating over that last paragraph. I'm just getting across the idea that dimensionality is a bit arbitrary and will always be mutable. At this point, the key thing to bear in mind is that _all of the data is of the same type_. 
 
-There's no real trick here. You'll be constructing vectors whether you want to be or not. But let's talk about a few core functions for vector construction and manipulation.
+## Vector construction
+
+So how do I create a vector? No real trick here. You'll be constructing vectors whether you want to or not. But let's talk about a few core functions for vector construction and manipulation.
 
 ### `seq`
 
-`seq` is used often to generate a sequence of values. The colon operator `:` is a shortcut for a sequence of integers.
+The first functions we'll look at are `seq` and its first cousin the `:` operator. You've already seen `:` where we've used it generate a sequence of integers. The `seq` function has much more flexibility. You may specify the starting point, the ending point, the length of the interval and the number of elements to output. You'll need to do at least three of those. We can think of the four use cases as being associated with which element we opt to leave out.
 
 ```{r }
+# Leave out the interval
+someXs <- seq(from = 0, to = 1, length.out = 300)
+# Leave out the ending point
 pies = seq(from = 0, by = pi, length.out = 5)
-i <- 1:5
-year = 2000:2004
+# Leave out the length
+someYs <- seq(from = 5, to = 15, by = 4)
+# Leave out the start
+someZ <- seq(to = 100, by = 3, length.out = 20)
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, eval = FALSE}
 library(rblocks)
 i <- 1:5
 block = make_block(i, type = 'vector')
 block
 ```
 
+Gotcha: `:` has a different meaning when constructing a formula. In that context, it refers to the interaction of variables.
+
 ### `rep`
 
-The `rep` function will replicate its input 
+Whereas the `seq` function will generate unique values, the `rep` function will replicate its input. Let's look at 100 pies:
+
 ```{r }
-i = rep(pi, 100)
-head(i)
+i <- rep(pi, 100)
 ```
 
-### Concatenation
+Note that the `rep` function also has an argument called `length.out`. This will cause the `times` argument to be ignored. Note that because you're replicating a vector, you might not get every value replicated the same number of times. That will only happen if `length.out` is a multiple of the input vector length. Have a go at the following line of code.
 
-The `c()` function will concatenate values.
+```{r}
+rep(1:4, length.out = 9)
+```
 
-```{r results='hide'}
+There's nothing stopping us from combining functions ######
+
+### `c`
+
+For just a single letter, `c` packs quite a punch. The `c` is short for "concatenate" and you'll be happy about the reduced keystrokes. You'll be using this function a LOT. `c` will join two or more vectors into one vector. Remember the first basic property of vectors: every element must be the same type. If you try to concatenate vectors which have different data types, R will convert them to a common data type. For more on this, see the chapter on [data types](#chap-data-types).
+
+```{r }
 i <- c(1, 2, 3, 4, 5)
 j <- c(6, 7, 8, 9, 10)
 k <- c(i, j)
-l <- c(1:5, 6:10)
 ```
 
-```{r echo=FALSE}
+Watch what happens when we try to concatenate two vectors which have different data types:
+
+```{r}
+i <- 1:5
+j <- letters
+k <- c(i, j)
+```
+
+
+```{r echo=FALSE, eval=FALSE}
 i = c(1, 2, 3, 4, 5)
 j = c(6, 7, 8, 9, 10)
 k = c(i, j)
@@ -104,15 +129,110 @@ block_j
 block_k
 ```
 
-### Growth by assignment
+### `sample`
 
-Assigning a value beyond a vectors limits will automatically grow the vector. Interim values are assigned `NA`.
+The `sample` function will generate a random sample. This is a great one to use for randomizing a vector.
 
 ```{r }
-i <- 1:10
-i[30] = pi
+months <- c("January", "February", "March", "April"
+            , "May", "June", "July", "August"
+            , "September", "October", "November", "December")
+
+set.seed(1234)
+mixedMonths <- sample(months)
+head(mixedMonths)
+```
+
+By altering the `size` parameter and possibly setting the `replace` parameter to TRUE, we can get lots of values.
+
+```{r }
+set.seed(1234)
+lotsOfMonths <- sample(months, size = 100, replace = TRUE)
+```
+
+### `sample` II
+
+Sample may also be used within the indexing of the vector itself:
+
+```{r }
+set.seed(1234)
+moreMonths <- months[sample(1:12, replace=TRUE, size=100)]
+head(moreMonths)
+
+# Cleaner with sample.int
+set.seed(1234)
+evenMoreMonths <- months[sample.int(length(months), size=100, replace=TRUE)]
+head(evenMoreMonths)
+```
+
+### `sort`
+
+Remember how I said that the elements of a vector have an order? Well, they do. Although this may seem obvious, this is not a property that's observed in other data constructs like a relational database. That's done to optimize insertion and deletion in fixed storage. For R, all of your data is in RAM, so this is not as important. So, we can sort our vector and know that this arrangement of elements won't change.
+
+```{r}
+set.seed(1234)
+i <- sample(1:5)
+i
+sort(i)
+```
+
+### `order`
+
+Although `sort` will get the job done most of the time, there are instances when you may want to use `order`. The `order` function will return the indices of the vector in order.
+
+```{r }
+set.seed(1234)
+x <- sample(1:5)
+order[x]
+y <- 3 * x
+y[order(x)]
+```
+
+Note that changing the `decreasing` parameter from FALSE to TRUE will change the sort order.
+
+
+### Recycling
+
+R will "recycle" vectors until there are enough elements to perform an operation. Everything gets as "long" as the longest vector in the operation. For scalar operations on a vector this doesn't involve any drama. Try the following code:
+
+```{r size='tiny'}
+vector1 = 1:10
+vector2 = 1:5
+scalar = 3
+
+print(vector1 + scalar)
+print(vector2 + scalar)
+print(vector1 + vector2)
+```
+
+## Metadata
+
+Metadata is data about data. Simple vectors don't have much need for metadata, but there is at least one property - `name` - that you'll see often.
+
+```{r}
+i <- 1:4
+names(i) <- letters[1:4]
 i
 ```
+
+In R, most metadata is set and accessed by the `attr` function and metadata are called "attributes". Some pre-defined attributes like `names` have their own assignment and reference function. Those are: `class`, `comment`, `dim`, `dimnames`, `row.names` and `tsp`. We'll hear more about `dim`, `dimnames` and `row.names`, as well as a few other pre-defined properties, when we talk about matrices later.
+
+In general, an attribute is set using the `<-` assignment operator along with the function name. The attribute is referenced by simply typing the function.
+
+```{r}
+comment(i) <- "This is a comment."
+comment(i)
+j <- 5:8
+comment(j)
+```
+
+```{r}
+attributes(i)
+```
+
+
+
+## Vector access
 
 ### Vector access - by index
 
@@ -149,95 +269,23 @@ which(i > 12)
 i[which(i > 12)]
 ```
 
-### `sample`
 
-The `sample` function will generate a random sample. Great to use for randomizing a vector.
+### Assignment
 
-```{r }
-months <- c("January", "February", "March", "April"
-            , "May", "June", "July", "August"
-            , "September", "October", "November", "December")
+### Growth by assignment
 
-set.seed(1234)
-mixedMonths <- sample(months)
-head(mixedMonths)
-```
-
-Get lots of months with the `size` parameter:
+A 
+Assigning a value beyond a vector's limits will automatically grow the vector. Interim values are assigned `NA`.
 
 ```{r }
-set.seed(1234)
-lotsOfMonths <- sample(months, size = 100, replace = TRUE)
-head(lotsOfMonths)
+i <- 1:10
+i[30] = pi
+i
 ```
 
-### `sample` II
+### Set theory
 
-Sample may also be used within the indexing of the vector itself:
-
-```{r }
-set.seed(1234)
-moreMonths <- months[sample(1:12, replace=TRUE, size=100)]
-head(moreMonths)
-
-# Cleaner with sample.int
-set.seed(1234)
-evenMoreMonths <- months[sample.int(length(months), size=100, replace=TRUE)]
-head(evenMoreMonths)
-```
-
-### `order`
-
-The function `order` will return the indices of the vector in order.
-
-```{r }
-set.seed(1234)
-x <- sample(1:10)
-x
-order(x)
-x[order(x)]
-```
-
-### Vector arithmetic
-
-Vectors may be used in arithmetic operations. 
-  
-```{r eval=FALSE}
-B0 <- 5
-B1 <- 1.5
-
-set.seed(1234)
-
-e <- rnorm(N, mean = 0, sd = 1)
-X1 <- rep(seq(1,10),10)
-
-Y <- B0 + B1 * X1 + e
-```
-
-Y is now a vector with length equal to the longest vector used in the calculation.
-
-Question: B0 and B1 are vectors of length 1. 
-
-X1 and e are vectors of length 100. 
-
-How are they combined?
-
-
-### Recycling
-
-R will "recycle" vectors until there are enough elements to perform an operation. Everything gets as "long" as the longest vector in the operation. For scalar operations on a vector this doesn't involve any drama. Try the following code:
-
-```{r size='tiny'}
-vector1 = 1:10
-vector2 = 1:5
-scalar = 3
-
-print(vector1 + scalar)
-print(vector2 + scalar)
-print(vector1 + vector2)
-```
-
-### Set theory - Part I
+#### `%in%`
 
 The `%in%` operator will return a logical vector indicating whether or not an element of the first set is contained in the second set.
 
@@ -281,183 +329,16 @@ length(x)
 var(x)
 ```
 
-### Vectors 
+### Matrix metadata
 
-Vectors are like atoms. If you understand vectors- how to create them, how to manipulate them, how to access the elements, you're well on your way to grasping how to handle other objects in R. 
-
-Vectors may combine to form molecules, but fundamentally, _everything_ in R is a vector.
-
-## From data
-
-
-
-* Data types
-* From vectors to matrices and lists
-
-### Data types
-
-* logical
-* integer
-* double
-* character
-
-### What is it?
-
-```{r}
-x <- 6
-y <- 6L
-z <- TRUE
-typeof(x)
-typeof(y)
-typeof(z)
-is.logical(x)
-is.double(x)
-```
-
-### Data conversion
-
-Most conversion is implicit. For explicit conversion, use the `as.*` functions. 
-
-Implicit conversion alters everything to the most complex form of data present as follows:
-
-logical -> integer -> double -> character
-
-Explicit conversion usually implies truncation and loss of information.
+Possible to add metadata. This is typically a name for the columns or rows.
 
 ```{r }
-# Implicit conversion
-w <- TRUE
-x <- 4L
-y <- 5.8
-z <- w + x + y
-typeof(z)
-
-# Explicit conversion. Note loss of data.
-as.integer(z)
-```
-
-### Class
-
-A class is an extension of the basic data types. We'll see many examples of these. The class of a basic type will be equal to its type apart from 'double', whose class is 'numeric' for reasons I don't pretend to understand.
-
-```{r }
-class(TRUE)
-class(pi)
-class(4L)
-```
-The type and class of a vector is returned as a scalar. Remember a vector is a set of elements which all have the same type.
-```{r }
-class(1:4)
-```
-
-### Mode
-
-There is also a function called 'mode' which looks tempting. Ignore it.
-
-### Dates and times
-
-Dates in R can be tricky. Two basic classes: `Date` and `POSIXt`. The `Date` class does not get more granular than days. The `POSIXt` class can handle seconds, milliseconds, etc.
-
-My recommendation is to stick with the "Date" class. Introducing times means introducing time zones and possibility for confusion or error. Actuaries rarely need to measure things in minutes.
-
-```{r }
-x <- as.Date('2010-01-01')
-class(x)
-typeof(x)
-```
-
-### More on dates
-
-The default behavior for dates is that they don't follow US conventions.
-
-Don't do this:
-```{r error=TRUE}
-x <- as.Date('06-30-2010')
-```
-
-But this is just fine:
-```{r }
-x <- as.Date('30-06-2010')
-```
-
-If you want to preserve your sanity, stick with year, month, day.
-```{r }
-x <- as.Date('2010-06-30')
-```
-
-### What day is it?
-
-To get the date and time of the computer, use the either `Sys.Date()` or `Sys.time()`. Note that `Sys.time()` will return both the day AND the time as a POSIXct object.
-
-```{r }
-x <- Sys.Date()
-y <- Sys.time()
-```
-
-### More reading on dates
-
-Worth reading the documentation about dates. Measuring time periods is a common task for actuaries. It's easy to make huge mistakes by getting dates wrong.
-
-The `lubridate` package has some nice convenience functions for setting month and day and reasoning about time periods. It also enables you to deal with time zones, leap days and leap seconds. Probably more than you need.
-
-`mondate` was written by an actuary and supports (among other things) handling time periods in terms of months.
-
-* [Date class](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html)
-* [lubridate](http://www.jstatsoft.org/v40/i03/paper)
-* [Ripley and Hornik](http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf)
-* [mondate](https://code.google.com/p/mondate/)
-
-### Factors
-
-Another gotcha. Factors were necessary many years ago when data collection and storage were expensive. A factor is a mapping of a character string to an integer. Particularly when importing data, R often wants to convert character values into a factor. You will often want to convert a factor into a string.
-
-```{r }
-myColors <- c("Red", "Blue", "Green", "Red", "Blue", "Red")
-myFactor <- factor(myColors)
-typeof(myFactor)
-class(myFactor)
-is.character(myFactor)
-is.character(myColors)
-```
-
-### Altering factors
-
-```{r }
-# This probably won't give you what you expect
-myOtherFactor <- c(myFactor, "Orange")
-myOtherFactor
-
-# And this will give you an error
-myFactor[length(myFactor)+1] <- "Orange"
-
-# Must do things in two steps
-myOtherFactor <- factor(c(levels(myFactor), "Orange"))
-myOtherFactor[length(myOtherFactor)+1] <- "Orange"
-```
-
-### Avoid factors
-
-Now that you know what they are, you can spend the next few months avoiding factors. When R was created, there were compelling reasons to include factors and they still have some utility. More often than not, though, they're a confusing hindrance.
-
-If characters aren't behaving the way you expect them to, check the variables with `is.factor`. Convert them with `as.character` and you'll be back on the road to happiness.
-
-## Exercises
-
-* Create a logical, integer, double and character variable.
-* Can you create a vector with both logical and character values?
-* What happens when you try to add a logical to an integer? An integer to a double?
-
-### Answers
-```{r }
-myLogical <- TRUE
-myInteger <- 1:4
-myDouble <- 3.14
-myCharacter <- "Hello!"
-
-y <- myLogical + myInteger
-typeof(y)
-y <- myInteger + myDouble
-typeof(y)
+myMatrix <- matrix(nrow=10, ncol=10, data = sample(1:100))
+colnames(myMatrix) <- letters[1:10]
+head(myMatrix, 3)
+rownames(myMatrix) <- tail(letters, 10)
+head(myMatrix, 3)
 ```
 
 ### From vectors to matrices and lists
@@ -549,11 +430,12 @@ Like more than two dimensions? Shine on you crazy diamond.
 
 ## Exercises
 
-Create a vector of length 10, with years starting from 1980.
+1. Create a vector of length 10, with years starting from 1980.
 
-Create a vector with values from 1972 to 2012 in increments of four (1972, 1976, 1980, etc.)
+2. Create a vector with values from 1972 to 2012 in increments of four (1972, 1976, 1980, etc.)
 
-Construct the following vectors (feel free to use the `VectorQuestion.R` script):
+For the next few questions, use the following vectors:
+
 ```{r }
 FirstName <- c("Richard", "James", "Ronald", "Ronald"
               , "George", "William", "William", "George"
@@ -564,11 +446,11 @@ LastName <- c("Nixon", "Carter", "Reagan", "Reagan"
 ElectionYear <- seq(1972, 2012, 4)
 ```
 
-* List the last names in alphabetical order
-* List the years in order by first name.
-* Create a vector of years when someone named "George" was elected.
-* How many Georges were elected before 1996?
-* Generate a random sample of 100 presidents.
+3. List the last names in alphabetical order
+4. List the years in order by first name.
+5. Create a vector of years when someone named "George" was elected.
+6. How many Georges were elected before 1996?
+7. Generate a random sample of 100 presidents.
 
 ## Answers
 
@@ -583,6 +465,8 @@ sum(myLogical)
 sample(LastName, 100, replace = TRUE)
 ```
 
-### Next
+## Conclusion 
+
+Vectors are like atoms. If you understand vectors- how to create them, how to manipulate them, how to access the elements, you're well on your way to grasping how to handle other objects in R. Vectors may combine to form molecules, but fundamentally, _everything_ in R is a vector.
 
 Having sorted out vectors, we're next going to turn out attention to lists. Lists are similar to vectors in that they enable us to bundle large amounts of data in a single construct. However, they're far more flexible and require a bit more thought.
