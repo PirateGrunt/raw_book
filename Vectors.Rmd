@@ -14,7 +14,7 @@ Enter a value at the console and hit enter. What do we see?
 
 ![Console returning one value](images/ConsoleVector.png)
 
-By now, this should make sense. We entered 2 and we got back 2. But what's that 1 in brackets? Things get even weirder when we ask R to return more than one value. Type "letters" (without the quotes) and have a look.
+By now, this should make sense. We entered 2 and we got back 2. But what's that 1 in brackets? Things get weirder when we ask R to return more than one value. Type "letters" (without the quotes) and have a look.
 
 ![Console returning more than one value](images/ConsoleVector2.png)
 
@@ -38,10 +38,10 @@ To generate 100 new values, I just applied a multiplication operation in a singl
 
 So, how will I know a vector when I see one? For starters, it will have the following basic properties:
 
-* Every element in a vector must be the same type. 
-* Vectors are ordered.
-* Vectors have one dimension. Higher dimensions are possible via matrices and arrays.
-* Vectors may have metadata like names.
+1. Every element in a vector must be the same basic data type. (Refer to {#chap-data-types} for a review of basic data types.)
+2. Vectors are ordered.
+3. Vectors have one dimension. Higher dimensions are possible via matrices and arrays.
+4. Vectors may have metadata like names for each element.
 
 A quick word about dimensionality: there are folks who will make a big fuss about the difference between a vector and a matrix and an array. Further, they might insist that there's a difference between a 100 x 1 matrix and a one dimensional vector. I'm not one of those people. To me, anything that forms a countable set of elements is an array. Splitting it into dimensions is just a matter of imposing some structure to the set. I can sort my bag of M&Ms by color, put them in rows, etc. But don't listen to me. When working with R, you will almost invariably see a unidimensional set of data referred to as a "vector". Anything with two dimensions is a "matrix" and it contains the specific notion of "rows" and "columns". Anything of higher dimensions is an array.
 
@@ -49,11 +49,11 @@ You needn't spend too much time sweating over that last paragraph. I'm just gett
 
 ## Vector construction
 
-So how do I create a vector? No real trick here. You'll be constructing vectors whether you want to or not. But let's talk about a few core functions for vector construction and manipulation.
+So how do I create a vector? No real trick here. You'll be constructing vectors whether you want to or not. But let's talk about a few core functions for vector construction and manipulation. These are ones that you're likely to see and use often.
 
 ### `seq`
 
-The first functions we'll look at are `seq` and its first cousin the `:` operator. You've already seen `:` where we've used it generate a sequence of integers. The `seq` function has much more flexibility. You may specify the starting point, the ending point, the length of the interval and the number of elements to output. You'll need to do at least three of those. We can think of the four use cases as being associated with which element we opt to leave out.
+The first functions we'll look at are `seq` and its first cousin the `:` operator[^colon_gotcha]. You've already seen `:` where we've used it generate a sequence of integers. `seq` is much more flexible: you can specify the starting point, the ending point, the length of the interval and the number of elements to output. You'll need to provide at least three of the parameters and R will figure out everything else. We can think of the four use cases as being associated with which element we opt to leave out.
 
 ```{r }
 # Leave out the interval
@@ -73,11 +73,11 @@ block = make_block(i, type = 'vector')
 block
 ```
 
-Gotcha: `:` has a different meaning when constructing a formula. In that context, it refers to the interaction of variables.
+[^colon_gotcha]: Gotcha: `:` has a different meaning when constructing a formula. In that context, it refers to the interaction of variables.
 
 ### `rep`
 
-Whereas the `seq` function will generate unique values, the `rep` function will replicate its input. Let's look at 100 pies:
+Whereas the `seq` function will generate unique values, the `rep` function will replicate its input. Tell it what you want repeated and how many times. Let's look at 100 pies:
 
 ```{r }
 i <- rep(pi, 100)
@@ -105,10 +105,12 @@ Watch what happens when we try to concatenate two vectors which have different d
 
 ```{r}
 i <- 1:5
+i
 j <- letters
+j
 k <- c(i, j)
+k
 ```
-
 
 ```{r echo=FALSE, eval=FALSE}
 i = c(1, 2, 3, 4, 5)
@@ -150,9 +152,7 @@ set.seed(1234)
 lotsOfMonths <- sample(months, size = 100, replace = TRUE)
 ```
 
-### `sample` II
-
-Sample may also be used within the indexing of the vector itself:
+`sample` may also be used within the indexing of the vector itself:
 
 ```{r }
 set.seed(1234)
@@ -167,7 +167,9 @@ head(evenMoreMonths)
 
 ### `sort`
 
-Remember how I said that the elements of a vector have an order? Well, they do. Although this may seem obvious, this is not a property that's observed in other data constructs like a relational database. That's done to optimize insertion and deletion in fixed storage. For R, all of your data is in RAM, so this is not as important. So, we can sort our vector and know that this arrangement of elements won't change.
+Remember how I said that the elements of a vector have an order? Well, they do. Although this may seem obvious, this is not a property that's observed in other data constructs like a relational database. In a system like Oracle or SQL Server, records aren't stored in order. Further, there's no guarantee that when you run a `SELECT` statement that you'll get rows in the back in the same order when you run the same statement a second time[^rdbms_index]. That's done to optimize insertion and deletion in fixed storage. For R, all of your data is in RAM, so this is not as important. So, we can sort our vector and know that this arrangement of elements won't change until we say so.
+
+[^rdbms_index]: This might not be true if the table is indexed. However, in general, a table's index is stored on different physical space from the associated table. The table itself remains unordered.
 
 ```{r}
 set.seed(1234)
@@ -175,21 +177,6 @@ i <- sample(1:5)
 i
 sort(i)
 ```
-
-### `order`
-
-Although `sort` will get the job done most of the time, there are instances when you may want to use `order`. The `order` function will return the indices of the vector in order.
-
-```{r }
-set.seed(1234)
-x <- sample(1:5)
-order[x]
-y <- 3 * x
-y[order(x)]
-```
-
-Note that changing the `decreasing` parameter from FALSE to TRUE will change the sort order.
-
 
 ### Recycling
 
@@ -205,38 +192,18 @@ print(vector2 + scalar)
 print(vector1 + vector2)
 ```
 
-## Metadata
-
-Metadata is data about data. Simple vectors don't have much need for metadata, but there is at least one property - `name` - that you'll see often.
-
-```{r}
-i <- 1:4
-names(i) <- letters[1:4]
-i
-```
-
-In R, most metadata is set and accessed by the `attr` function and metadata are called "attributes". Some pre-defined attributes like `names` have their own assignment and reference function. Those are: `class`, `comment`, `dim`, `dimnames`, `row.names` and `tsp`. We'll hear more about `dim`, `dimnames` and `row.names`, as well as a few other pre-defined properties, when we talk about matrices later.
-
-In general, an attribute is set using the `<-` assignment operator along with the function name. The attribute is referenced by simply typing the function.
-
-```{r}
-comment(i) <- "This is a comment."
-comment(i)
-j <- 5:8
-comment(j)
-```
-
-```{r}
-attributes(i)
-```
-
-
-
 ## Vector access
 
-### Vector access - by index
+Vector access is something that we'll be doing all the time. Here, we're subsetting the elements in our vector to get something useful. This is critical when we want to isolate bits of our data, either for analysis or to emphasize particularly important points.
 
-Vectors may be accessed by their numeric indices. Remember, ':' is shorthand to generate a sequence.
+Vectors may be accessed in one of two ways: by position[^told_you_order], or via logical subsetting. In the first case, we're asking R to return the elements at particular positions. In the second, we form a vector of logical values of the same length of the vector we're accessing. 
+
+[^told_you_order]: I told you vectors were ordered.
+
+### `head`/`tail`
+
+The `head` and `tail` functions will return the first or last few elements of a vector. They're 
+
 
 ```{r }
 set.seed(1234)
@@ -265,12 +232,60 @@ The `which` function returns indices that match a logical expression.
 
 ```{r }
 i <- 11:20
-which(i > 12)
-i[which(i > 12)]
+which(i > 15)
+i[which(i > 15)]
 ```
 
+As with other functions that return indices, remember that you can store the indices in another variable, or use the indices to extract elements from a different vector.
 
-### Assignment
+### `order`
+
+I've put `order` here as it feels like a close companion to `which` and the idea of ordinal vector access. The `order` function will return the indices of the vector in order. This is a key difference from `sort` which alter the contents of the vector itself.
+
+```{r }
+set.seed(1234)
+x <- sample(1:5)
+order(x)
+y <- 3 * x
+y[order(x)]
+```
+
+Note that changing the `decreasing` parameter from FALSE to TRUE will change the sort order.
+
+## Set theory
+
+Vectors adhere to all the set theory operations that you would expect.
+
+```{r}
+x <- 1:5
+y <- 1:10
+
+union(x, y)
+intersect(x, y)
+
+setdiff(x, y)
+setdiff(y, x)
+
+is.element(4, x)
+is.element(11, x)
+is.element(x, y)
+
+setequal(1:5, sample(1:5))
+identical(1:5, sample(1:5))
+```
+
+The `%in%` operator will return a logical vector indicating whether or not an element of the first set is contained in the second set.
+
+```{r }
+x <- 1:10
+y <- 5:20
+x %in% y
+is.element(x, y)
+```
+
+## Assignment
+
+Assignment works the same as access, but in the opposite direction. Here, we're not extracting a subset of a vector, we're 
 
 ### Growth by assignment
 
@@ -283,40 +298,32 @@ i[30] = pi
 i
 ```
 
-### Set theory
+## Metadata
 
-#### `%in%`
+Metadata is data about data. Simple vectors don't have much need for metadata, but there is at least one property - `name` - that you'll see often.
 
-The `%in%` operator will return a logical vector indicating whether or not an element of the first set is contained in the second set.
-
-```{r }
-x <- 1:10
-y <- 5:15
-x %in% y
+```{r}
+i <- 1:4
+names(i) <- letters[1:4]
+i
 ```
 
-### Set theory - Part II
+In R, most metadata is set and accessed by the `attr` function and metadata are called "attributes". Some pre-defined attributes like `names` have their own assignment and reference function. Those are: `class`, `comment`, `dim`, `dimnames`, `row.names` and `tsp`. We'll hear more about `dim`, `dimnames` and `row.names`, as well as a few other pre-defined properties, when we talk about matrices later.
 
-* `union`
-* `intersect`
-* `setdiff`
-* `setequal`
-* `is.element`
+In general, an attribute is set using the `<-` assignment operator along with the function name. The attribute is referenced by simply typing the function.
 
-```{r eval = FALSE}
-?union
+```{r}
+comment(i) <- "This is a comment."
+comment(i)
+j <- 5:8
+comment(j)
 ```
 
-```{r }
-x <- 1900:1910
-y <- 1905:1915
-intersect(x, y)
-setdiff(x, y)
-setequal(x, y)
-is.element(1941, y)
+```{r}
+attributes(i)
 ```
 
-### Summarization
+## Summarization
 
 Loads of functions take vector input and return scalar output. Translation of a large set of numbers into a few, informative values is one of the cornerstones of statistics.
 
@@ -329,42 +336,24 @@ length(x)
 var(x)
 ```
 
-### Matrix metadata
+## Matrices
 
-Possible to add metadata. This is typically a name for the columns or rows.
-
-```{r }
-myMatrix <- matrix(nrow=10, ncol=10, data = sample(1:100))
-colnames(myMatrix) <- letters[1:10]
-head(myMatrix, 3)
-rownames(myMatrix) <- tail(letters, 10)
-head(myMatrix, 3)
-```
-
-### From vectors to matrices and lists
-
-A matrix is a vector with higher dimensions.
-
-A list has both higher dimensions, but also different data types.
-
-### A matrix
-
-Two ways to construct:
+A matrix is a vector with higher dimensions. In R, when we talk about a matrix, we will always mean something with two dimensions. A matrix may be constructed in two ways:
 
 1. Use the `matrix` function.
 2. Change the dimensions of a `vector`.
 
+Note 
+
 ```{r }
-myVector <- 1:100
-myMatrix <- matrix(myVector, nrow=10, ncol=10)
+myVector <- 
+myMatrix <- matrix(1:100, nrow=10, ncol=10)
 
 myOtherMatrix <- myVector
 dim(myOtherMatrix) <- c(10,10)
 
 identical(myMatrix, myOtherMatrix)
 ```
-
-### 
 
 ```{r }
 myMatrix <- matrix(nrow=10, ncol=10)
@@ -397,7 +386,7 @@ rownames(myMatrix) <- tail(letters, 10)
 head(myMatrix, 3)
 ```
 
-### Data access for a matrix
+### Matrix access
 
 Matrix access is similar to vector, but with additional dimensions. For two-dimensional matrices, the order is row first, then column. 
 
@@ -406,8 +395,6 @@ myMatrix[2, ]
 myMatrix[, 2]
 ```
 
-### Data access continued
-
 Single index will return values by indexing along only one dimension.
 
 ```{r }
@@ -415,7 +402,7 @@ myMatrix[2]
 myMatrix[22]
 ```
 
-### Matrix summary
+### Matrix summarizatioon
 
 ```{r }
 sum(myMatrix)
@@ -424,9 +411,23 @@ rowSums(myMatrix)
 colMeans(myMatrix)
 ```
 
-### More than two dimensions
+## Arrays
 
-Like more than two dimensions? Shine on you crazy diamond.
+An array has more than two dimensions. Do you like data with more than two dimensions? Shine on you crazy diamond. In a geometric space, I can hang with three dimensions, but in other contexts and in higher dimensions, I lose cognition pretty quick. In those cases, I often find my data is easier to express as a data frame, which we'll get to. In the meantime, here's ordinal access for any mathechists who love using 3 or more sets of natural numbers to reference data elements.
+
+```{r}
+myArray <- 1:100
+dim(myArray) <- c(10, 2, 5)
+
+myArray[1, 2, 3]
+```
+
+Sorting out why that's 51 hurts my brain. 
+
+```{r}
+
+```
+
 
 ## Exercises
 
