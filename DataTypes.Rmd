@@ -1,0 +1,173 @@
+# Data {-}
+
+Yay, data! The good stuff! Well, pretty good, but we'll have to walk through some 
+
+# Data types {#chap-data-types}
+
+* What are the different data types?
+* When and how is one type converted to another?
+* How can I tell what sort of data I'm working with?
+
+To a human, the difference between something numeric- like a person's age- and something textual - like their name - isn't a big deal. To a computer, however, this matters a lot. In order to ensure that there is sufficient memory to store the information and to ensure that it may be used in an operation, the computer needs to know what type of data it's working with. In other words: 5 + "Steve" = Huh? We'
+
+## Data types
+
+* logical
+* integer
+* double
+* character
+
+### What is it?
+
+```{r}
+x <- 6
+y <- 6L
+z <- TRUE
+typeof(x)
+typeof(y)
+typeof(z)
+is.logical(x)
+is.double(x)
+```
+
+### Data conversion
+
+Most conversion is implicit. For explicit conversion, use the `as.*` functions. 
+
+Implicit conversion alters everything to the most complex form of data present as follows:
+
+logical -> integer -> double -> character
+
+Explicit conversion usually implies truncation and loss of information.
+
+```{r }
+# Implicit conversion
+w <- TRUE
+x <- 4L
+y <- 5.8
+z <- w + x + y
+typeof(z)
+
+# Explicit conversion. Note loss of data.
+as.integer(z)
+```
+
+### Class
+
+A class is an extension of the basic data types. We'll see many examples of these. The class of a basic type will be equal to its type apart from 'double', whose class is 'numeric' for reasons I don't pretend to understand.
+
+```{r }
+class(TRUE)
+class(pi)
+class(4L)
+```
+
+### Mode
+
+There is also a function called 'mode' which looks tempting. Ignore it.
+
+### Dates and times
+
+Dates in R can be tricky. Two basic classes: `Date` and `POSIXt`. The `Date` class does not get more granular than days. The `POSIXt` class can handle seconds, milliseconds, etc.
+
+My recommendation is to stick with the "Date" class. Introducing times means introducing time zones and possibility for confusion or error. Actuaries rarely need to measure things in minutes.
+
+```{r }
+x <- as.Date('2010-01-01')
+class(x)
+typeof(x)
+```
+
+### More on dates
+
+The default behavior for dates is that they don't follow US conventions.
+
+Don't do this:
+```{r error=TRUE}
+x <- as.Date('06-30-2010')
+```
+
+But this is just fine:
+```{r }
+x <- as.Date('30-06-2010')
+```
+
+If you want to preserve your sanity, stick with year, month, day.
+```{r }
+x <- as.Date('2010-06-30')
+```
+
+### What day is it?
+
+To get the date and time of the computer, use the either `Sys.Date()` or `Sys.time()`. Note that `Sys.time()` will return both the day AND the time as a POSIXct object.
+
+```{r }
+x <- Sys.Date()
+y <- Sys.time()
+```
+
+### More reading on dates
+
+Worth reading the documentation about dates. Measuring time periods is a common task for actuaries. It's easy to make huge mistakes by getting dates wrong.
+
+The `lubridate` package has some nice convenience functions for setting month and day and reasoning about time periods. It also enables you to deal with time zones, leap days and leap seconds. Probably more than you need.
+
+`mondate` was written by an actuary and supports (among other things) handling time periods in terms of months.
+
+* [Date class](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html)
+* [lubridate](http://www.jstatsoft.org/v40/i03/paper)
+* [Ripley and Hornik](http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf)
+* [mondate](https://code.google.com/p/mondate/)
+
+### Factors
+
+Another gotcha. Factors were necessary many years ago when data collection and storage were expensive. A factor is a mapping of a character string to an integer. Particularly when importing data, R often wants to convert character values into a factor. You will often want to convert a factor into a string.
+
+```{r }
+myColors <- c("Red", "Blue", "Green", "Red", "Blue", "Red")
+myFactor <- factor(myColors)
+typeof(myFactor)
+class(myFactor)
+is.character(myFactor)
+is.character(myColors)
+```
+
+### Altering factors
+
+```{r }
+# This probably won't give you what you expect
+myOtherFactor <- c(myFactor, "Orange")
+myOtherFactor
+
+# And this will give you an error
+myFactor[length(myFactor)+1] <- "Orange"
+
+# Must do things in two steps
+myOtherFactor <- factor(c(levels(myFactor), "Orange"))
+myOtherFactor[length(myOtherFactor)+1] <- "Orange"
+```
+
+### Avoid factors
+
+Now that you know what they are, you can spend the next few months avoiding factors. When R was created, there were compelling reasons to include factors and they still have some utility. More often than not, though, they're a confusing hindrance.
+
+If characters aren't behaving the way you expect them to, check the variables with `is.factor`. Convert them with `as.character` and you'll be back on the road to happiness.
+
+## Exercises
+
+* Create a logical, integer, double and character variable.
+* Can you create a vector with both logical and character values?
+* What happens when you try to add a logical to an integer? An integer to a double?
+
+### Answers
+```{r }
+myLogical <- TRUE
+myInteger <- 1:4
+myDouble <- 3.14
+myCharacter <- "Hello!"
+
+y <- myLogical + myInteger
+typeof(y)
+y <- myInteger + myDouble
+typeof(y)
+```
