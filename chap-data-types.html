@@ -38,8 +38,8 @@ MathJax.Hub.Config({
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="elements-of-the-language.html">
-<link rel="next" href="chap-data-types.html">
+<link rel="prev" href="data.html">
+<link rel="next" href="chap-vectors.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -266,17 +266,225 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data" class="section level1 unnumbered">
-<h1>Data</h1>
-<p>Yay, data! The good stuff! Well, pretty good, but we’ve got a lot to cover. Some of this may not make much sense on a first read. Don’t get bogged down, press on and refer to this later if you feel you need to.</p>
+<div id="chap-data-types" class="section level1">
+<h1><span class="header-section-number">4</span> Data types</h1>
+<p>To a human, the difference between something numeric- like a person’s age- and something textual - like their name - isn’t a big deal. To a computer, however, this matters a lot. In order to ensure that there is sufficient memory to store the information and to ensure that it may be used in an operation, the computer needs to know what type of data it’s working with. In other words: 5 + “Steve” = Huh?</p>
+<p>In this chapter, we’ll talk through the various primitive data types that R supports. By the end of this chapter, you will be able to answer the following:</p>
+<ul>
+<li>What are the different data types?</li>
+<li>When and how is one type converted to another?</li>
+<li>How can I work with dates?</li>
+<li>What the heck is a factor?</li>
+</ul>
+<div id="data-types" class="section level2">
+<h2><span class="header-section-number">4.1</span> Data types</h2>
+<p>R supports four “primitive” data types as shown below:</p>
+<ul>
+<li>logical</li>
+<li>integer</li>
+<li>double</li>
+<li>character</li>
+</ul>
+<p>To know what type of data you’re working with, you use the (wait for it) <code>typeof</code> function. If you want to test for a specific data type, you can use the suite of <code>is.</code> functions. Have a look at the example below. Note that when we want something to be an integer, we type the letter “L” after the number.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">6</span>
+y &lt;-<span class="st"> </span>3L
+z &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+<span class="kw">typeof</span>(x)
+<span class="co">#&gt; [1] &quot;double&quot;</span>
+<span class="kw">typeof</span>(y)
+<span class="co">#&gt; [1] &quot;integer&quot;</span>
+<span class="kw">typeof</span>(z)
+<span class="co">#&gt; [1] &quot;logical&quot;</span>
+<span class="kw">is.logical</span>(x)
+<span class="co">#&gt; [1] FALSE</span>
+<span class="kw">is.double</span>(x)
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+</div>
+<div id="data-conversion" class="section level2">
+<h2><span class="header-section-number">4.2</span> Data conversion</h2>
+<p>It’s possible to convert from one type to another. Most of the time, this happens implicitly as part of an operation. R will alter data in order for calculations to take place. For example, let’s say that I’m adding together <code>x</code> and <code>y</code> from the code snippet above. We know that an integer and a real number will add together easily, but the computer needs to convert the integer before the operation can take place.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(x +<span class="st"> </span>y)
+<span class="co">#&gt; [1] &quot;double&quot;</span></code></pre></div>
+<p>Implicit conversion will change data types in the order shown below. Note that all data types for an operation will be converted to the most complex number involved in the calculation.</p>
+<p>logical -&gt; integer -&gt; double -&gt; character</p>
+<p>Note that implicit conversion can’t always help us. Let’s try the example from the start of this chapter.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> +<span class="st"> &#39;Steve&#39;</span>
+<span class="co">#&gt; Error in 5 + &quot;Steve&quot;: non-numeric argument to binary operator</span></code></pre></div>
+<p>Here, R is telling us that it doesn’t know how to add a number and a word. I don’t either.</p>
+<p>For explicit conversion, use the <code>as.*</code> functions. When explicit conversion is used to convert a value to a simpler data type - double to integer, say - that there will likely be loss of information.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Implicit conversion</span>
+w &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+x &lt;-<span class="st"> </span>4L
+y &lt;-<span class="st"> </span><span class="fl">5.8</span>
+z &lt;-<span class="st"> </span>w +<span class="st"> </span>x +<span class="st"> </span>y
+<span class="kw">typeof</span>(z)
+<span class="co">#&gt; [1] &quot;double&quot;</span>
+
+<span class="co"># Explicit conversion. Note loss of data.</span>
+<span class="kw">as.integer</span>(z)
+<span class="co">#&gt; [1] 10</span></code></pre></div>
+<p>In addition to <code>typeof</code> there are two other functions which will return basic information about an object.</p>
+<p>The <code>mode</code> of an object will return a value indicating how the object is meant to be stored. This will generally mirror the output produced by <code>typeof</code> except that double and integers both have a mode of “numeric”. This function has never improved my life and it won’t be discussed any further.</p>
+<p>A <code>class</code> of an object is a very special kind of metadata. (We’ll get more into metadata in the next chapter <a href="chap-vectors.html#chap-vectors">Vectors</a>.) When we get beyond primitive data types, this starts to become important. We’ll see two examples in just a moment when we talk about dates and factors. The class of a basic type will be equal to its type apart from ‘double’, whose class is ‘numeric’ for reasons I don’t pretend to understand.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="ot">TRUE</span>)
+<span class="co">#&gt; [1] &quot;logical&quot;</span>
+<span class="kw">class</span>(pi)
+<span class="co">#&gt; [1] &quot;numeric&quot;</span>
+<span class="kw">class</span>(4L)
+<span class="co">#&gt; [1] &quot;integer&quot;</span>
+<span class="kw">class</span>(<span class="kw">Sys.Date</span>())
+<span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre></div>
+<p>The table below summarizes most of the ways we can sort out what sort of data we’re working with.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-24">Table 4.1: </span>Key similarities and differences between vectors and lists</caption>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">typeof</td>
+<td align="left">The type of the object</td>
+</tr>
+<tr class="even">
+<td align="left">mode</td>
+<td align="left">Storage mode of the object</td>
+</tr>
+<tr class="odd">
+<td align="left">class</td>
+<td align="left">The class(es) of the object</td>
+</tr>
+<tr class="even">
+<td align="left">inherits</td>
+<td align="left">Whether the object is a particular class</td>
+</tr>
+<tr class="odd">
+<td align="left">is.</td>
+<td align="left">Whether the object is a particular type</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dates-and-times" class="section level2">
+<h2><span class="header-section-number">4.3</span> Dates and times</h2>
+<p>Dates in R can be tricky. There are two basic classes: <code>Date</code> and <code>POSIXt</code>. The <code>Date</code> class does not get more granular than days. The <code>POSIXt</code> class can handle seconds, milliseconds, etc. My recommendation is to stick with the “Date” class. Introducing times means introducing time zones and the possibility for confusion or error. Actuaries rarely need to measure things in minutes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;2010-01-01&#39;</span>)
+<span class="kw">class</span>(x)
+<span class="co">#&gt; [1] &quot;Date&quot;</span>
+<span class="kw">typeof</span>(x)
+<span class="co">#&gt; [1] &quot;double&quot;</span></code></pre></div>
+<p>By default, dates don’t follow US conventions. Much like avoiding the metric system, United Statesians are sticking with a convention that doesn’t have a lot of logical support. If you want to preserve your sanity, stick with year, month, day order.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Don&#39;t do this:</span>
+x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;06-30-2010&#39;</span>)
+<span class="co">#&gt; Error in charToDate(x): character string is not in a standard unambiguous format</span>
+
+<span class="co"># But this is just fine:</span>
+x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;30-06-2010&#39;</span>)
+
+<span class="co"># Year, month, day is your friend</span>
+x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;2010-06-30&#39;</span>)</code></pre></div>
+<p>To get the date and time of the computer, use the either <code>Sys.Date()</code> or <code>Sys.time()</code>. Note that <code>Sys.time()</code> will return both the day AND the time as a POSIXct object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()
+y &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</code></pre></div>
+<p>It’s worth reading the documentation about dates. Measuring time periods is a common task for actuaries. It’s easy to make huge mistakes by getting dates wrong.</p>
+<p>The <code>lubridate</code> package has some nice convenience functions for setting month and day and reasoning about time periods. It also enables you to deal with time zones, leap days and leap seconds. This is probably more than most folks need, but it’s worth looking into.</p>
+<p>The <code>mondate</code> package was written by Daniel Murphy (an actuary) and supports handling time periods in terms of months. This is a very good thing. You’ll quickly learn that the base functions don’t like dealing with time periods as measured in months. Why? Because they’re all different lengths. It’s not clear how to add “one month” to a set of dates. And yet, we very often want to do this. An easy example is adding a set of months to the last day in a month. The close of a quarter is a common task in financial circles. The code below will produce the end of the quarter for a single year.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mondate)
+<span class="co">#&gt; Loading required package: methods</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: &#39;mondate&#39;</span>
+<span class="co">#&gt; The following object is masked from &#39;package:base&#39;:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     as.difftime</span>
+<span class="kw">add</span>(<span class="kw">mondate</span>(<span class="st">&quot;2010-03-31&quot;</span>), <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>), <span class="dt">units =</span> <span class="st">&quot;months&quot;</span>)
+<span class="co">#&gt; mondate: timeunits=&quot;months&quot;</span>
+<span class="co">#&gt; [1] 2010-03-31 2010-06-30 2010-09-30 2010-12-31</span></code></pre></div>
+<p>The items below are all worth reading.</p>
+<ul>
+<li>Date class: <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html</a></li>
+<li>lubridate: <a href="http://www.jstatsoft.org/v40/i03/paper" class="uri">http://www.jstatsoft.org/v40/i03/paper</a></li>
+<li>Ripley and Hornik: <a href="http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf" class="uri">http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf</a></li>
+<li>mondate: (<a href="https://code.google.com/p/mondate/" class="uri">https://code.google.com/p/mondate/</a>)</li>
+</ul>
+</div>
+<div id="factors" class="section level2">
+<h2><span class="header-section-number">4.4</span> Factors</h2>
+<p>Factors are a pretty big gotcha. They were necessary many years ago when data collection and storage were expensive. A factor maps a character string to an integer, so that it takes up less space. The code below will illustrate the difference between a factor and a compararble character vector<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myColors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Red&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Green&quot;</span>, <span class="st">&quot;Red&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Red&quot;</span>)
+myFactor &lt;-<span class="st"> </span><span class="kw">factor</span>(myColors)
+myColors
+<span class="co">#&gt; [1] &quot;Red&quot;   &quot;Blue&quot;  &quot;Green&quot; &quot;Red&quot;   &quot;Blue&quot;  &quot;Red&quot;</span>
+myFactor
+<span class="co">#&gt; [1] Red   Blue  Green Red   Blue  Red  </span>
+<span class="co">#&gt; Levels: Blue Green Red</span>
+<span class="kw">typeof</span>(myFactor)
+<span class="co">#&gt; [1] &quot;integer&quot;</span>
+<span class="kw">class</span>(myFactor)
+<span class="co">#&gt; [1] &quot;factor&quot;</span>
+<span class="kw">is.character</span>(myFactor)
+<span class="co">#&gt; [1] FALSE</span>
+<span class="kw">is.character</span>(myColors)
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<p>Note that when we printed the value of <code>myFactor</code> we got the list of colors, but without the quotes around them. We are also told that our object has “Levels”. This is important as it defines the set of possible values for the factor. This is rather useful if you have a data set where the permissible values are constrained to a closed set, like gender, education, smoker/non-smoker, etc.</p>
+<p>So, what happens if we want to add a new element to our factor?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This probably won&#39;t give you what you expect</span>
+myOtherFactor &lt;-<span class="st"> </span><span class="kw">c</span>(myFactor, <span class="st">&quot;Orange&quot;</span>)
+myOtherFactor
+<span class="co">#&gt; [1] &quot;3&quot;      &quot;1&quot;      &quot;2&quot;      &quot;3&quot;      &quot;1&quot;      &quot;3&quot;      &quot;Orange&quot;</span>
+
+<span class="co"># And this will give you an error</span>
+myFactor[<span class="kw">length</span>(myFactor)+<span class="dv">1</span>] &lt;-<span class="st"> &quot;Orange&quot;</span>
+<span class="co">#&gt; Warning in `[&lt;-.factor`(`*tmp*`, length(myFactor) + 1, value = &quot;Orange&quot;):</span>
+<span class="co">#&gt; invalid factor level, NA generated</span>
+
+<span class="co"># Must do things in two steps</span>
+myOtherFactor &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="kw">levels</span>(myFactor), <span class="st">&quot;Orange&quot;</span>))
+myOtherFactor[<span class="kw">length</span>(myOtherFactor)+<span class="dv">1</span>] &lt;-<span class="st"> &quot;Orange&quot;</span></code></pre></div>
+<p>Ugh. In the first instance, R recognizes that it can’t append a new item to the factor. So, it converts the values to a string and then appends the string “Orange”. But note that the items are string values of integers. That’s because the underlying data of a factor <em>is</em> an integer. In the second instance, we first have to change the levels of the factor and then we can append our new data element.</p>
+<p>Often when creating a data frame, R’s default behavior is to convert character values into a factor. When we get to creating data frames and importing data, you’ll often see us use code like the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mojo &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;myFile.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p>Now that you know what they are, you can spend the next few months avoiding factors. When R was created, there were compelling reasons to include factors and they still have some utility. More often than not, though, they’re a confusing hindrance. If characters aren’t behaving the way you expect them to, check the variables with <code>class</code> or <code>is.factor</code>. Convert them with <code>as.character</code> and you’ll be back on the road to happiness.</p>
+</div>
+<div id="exercises-1" class="section level2">
+<h2><span class="header-section-number">4.5</span> Exercises</h2>
+<ul>
+<li>Create a logical, integer, double and character variable.</li>
+<li>Can you create a vector with both logical and character values?</li>
+<li>What happens when you try to add a logical to an integer? An integer to a double?</li>
+</ul>
+<div id="answers" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Answers</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myLogical &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+myInteger &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">4</span>
+myDouble &lt;-<span class="st"> </span><span class="fl">3.14</span>
+myCharacter &lt;-<span class="st"> &quot;Hello!&quot;</span>
+
+y &lt;-<span class="st"> </span>myLogical +<span class="st"> </span>myInteger
+<span class="kw">typeof</span>(y)
+<span class="co">#&gt; [1] &quot;integer&quot;</span>
+y &lt;-<span class="st"> </span>myInteger +<span class="st"> </span>myDouble
+<span class="kw">typeof</span>(y)
+<span class="co">#&gt; [1] &quot;double&quot;</span></code></pre></div>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>You can also use the <code>quarter</code> function to achieve much the same thing.<a href="chap-data-types.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>We haven’t covered vectors yet, but we’re getting there. If this code is confusing, just skip this section for now and come back after you’ve read up on vectors.<a href="chap-data-types.html#fnref6">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="elements-of-the-language.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="chap-data-types.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-vectors.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

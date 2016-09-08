@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>raw - R Actuarial Workshops</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This is a companion to actuarial workshops.">
+  <meta name="generator" content="bookdown 0.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="raw - R Actuarial Workshops" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="raw_cover.png" />
+  <meta property="og:description" content="This is a companion to actuarial workshops." />
+  <meta name="github-repo" content="PirateGrunt/raw_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="raw - R Actuarial Workshops" />
+  
+  <meta name="twitter:description" content="This is a companion to actuarial workshops." />
+  <meta name="twitter:image" content="raw_cover.png" />
+
+<meta name="author" content="Brian A. Fannin, ACAS">
+
+<meta name="date" content="2016-08-27">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="elements-of-the-language.html">
+<link rel="next" href="data.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">raw - Raw Actuarial Workshops</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="first-steps.html"><a href="first-steps.html"><i class="fa fa-check"></i>First Steps</a></li>
+<li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
+<li class="chapter" data-level="1.1" data-path="setup.html"><a href="setup.html#operating-systems"><i class="fa fa-check"></i><b>1.1</b> Operating systems</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup.html"><a href="setup.html#installing-r"><i class="fa fa-check"></i><b>1.1.1</b> Installing R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="setup.html"><a href="setup.html#bitness"><i class="fa fa-check"></i><b>1.1.2</b> Bitness</a></li>
+<li class="chapter" data-level="1.1.3" data-path="setup.html"><a href="setup.html#installing-r-studio"><i class="fa fa-check"></i><b>1.1.3</b> Installing R Studio</a></li>
+<li class="chapter" data-level="1.1.4" data-path="setup.html"><a href="setup.html#it"><i class="fa fa-check"></i><b>1.1.4</b> IT</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a><ul>
+<li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#the-operating-environment"><i class="fa fa-check"></i><b>2.1</b> The Operating Environment</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="getting-started.html"><a href="getting-started.html#command-line-interface"><i class="fa fa-check"></i><b>2.1.1</b> Command-line interface</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#entering-commands"><i class="fa fa-check"></i><b>2.2</b> Entering Commands</a></li>
+<li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#getting-help"><i class="fa fa-check"></i><b>2.3</b> Getting help</a></li>
+<li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#the-working-directory"><i class="fa fa-check"></i><b>2.4</b> The working directory</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="getting-started.html"><a href="getting-started.html#directory-paths"><i class="fa fa-check"></i><b>2.4.1</b> Directory paths</a></li>
+<li class="chapter" data-level="2.4.2" data-path="getting-started.html"><a href="getting-started.html#source-files"><i class="fa fa-check"></i><b>2.4.2</b> Source files</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="getting-started.html"><a href="getting-started.html#your-first-script"><i class="fa fa-check"></i><b>2.5</b> Your first script</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="getting-started.html"><a href="getting-started.html#executing-a-script"><i class="fa fa-check"></i><b>2.5.1</b> Executing a script</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html"><i class="fa fa-check"></i><b>3</b> Elements of the Language</a><ul>
+<li class="chapter" data-level="3.1" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#variables"><i class="fa fa-check"></i><b>3.1</b> Variables</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#assignment"><i class="fa fa-check"></i><b>3.1.1</b> Assignment</a></li>
+<li class="chapter" data-level="3.1.2" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#data-types"><i class="fa fa-check"></i><b>3.1.2</b> Data types</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#operators"><i class="fa fa-check"></i><b>3.2</b> Operators</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#mathematical-operators"><i class="fa fa-check"></i><b>3.2.1</b> Mathematical Operators</a></li>
+<li class="chapter" data-level="3.2.2" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#logical-operators"><i class="fa fa-check"></i><b>3.2.2</b> Logical Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#functions"><i class="fa fa-check"></i><b>3.3</b> Functions</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#a-few-mathematical-functions"><i class="fa fa-check"></i><b>3.3.1</b> A few mathematical functions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#comments"><i class="fa fa-check"></i><b>3.3.2</b> Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="elements-of-the-language.html"><a href="elements-of-the-language.html#exercises"><i class="fa fa-check"></i><b>3.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-types-1.html"><a href="data-types-1.html"><i class="fa fa-check"></i><b>4</b> Data types</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-types-1.html"><a href="data-types-1.html#from-data"><i class="fa fa-check"></i><b>4.1</b> From data</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-types-1.html"><a href="data-types-1.html#data-types-2"><i class="fa fa-check"></i><b>4.1.1</b> Data types</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-types-1.html"><a href="data-types-1.html#what-is-it"><i class="fa fa-check"></i><b>4.1.2</b> What is it?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="data-types-1.html"><a href="data-types-1.html#data-conversion"><i class="fa fa-check"></i><b>4.1.3</b> Data conversion</a></li>
+<li class="chapter" data-level="4.1.4" data-path="data-types-1.html"><a href="data-types-1.html#class"><i class="fa fa-check"></i><b>4.1.4</b> Class</a></li>
+<li class="chapter" data-level="4.1.5" data-path="data-types-1.html"><a href="data-types-1.html#mode"><i class="fa fa-check"></i><b>4.1.5</b> Mode</a></li>
+<li class="chapter" data-level="4.1.6" data-path="data-types-1.html"><a href="data-types-1.html#dates-and-times"><i class="fa fa-check"></i><b>4.1.6</b> Dates and times</a></li>
+<li class="chapter" data-level="4.1.7" data-path="data-types-1.html"><a href="data-types-1.html#more-on-dates"><i class="fa fa-check"></i><b>4.1.7</b> More on dates</a></li>
+<li class="chapter" data-level="4.1.8" data-path="data-types-1.html"><a href="data-types-1.html#what-day-is-it"><i class="fa fa-check"></i><b>4.1.8</b> What day is it?</a></li>
+<li class="chapter" data-level="4.1.9" data-path="data-types-1.html"><a href="data-types-1.html#more-reading-on-dates"><i class="fa fa-check"></i><b>4.1.9</b> More reading on dates</a></li>
+<li class="chapter" data-level="4.1.10" data-path="data-types-1.html"><a href="data-types-1.html#factors"><i class="fa fa-check"></i><b>4.1.10</b> Factors</a></li>
+<li class="chapter" data-level="4.1.11" data-path="data-types-1.html"><a href="data-types-1.html#altering-factors"><i class="fa fa-check"></i><b>4.1.11</b> Altering factors</a></li>
+<li class="chapter" data-level="4.1.12" data-path="data-types-1.html"><a href="data-types-1.html#avoid-factors"><i class="fa fa-check"></i><b>4.1.12</b> Avoid factors</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-types-1.html"><a href="data-types-1.html#exercises-1"><i class="fa fa-check"></i><b>4.2</b> Exercises</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-types-1.html"><a href="data-types-1.html#answers"><i class="fa fa-check"></i><b>4.2.1</b> Answers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i>Data</a></li>
+<li class="chapter" data-level="5" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>5</b> Vectors</a><ul>
+<li class="chapter" data-level="5.1" data-path="vectors.html"><a href="vectors.html#what-is-a-vector"><i class="fa fa-check"></i><b>5.1</b> What is a vector?</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="vectors.html"><a href="vectors.html#vector-properties"><i class="fa fa-check"></i><b>5.1.1</b> Vector properties</a></li>
+<li class="chapter" data-level="5.1.2" data-path="vectors.html"><a href="vectors.html#vector-arithmetic"><i class="fa fa-check"></i><b>5.1.2</b> Vector arithmetic</a></li>
+<li class="chapter" data-level="5.1.3" data-path="vectors.html"><a href="vectors.html#recycling"><i class="fa fa-check"></i><b>5.1.3</b> Recycling</a></li>
+<li class="chapter" data-level="5.1.4" data-path="vectors.html"><a href="vectors.html#vector-construction"><i class="fa fa-check"></i><b>5.1.4</b> Vector construction</a></li>
+<li class="chapter" data-level="5.1.5" data-path="vectors.html"><a href="vectors.html#seq"><i class="fa fa-check"></i><b>5.1.5</b> <code>seq</code></a></li>
+<li class="chapter" data-level="5.1.6" data-path="vectors.html"><a href="vectors.html#rep"><i class="fa fa-check"></i><b>5.1.6</b> <code>rep</code></a></li>
+<li class="chapter" data-level="5.1.7" data-path="vectors.html"><a href="vectors.html#c"><i class="fa fa-check"></i><b>5.1.7</b> <code>c</code></a></li>
+<li class="chapter" data-level="5.1.8" data-path="vectors.html"><a href="vectors.html#sample"><i class="fa fa-check"></i><b>5.1.8</b> <code>sample</code></a></li>
+<li class="chapter" data-level="5.1.9" data-path="vectors.html"><a href="vectors.html#sample-ii"><i class="fa fa-check"></i><b>5.1.9</b> <code>sample</code> II</a></li>
+<li class="chapter" data-level="5.1.10" data-path="vectors.html"><a href="vectors.html#order"><i class="fa fa-check"></i><b>5.1.10</b> <code>order</code></a></li>
+<li class="chapter" data-level="5.1.11" data-path="vectors.html"><a href="vectors.html#vector-access"><i class="fa fa-check"></i><b>5.1.11</b> Vector access</a></li>
+<li class="chapter" data-level="5.1.12" data-path="vectors.html"><a href="vectors.html#vector-access---by-index"><i class="fa fa-check"></i><b>5.1.12</b> Vector access - by index</a></li>
+<li class="chapter" data-level="5.1.13" data-path="vectors.html"><a href="vectors.html#vector-access---logical-access"><i class="fa fa-check"></i><b>5.1.13</b> Vector access - logical access</a></li>
+<li class="chapter" data-level="5.1.14" data-path="vectors.html"><a href="vectors.html#which"><i class="fa fa-check"></i><b>5.1.14</b> <code>which</code></a></li>
+<li class="chapter" data-level="5.1.15" data-path="vectors.html"><a href="vectors.html#assignment-1"><i class="fa fa-check"></i><b>5.1.15</b> Assignment</a></li>
+<li class="chapter" data-level="5.1.16" data-path="vectors.html"><a href="vectors.html#growth-by-assignment"><i class="fa fa-check"></i><b>5.1.16</b> Growth by assignment</a></li>
+<li class="chapter" data-level="5.1.17" data-path="vectors.html"><a href="vectors.html#set-theory"><i class="fa fa-check"></i><b>5.1.17</b> Set theory</a></li>
+<li class="chapter" data-level="5.1.18" data-path="vectors.html"><a href="vectors.html#set-theory---part-ii"><i class="fa fa-check"></i><b>5.1.18</b> Set theory - Part II</a></li>
+<li class="chapter" data-level="5.1.19" data-path="vectors.html"><a href="vectors.html#summarization"><i class="fa fa-check"></i><b>5.1.19</b> Summarization</a></li>
+<li class="chapter" data-level="5.1.20" data-path="vectors.html"><a href="vectors.html#matrix-metadata"><i class="fa fa-check"></i><b>5.1.20</b> Matrix metadata</a></li>
+<li class="chapter" data-level="5.1.21" data-path="vectors.html"><a href="vectors.html#from-vectors-to-matrices-and-lists"><i class="fa fa-check"></i><b>5.1.21</b> From vectors to matrices and lists</a></li>
+<li class="chapter" data-level="5.1.22" data-path="vectors.html"><a href="vectors.html#a-matrix"><i class="fa fa-check"></i><b>5.1.22</b> A matrix</a></li>
+<li class="chapter" data-level="5.1.23" data-path="vectors.html"><a href="vectors.html#section"><i class="fa fa-check"></i><b>5.1.23</b> </a></li>
+<li class="chapter" data-level="5.1.24" data-path="vectors.html"><a href="vectors.html#section-1"><i class="fa fa-check"></i><b>5.1.24</b> </a></li>
+<li class="chapter" data-level="5.1.25" data-path="vectors.html"><a href="vectors.html#matrix-metadata-1"><i class="fa fa-check"></i><b>5.1.25</b> Matrix metadata</a></li>
+<li class="chapter" data-level="5.1.26" data-path="vectors.html"><a href="vectors.html#data-access-for-a-matrix"><i class="fa fa-check"></i><b>5.1.26</b> Data access for a matrix</a></li>
+<li class="chapter" data-level="5.1.27" data-path="vectors.html"><a href="vectors.html#data-access-continued"><i class="fa fa-check"></i><b>5.1.27</b> Data access continued</a></li>
+<li class="chapter" data-level="5.1.28" data-path="vectors.html"><a href="vectors.html#matrix-summary"><i class="fa fa-check"></i><b>5.1.28</b> Matrix summary</a></li>
+<li class="chapter" data-level="5.1.29" data-path="vectors.html"><a href="vectors.html#more-than-two-dimensions"><i class="fa fa-check"></i><b>5.1.29</b> More than two dimensions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="vectors.html"><a href="vectors.html#exercises-2"><i class="fa fa-check"></i><b>5.2</b> Exercises</a></li>
+<li class="chapter" data-level="5.3" data-path="vectors.html"><a href="vectors.html#answers-1"><i class="fa fa-check"></i><b>5.3</b> Answers</a></li>
+<li class="chapter" data-level="5.4" data-path="vectors.html"><a href="vectors.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Lists</a><ul>
+<li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#lists-overview"><i class="fa fa-check"></i><b>6.1</b> Lists Overview</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="lists.html"><a href="lists.html#vs."><i class="fa fa-check"></i><b>6.1.1</b> [ vs. [[</a></li>
+<li class="chapter" data-level="6.1.2" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.1.2</b> Recursive storage</a></li>
+<li class="chapter" data-level="6.1.3" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.1.3</b> List metadata</a></li>
+<li class="chapter" data-level="6.1.4" data-path="lists.html"><a href="lists.html#lapply"><i class="fa fa-check"></i><b>6.1.4</b> <code>lapply</code></a></li>
+<li class="chapter" data-level="6.1.5" data-path="lists.html"><a href="lists.html#why-lapply"><i class="fa fa-check"></i><b>6.1.5</b> Why <code>lapply</code>?</a></li>
+<li class="chapter" data-level="6.1.6" data-path="lists.html"><a href="lists.html#summary-functions"><i class="fa fa-check"></i><b>6.1.6</b> Summary functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.2</b> Exercises</a></li>
+<li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.3</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>7</b> Data Frames</a><ul>
+<li class="chapter" data-level="7.1" data-path="data-frames.html"><a href="data-frames.html#whats-a-data-frame"><i class="fa fa-check"></i><b>7.1</b> What’s a data frame?</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="data-frames.html"><a href="data-frames.html#creating-a-data-frame"><i class="fa fa-check"></i><b>7.1.1</b> Creating a data frame</a></li>
+<li class="chapter" data-level="7.1.2" data-path="data-frames.html"><a href="data-frames.html#basic-properties-of-a-data-frame"><i class="fa fa-check"></i><b>7.1.2</b> Basic properties of a data frame</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#referencing"><i class="fa fa-check"></i><b>7.1.3</b> Referencing</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.1.4</b> Ordering</a></li>
+<li class="chapter" data-level="7.1.5" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.1.5</b> Altering and adding columns</a></li>
+<li class="chapter" data-level="7.1.6" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.1.6</b> Eliminating columns</a></li>
+<li class="chapter" data-level="7.1.7" data-path="data-frames.html"><a href="data-frames.html#rbind-cbind"><i class="fa fa-check"></i><b>7.1.7</b> rbind, cbind</a></li>
+<li class="chapter" data-level="7.1.8" data-path="data-frames.html"><a href="data-frames.html#merging"><i class="fa fa-check"></i><b>7.1.8</b> Merging</a></li>
+<li class="chapter" data-level="7.1.9" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.1.9</b> Altering column names</a></li>
+<li class="chapter" data-level="7.1.10" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-easy-way"><i class="fa fa-check"></i><b>7.1.10</b> Subsetting - The easy way</a></li>
+<li class="chapter" data-level="7.1.11" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-hardish-way"><i class="fa fa-check"></i><b>7.1.11</b> Subsetting - The hard(ish) way</a></li>
+<li class="chapter" data-level="7.1.12" data-path="data-frames.html"><a href="data-frames.html#subsetting---yet-another-way"><i class="fa fa-check"></i><b>7.1.12</b> Subsetting - Yet another way</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.2</b> Summarizing</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---1"><i class="fa fa-check"></i><b>7.2.1</b> Summarizing visually - 1</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---2"><i class="fa fa-check"></i><b>7.2.2</b> Summarizing visually - 2</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#advanced-data-frame-tools"><i class="fa fa-check"></i><b>7.2.3</b> Advanced data frame tools</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#reading-data"><i class="fa fa-check"></i><b>7.2.4</b> Reading data</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#reading-from-excel"><i class="fa fa-check"></i><b>7.2.5</b> Reading from Excel</a></li>
+<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web---1"><i class="fa fa-check"></i><b>7.2.6</b> Reading from the web - 1</a></li>
+<li class="chapter" data-level="7.2.7" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web---2"><i class="fa fa-check"></i><b>7.2.7</b> Reading from the web - 2</a></li>
+<li class="chapter" data-level="7.2.8" data-path="data-frames.html"><a href="data-frames.html#reading-from-a-database"><i class="fa fa-check"></i><b>7.2.8</b> Reading from a database</a></li>
+<li class="chapter" data-level="7.2.9" data-path="data-frames.html"><a href="data-frames.html#read-some-data"><i class="fa fa-check"></i><b>7.2.9</b> Read some data</a></li>
+<li class="chapter" data-level="7.2.10" data-path="data-frames.html"><a href="data-frames.html#exercises-4"><i class="fa fa-check"></i><b>7.2.10</b> Exercises</a></li>
+<li class="chapter" data-level="7.2.11" data-path="data-frames.html"><a href="data-frames.html#answer"><i class="fa fa-check"></i><b>7.2.11</b> Answer</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/PirateGrunt/raw_book" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">raw - R Actuarial Workshops</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-types-1" class="section level1">
+<h1><span class="header-section-number">4</span> Data types</h1>
+<ul>
+<li>What are the different data types?</li>
+<li>When and how is one type converted to another?</li>
+<li></li>
+</ul>
+<div id="from-data" class="section level2">
+<h2><span class="header-section-number">4.1</span> From data</h2>
+<ul>
+<li>Data types</li>
+<li>From vectors to matrices and lists</li>
+</ul>
+<div id="data-types-2" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Data types</h3>
+<ul>
+<li>logical</li>
+<li>integer</li>
+<li>double</li>
+<li>character</li>
+</ul>
+</div>
+<div id="what-is-it" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> What is it?</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">6</span>
+y &lt;-<span class="st"> </span>6L
+z &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+<span class="kw">typeof</span>(x)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(y)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(z)</code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.logical</span>(x)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.double</span>(x)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="data-conversion" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Data conversion</h3>
+<p>Most conversion is implicit. For explicit conversion, use the <code>as.*</code> functions.</p>
+<p>Implicit conversion alters everything to the most complex form of data present as follows:</p>
+<p>logical -&gt; integer -&gt; double -&gt; character</p>
+<p>Explicit conversion usually implies truncation and loss of information.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Implicit conversion</span>
+w &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+x &lt;-<span class="st"> </span>4L
+y &lt;-<span class="st"> </span><span class="fl">5.8</span>
+z &lt;-<span class="st"> </span>w +<span class="st"> </span>x +<span class="st"> </span>y
+<span class="kw">typeof</span>(z)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Explicit conversion. Note loss of data.</span>
+<span class="kw">as.integer</span>(z)</code></pre></div>
+<pre><code>## [1] 10</code></pre>
+</div>
+<div id="class" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Class</h3>
+<p>A class is an extension of the basic data types. We’ll see many examples of these. The class of a basic type will be equal to its type apart from ‘double’, whose class is ‘numeric’ for reasons I don’t pretend to understand.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(pi)</code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(4L)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p>The type and class of a vector is returned as a scalar. Remember a vector is a set of elements which all have the same type.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(<span class="dv">1</span>:<span class="dv">4</span>)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+</div>
+<div id="mode" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> Mode</h3>
+<p>There is also a function called ‘mode’ which looks tempting. Ignore it.</p>
+</div>
+<div id="dates-and-times" class="section level3">
+<h3><span class="header-section-number">4.1.6</span> Dates and times</h3>
+<p>Dates in R can be tricky. Two basic classes: <code>Date</code> and <code>POSIXt</code>. The <code>Date</code> class does not get more granular than days. The <code>POSIXt</code> class can handle seconds, milliseconds, etc.</p>
+<p>My recommendation is to stick with the “Date” class. Introducing times means introducing time zones and possibility for confusion or error. Actuaries rarely need to measure things in minutes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;2010-01-01&#39;</span>)
+<span class="kw">class</span>(x)</code></pre></div>
+<pre><code>## [1] &quot;Date&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(x)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+</div>
+<div id="more-on-dates" class="section level3">
+<h3><span class="header-section-number">4.1.7</span> More on dates</h3>
+<p>The default behavior for dates is that they don’t follow US conventions.</p>
+<p>Don’t do this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;06-30-2010&#39;</span>)</code></pre></div>
+<pre><code>## Error in charToDate(x): character string is not in a standard unambiguous format</code></pre>
+<p>But this is just fine:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;30-06-2010&#39;</span>)</code></pre></div>
+<p>If you want to preserve your sanity, stick with year, month, day.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&#39;2010-06-30&#39;</span>)</code></pre></div>
+</div>
+<div id="what-day-is-it" class="section level3">
+<h3><span class="header-section-number">4.1.8</span> What day is it?</h3>
+<p>To get the date and time of the computer, use the either <code>Sys.Date()</code> or <code>Sys.time()</code>. Note that <code>Sys.time()</code> will return both the day AND the time as a POSIXct object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()
+y &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</code></pre></div>
+</div>
+<div id="more-reading-on-dates" class="section level3">
+<h3><span class="header-section-number">4.1.9</span> More reading on dates</h3>
+<p>Worth reading the documentation about dates. Measuring time periods is a common task for actuaries. It’s easy to make huge mistakes by getting dates wrong.</p>
+<p>The <code>lubridate</code> package has some nice convenience functions for setting month and day and reasoning about time periods. It also enables you to deal with time zones, leap days and leap seconds. Probably more than you need.</p>
+<p><code>mondate</code> was written by an actuary and supports (among other things) handling time periods in terms of months.</p>
+<ul>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html">Date class</a></li>
+<li><a href="http://www.jstatsoft.org/v40/i03/paper">lubridate</a></li>
+<li><a href="http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf">Ripley and Hornik</a></li>
+<li><a href="https://code.google.com/p/mondate/">mondate</a></li>
+</ul>
+</div>
+<div id="factors" class="section level3">
+<h3><span class="header-section-number">4.1.10</span> Factors</h3>
+<p>Another gotcha. Factors were necessary many years ago when data collection and storage were expensive. A factor is a mapping of a character string to an integer. Particularly when importing data, R often wants to convert character values into a factor. You will often want to convert a factor into a string.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myColors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Red&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Green&quot;</span>, <span class="st">&quot;Red&quot;</span>, <span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Red&quot;</span>)
+myFactor &lt;-<span class="st"> </span><span class="kw">factor</span>(myColors)
+<span class="kw">typeof</span>(myFactor)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(myFactor)</code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.character</span>(myFactor)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.character</span>(myColors)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="altering-factors" class="section level3">
+<h3><span class="header-section-number">4.1.11</span> Altering factors</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This probably won&#39;t give you what you expect</span>
+myOtherFactor &lt;-<span class="st"> </span><span class="kw">c</span>(myFactor, <span class="st">&quot;Orange&quot;</span>)
+myOtherFactor</code></pre></div>
+<pre><code>## [1] &quot;3&quot;      &quot;1&quot;      &quot;2&quot;      &quot;3&quot;      &quot;1&quot;      &quot;3&quot;      &quot;Orange&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># And this will give you an error</span>
+myFactor[<span class="kw">length</span>(myFactor)+<span class="dv">1</span>] &lt;-<span class="st"> &quot;Orange&quot;</span></code></pre></div>
+<pre><code>## Warning in `[&lt;-.factor`(`*tmp*`, length(myFactor) + 1, value = &quot;Orange&quot;):
+## invalid factor level, NA generated</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Must do things in two steps</span>
+myOtherFactor &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="kw">levels</span>(myFactor), <span class="st">&quot;Orange&quot;</span>))
+myOtherFactor[<span class="kw">length</span>(myOtherFactor)+<span class="dv">1</span>] &lt;-<span class="st"> &quot;Orange&quot;</span></code></pre></div>
+</div>
+<div id="avoid-factors" class="section level3">
+<h3><span class="header-section-number">4.1.12</span> Avoid factors</h3>
+<p>Now that you know what they are, you can spend the next few months avoiding factors. When R was created, there were compelling reasons to include factors and they still have some utility. More often than not, though, they’re a confusing hindrance.</p>
+<p>If characters aren’t behaving the way you expect them to, check the variables with <code>is.factor</code>. Convert them with <code>as.character</code> and you’ll be back on the road to happiness.</p>
+</div>
+</div>
+<div id="exercises-1" class="section level2">
+<h2><span class="header-section-number">4.2</span> Exercises</h2>
+<ul>
+<li>Create a logical, integer, double and character variable.</li>
+<li>Can you create a vector with both logical and character values?</li>
+<li>What happens when you try to add a logical to an integer? An integer to a double?</li>
+</ul>
+<div id="answers" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Answers</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myLogical &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+myInteger &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">4</span>
+myDouble &lt;-<span class="st"> </span><span class="fl">3.14</span>
+myCharacter &lt;-<span class="st"> &quot;Hello!&quot;</span>
+
+y &lt;-<span class="st"> </span>myLogical +<span class="st"> </span>myInteger
+<span class="kw">typeof</span>(y)</code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y &lt;-<span class="st"> </span>myInteger +<span class="st"> </span>myDouble
+<span class="kw">typeof</span>(y)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="elements-of-the-language.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/PirateGrunt/raw_book/edit/master/DataTypes.Rmd",
+"text": null
+},
+"download": ["raw.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
