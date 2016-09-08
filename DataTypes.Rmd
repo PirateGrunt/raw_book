@@ -1,27 +1,32 @@
 # Data {-}
 
-Yay, data! The good stuff! Well, pretty good, but we'll have to walk through some 
+Yay, data! The good stuff! Well, pretty good, but we've got a lot to cover. Some of this may not make much sense on a first read. Don't get bogged down, press on and refer to this later if you feel you need to.
 
 # Data types {#chap-data-types}
 
+To a human, the difference between something numeric- like a person's age- and something textual - like their name - isn't a big deal. To a computer, however, this matters a lot. In order to ensure that there is sufficient memory to store the information and to ensure that it may be used in an operation, the computer needs to know what type of data it's working with. In other words: 5 + "Steve" = Huh?
+
+In this chapter, we'll talk through the various primitive data types that R supports. By the end of this chapter, you will be able to answer the following:
+
 * What are the different data types?
 * When and how is one type converted to another?
-* How can I tell what sort of data I'm working with?
-
-To a human, the difference between something numeric- like a person's age- and something textual - like their name - isn't a big deal. To a computer, however, this matters a lot. In order to ensure that there is sufficient memory to store the information and to ensure that it may be used in an operation, the computer needs to know what type of data it's working with. In other words: 5 + "Steve" = Huh? We'
+* How can I work with dates?
+* What the heck is a factor?
 
 ## Data types
+
+R supports four "primitive" data types as shown below: 
 
 * logical
 * integer
 * double
 * character
 
-### What is it?
+To know what type of data you're working with, you use the (wait for it) `typeof` function. If you want to test for a specific data type, you can use the suite of `is.` functions. Have a look at the example below. Note that when we want something to be an integer, we type the letter "L" after the number.
 
 ```{r}
 x <- 6
-y <- 6L
+y <- 3L
 z <- TRUE
 typeof(x)
 typeof(y)
@@ -30,15 +35,27 @@ is.logical(x)
 is.double(x)
 ```
 
-### Data conversion
+## Data conversion
 
-Most conversion is implicit. For explicit conversion, use the `as.*` functions. 
+It's possible to convert from one type to another. Most of the time, this happens implicitly as part of an operation. R will alter data in order for calculations to take place. For example, let's say that I'm adding together `x` and `y` from the code snippet above. We know that an integer and a real number will add together easily, but the computer needs to convert the integer before the operation can take place.
 
-Implicit conversion alters everything to the most complex form of data present as follows:
+```{r}
+typeof(x + y)
+```
+
+Implicit conversion will change data types in the order shown below. Note that all data types for an operation will be converted to the most complex number involved in the calculation.
 
 logical -> integer -> double -> character
 
-Explicit conversion usually implies truncation and loss of information.
+Note that implicit conversion can't always help us. Let's try the example from the start of this chapter.
+
+```{r error=TRUE}
+5 + 'Steve'
+```
+
+Here, R is telling us that it doesn't know how to add a number and a word. I don't either. 
+
+For explicit conversion, use the `as.*` functions. When explicit conversion is used to convert a value to a simpler data type - double to integer, say - that there will likely be loss of information.
 
 ```{r }
 # Implicit conversion
@@ -52,25 +69,39 @@ typeof(z)
 as.integer(z)
 ```
 
-### Class
+In addition to `typeof` there are two other functions which will return basic information about an object.
 
-A class is an extension of the basic data types. We'll see many examples of these. The class of a basic type will be equal to its type apart from 'double', whose class is 'numeric' for reasons I don't pretend to understand.
+The `mode` of an object will return a value indicating how the object is meant to be stored. This will generally mirror the output produced by `typeof` except that double and integers both have a mode of "numeric". This function has never improved my life and it won't be discussed any further.
+
+A `class` of an object is a very special kind of metadata. (We'll get more into metadata in the next chapter [Vectors](#chap-vectors).) When we get beyond primitive data types, this starts to become important. We'll see two examples in just a moment when we talk about dates and factors. The class of a basic type will be equal to its type apart from 'double', whose class is 'numeric' for reasons I don't pretend to understand.
 
 ```{r }
 class(TRUE)
 class(pi)
 class(4L)
+class(Sys.Date())
 ```
 
-### Mode
+The table below summarizes most of the ways we can sort out what sort of data we're working with.
 
-There is also a function called 'mode' which looks tempting. Ignore it.
+```{r echo = FALSE}
+dfDataTypeFunctions <- data.frame(Function = c("typeof", "mode", "class", "inherits", "is.")
+                                  , Returns = c("The type of the object"
+                                                , "Storage mode of the object"
+                                                , "The class(es) of the object"
+                                                , "Whether the object is a particular class"
+                                                , "Whether the object is a particular type"))
 
-### Dates and times
+knitr::kable(
+  dfDataTypeFunctions, booktabs = TRUE,
+  caption = 'Key similarities and differences between vectors and lists'
+)
+```
 
-Dates in R can be tricky. Two basic classes: `Date` and `POSIXt`. The `Date` class does not get more granular than days. The `POSIXt` class can handle seconds, milliseconds, etc.
 
-My recommendation is to stick with the "Date" class. Introducing times means introducing time zones and possibility for confusion or error. Actuaries rarely need to measure things in minutes.
+## Dates and times
+
+Dates in R can be tricky. There are two basic classes: `Date` and `POSIXt`. The `Date` class does not get more granular than days. The `POSIXt` class can handle seconds, milliseconds, etc. My recommendation is to stick with the "Date" class. Introducing times means introducing time zones and the possibility for confusion or error. Actuaries rarely need to measure things in minutes.
 
 ```{r }
 x <- as.Date('2010-01-01')
@@ -78,26 +109,18 @@ class(x)
 typeof(x)
 ```
 
-### More on dates
+By default, dates don't follow US conventions. Much like avoiding the metric system, United Statesians are sticking with a convention that doesn't have a lot of logical support. If you want to preserve your sanity, stick with year, month, day order.
 
-The default behavior for dates is that they don't follow US conventions.
-
-Don't do this:
 ```{r error=TRUE}
+# Don't do this:
 x <- as.Date('06-30-2010')
-```
 
-But this is just fine:
-```{r }
+# But this is just fine:
 x <- as.Date('30-06-2010')
-```
 
-If you want to preserve your sanity, stick with year, month, day.
-```{r }
+# Year, month, day is your friend
 x <- as.Date('2010-06-30')
 ```
-
-### What day is it?
 
 To get the date and time of the computer, use the either `Sys.Date()` or `Sys.time()`. Note that `Sys.time()` will return both the day AND the time as a POSIXct object.
 
@@ -106,33 +129,46 @@ x <- Sys.Date()
 y <- Sys.time()
 ```
 
-### More reading on dates
+It's worth reading the documentation about dates. Measuring time periods is a common task for actuaries. It's easy to make huge mistakes by getting dates wrong.
 
-Worth reading the documentation about dates. Measuring time periods is a common task for actuaries. It's easy to make huge mistakes by getting dates wrong.
+The `lubridate` package has some nice convenience functions for setting month and day and reasoning about time periods. It also enables you to deal with time zones, leap days and leap seconds. This is probably more than most folks need, but it's worth looking into.
 
-The `lubridate` package has some nice convenience functions for setting month and day and reasoning about time periods. It also enables you to deal with time zones, leap days and leap seconds. Probably more than you need.
+The `mondate` package was written by Daniel Murphy (an actuary) and supports handling time periods in terms of months. This is a very good thing. You'll quickly learn that the base functions don't like dealing with time periods as measured in months. Why? Because they're all different lengths. It's not clear how to add "one month" to a set of dates. And yet, we very often want to do this. An easy example is adding a set of months to the last day in a month. The close of a quarter is a common task in financial circles. The code below will produce the end of the quarter for a single year. [^mondate_quarter]
 
-`mondate` was written by an actuary and supports (among other things) handling time periods in terms of months.
+[^mondate_quarter]: You can also use the `quarter` function to achieve much the same thing.
 
-* [Date class](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html)
-* [lubridate](http://www.jstatsoft.org/v40/i03/paper)
-* [Ripley and Hornik](http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf)
-* [mondate](https://code.google.com/p/mondate/)
+```{r}
+library(mondate)
+add(mondate("2010-03-31"), c(0, 3, 6, 9), units = "months")
+```
 
-### Factors
+The items below are all worth reading.
 
-Another gotcha. Factors were necessary many years ago when data collection and storage were expensive. A factor is a mapping of a character string to an integer. Particularly when importing data, R often wants to convert character values into a factor. You will often want to convert a factor into a string.
+* Date class: [https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Dates.html)
+* lubridate: [http://www.jstatsoft.org/v40/i03/paper](http://www.jstatsoft.org/v40/i03/paper)
+* Ripley and Hornik: http://www.r-project.org/doc/Rnews/Rnews_2001-2.pdf
+* mondate: (https://code.google.com/p/mondate/)
+
+## Factors
+
+Factors are a pretty big gotcha. They were necessary many years ago when data collection and storage were expensive. A factor maps a character string to an integer, so that it takes up less space. The code below will illustrate the difference between a factor and a compararble character vector[^getting_to_vectors]. 
+
+[^getting_to_vectors]: We haven't covered vectors yet, but we're getting there. If this code is confusing, just skip this section for now and come back after you've read up on vectors.
 
 ```{r }
 myColors <- c("Red", "Blue", "Green", "Red", "Blue", "Red")
 myFactor <- factor(myColors)
+myColors
+myFactor
 typeof(myFactor)
 class(myFactor)
 is.character(myFactor)
 is.character(myColors)
 ```
 
-### Altering factors
+Note that when we printed the value of `myFactor` we got the list of colors, but without the quotes around them. We are also told that our object has "Levels". This is important as it defines the set of possible values for the factor. This is rather useful if you have a data set where the permissible values are constrained to a closed set, like gender, education, smoker/non-smoker, etc.
+
+So, what happens if we want to add a new element to our factor?
 
 ```{r }
 # This probably won't give you what you expect
@@ -147,11 +183,15 @@ myOtherFactor <- factor(c(levels(myFactor), "Orange"))
 myOtherFactor[length(myOtherFactor)+1] <- "Orange"
 ```
 
-### Avoid factors
+Ugh. In the first instance, R recognizes that it can't append a new item to the factor. So, it converts the values to a string and then appends the string "Orange". But note that the items are string values of integers. That's because the underlying data of a factor _is_ an integer. In the second instance, we first have to change the levels of the factor and then we can append our new data element.
 
-Now that you know what they are, you can spend the next few months avoiding factors. When R was created, there were compelling reasons to include factors and they still have some utility. More often than not, though, they're a confusing hindrance.
+Often when creating a data frame, R's default behavior is to convert character values into a factor. When we get to creating data frames and importing data, you'll often see us use code like the following:
 
-If characters aren't behaving the way you expect them to, check the variables with `is.factor`. Convert them with `as.character` and you'll be back on the road to happiness.
+```{r eval=FALSE}
+mojo <- read.csv("myFile.csv", stringsAsFactors = FALSE)
+```
+
+Now that you know what they are, you can spend the next few months avoiding factors. When R was created, there were compelling reasons to include factors and they still have some utility. More often than not, though, they're a confusing hindrance. If characters aren't behaving the way you expect them to, check the variables with `class` or `is.factor`. Convert them with `as.character` and you'll be back on the road to happiness.
 
 ## Exercises
 

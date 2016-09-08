@@ -4,38 +4,68 @@ library(rblocks)
 
 # Lists
 
-In this chapter, we're going to learn about lists. Lists can be a bit confusing the first time you begin to use them. Heaven knows it took me ages to get comfortable with them. However, they're a very powerful way to structure data and, once mastered, will give you all kinds of control over pretty much anything the world can throw at you. If vectors are R's atom, lists are molecules. 
+In this chapter, we're going to learn about lists. Lists can be a bit confusing the first time you begin to use them. Heaven knows it took me ages to get comfortable with them. However, they're a very powerful way to structure data and, once mastered, will give you all kinds of control over pretty much anything the world can throw at you. If vectors are R's atoms, lists are molecules. 
 
-By the end of this chapter, you will know:
+By the end of this chapter, you will know the following:
 
 * What is a list and how are they created?
 * What is the difference between a list and vector?
 * When and how do I use `lapply`?
 
-Lists have data of arbitrary complexity. Any type, any length. Note the new `[[ ]]` double bracket operator.
+## Lists Overview
+
+A list is a bit like a vector in that it is a container for many elements of data. However, unlike a vector, the elements of a list may have different data types. In addition, lists may store data _recursively_. This means that a list may contain list, which contains another list and so on. Partially for this reason, access and assignment will use a new operator: `[[]]`. Confusing? Sorta. But don't worry, we'll walk through why and how you'll work with lists. 
+
+```{r echo = FALSE}
+dfListVectorDifferences <- data.frame(Vectors = c("Ordered", "All elements have the same data type", "One dimension", "Access and assignment via []", "May contain metadata")
+                                      , Lists = c("Also ordered", "Elements may be any data type, even other lists", "Doesn't apply in this context"
+                                                  , "Access and assignment via [[ ]] and $", "May contain metadata"))
+knitr::kable(
+  dfListVectorDifferences, booktabs = TRUE,
+  caption = 'Key similarities and differences between vectors and lists'
+)
+```
+
+## List construction
+
+The `list` function will create a list. Have a look at the code below and try it out yourself. 
 
 ```{r }
-x <- list()
+x <- list(c("This", "is", "a", "list")
+          , c(pi, exp(1)))
 typeof(x)
-x[[1]] <- c("Hello", "there", "this", "is", "a", "list")
-x[[2]] <- c(pi, exp(1))
 summary(x)
 str(x)
 ```
 
-## Lists Overview
+Note that, weirdly - and confusingly - you can create a list by using the `vector` function.
+
+```{r}
+
+```
+
+
+```{r }
+dim(x)
+```
 
 ```{r echo=FALSE}
 make_block(x)
 ```
 
-### [ vs. [[
+## Access and assignment
+
+Because list elements can be arbitrarily complex, access and assignment gets a bit stranger. This 
+
+[ vs. [[
 
 `[` is (almost always) used to set and return an element of the same type as the _containing_ object.
 
 `[[` is used to set and return an element of the same type as the _contained_ object.
 
-This is why we use `[[` to set an item in a list. 
+This is why we use `[[` to set an item in a list. Note that `[[` will drop names[^why_drop_names].
+
+[^why_drop_names]: I have no idea why it does this. 
 
 Don't worry if this doesn't make sense yet. It's difficult for most R programmers.
 
@@ -69,9 +99,11 @@ y$Artist
 y$Age
 ```
 
-### `lapply`
+## Summary functions
 
-`lapply` is one of many functions which may be applied to lists. Can be difficult at first, but very powerful. Applies the same function to each element of a list.
+Because lists are arbitrary, we can't expect functions like `sum` or `mean` to work. Instead, we use functions like `lapply` to summarize particular list elements.
+
+`lapply` is one of many functions which may be applied to lists. They may not be intuitive at first, but they're very powerful. `lapply` will apply the same function to each element of a list. In the example below, we'll generate some statistics for three different vectors stored in a list.
 
 ```{r }
 myList <- list(firstVector = c(1:10)
@@ -82,16 +114,16 @@ lapply(myList, median)
 lapply(myList, sum)
 ```
 
-### Why `lapply`? 
-
-Two reasons:
+Why `lapply`? Two reasons:
 
 1. It's expressive. A loop is a lot of code which does little to clarify intent. `lapply` indicates that we want to apply the same function to each element of a list. Think of a formula that exists as a column in a spreadsheet.
 2. It's easier to type at an interactive console. In its very early days, `S` was fully interactive. Typing a `for` loop at the console is a tedius and unnecessary task.
 
-### Summary functions
+Note that we can also use `lapply` on structures like a vector. 
 
-Because lists are arbitrary, we can't expect functions like `sum` or `mean` to work. Use `lapply` to summarize particular list elements.
+## Flotsam
+
+### `split`
 
 ## Exercises
 

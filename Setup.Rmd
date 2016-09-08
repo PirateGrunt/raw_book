@@ -14,19 +14,19 @@ By the end of this chapter, you will have done the following:
 * Install RStudio
 * Install the `raw` package
 
-## Operating systems
+## Installing R
+
+### Operating systems
 
 Although R was developed primarily on Unix-based operating systems, it may be used on many different platforms. As I write these words, there are three major systems in use: Windows, Mac OS and Linux. I've used R and RStudio on all three and the experience is pretty much the same. This is one of the fantastic features of the software. It's meant to be as widely used and portable as possible to maximize its use. 
 
-There are one or two operating system quirks, but in general I won't need to OS differences again, apart from one preliminary note. When refrring to keystroke combinationsn, I will only refer to the CTRL key. Mac OS users will understand that this key is CMD on their keyboards. 
+There are one or two operating system quirks, but in general I won't need to refer to OS differences again, apart from one preliminary note. When refrring to keystroke combinationsn, I will only refer to the CTRL key. Mac OS users will understand that this key is CMD on their keyboards. 
 
 If you're curious, the version of R and system architecture being used to write this book are noted below:
 
-```{r echo = FALSE}
+```{r echo = TRUE}
 sessionInfo()$platform
 ```
-
-### Installing R
 
 In each case, what you'll do is download a file from the internet and then follow the standard process you go through to install software on whichever system you're using. For the most part, installation is quick and painless, but there may be limitations placed on you by your IT department. I have a few suggestions which I hope can help overcome any difficulties you might experience.
 
@@ -34,18 +34,18 @@ The first place to look for installation is [cran.r-project.org]. From there, yo
 
 I recommend getting familiar with the CRAN website and reading the documentation there. If you get totally lost, try the links below which should take you directly to the download site for Windows and Mac. (If you're running Linux, I can't imagine you need my help.)
 
-* [Windows install](http://cran.revolutionanalytics.com/bin/windows/base/)
-* [Mac install](http://cran.revolutionanalytics.com/bin/macosx/)
+* Windows install: [http://cran.revolutionanalytics.com/bin/windows/base/](http://cran.revolutionanalytics.com/bin/windows/base/)
+* Mac install: [http://cran.revolutionanalytics.com/bin/macosx/](http://cran.revolutionanalytics.com/bin/macosx/)
 
-https://cran.r-project.org/bin/windows/base/
-
-It's possible that you'll be asked to identify a "mirror". R is hosted on a number of servers throughout the world. It's all the same R, but distributing it in this way helps to minimized load on servers which host the files. 
+It's possible that you'll be asked to identify a "mirror". R is hosted on a number of servers throughout the world. It's all the same R, but distributing it in this way helps to minimized load on servers which host the files. There's nothing much to decide here - the internet is pretty fast. 
 
 ### Bitness
 
-32 vs 64
+You may be asked to decide between 32 and 64 bit R. The numbers refer to the width of an address in memory. Software will look for instructions or data in memory using one of those two memory addressing schemes. This young, ungrateful millenial generation wasn't around when it happened, but I can remember when we moved from 16 to 32 bit software. It was a big deal. This is one is less so. You'll probably want to use 64 bit R. Know that there's a chance that you'll run into problems working with other software, particularly the Microsoft Access database or the Java virtual machine. This could result if another program uses 32 bit memory addressing. I'm not going to pretend to be sensitive to all the technical nuances. Pretend that you're from the deep south trying to have a conversation with someone in Scottland. Although you're speaking the same language, it's possible that you're not able to have a conversation.
 
-### Installing R Studio
+If this happens, you may be able to use 32 bit R, presuming you've installed it. I won't walk through how to implement that here. 
+
+## Installing R Studio
 
 Installing R is most of the battle. Depending on the sort of person you are, it may even be all of the battle (see the following section on environments). R comes with a fairly spartan user interface, which is sufficient to get work done. However, most folk find that they enjoy using an Integrated Development Environment (IDE). This allows one to work on several source files at the same time, read help, observe console output, see what variables are loaded in memory, etc. There are a few options, but I've not yet found anything better than RStudio.
 
@@ -61,26 +61,30 @@ The first thing to bear in mind is that, despite any appearance to the contrary,
 
 With that understood, there are several situations you may find yourself in.:
 
-* You have- or can talk your way into- admin rights to your computer
+#### You have- or can talk your way into- admin rights to your computer {-}
 
 Lucky you. Also lucky me as this is the happy situation that I enjoy. How do you handle this situation? Don't blow it! Be careful what you download, don't greedily consume bandwidth, server space or any of your company's other scarce resources and be VERY NICE to your IT staff. Acknowledge that you're grateful to have been given such trust and pledge not to do anything to have it removed.
 
-* You don't have admin rights to your computer
+#### You don't have admin rights to your computer {-}
 
 What to do? Request to be given admin rights. Explain why, in detail and don't be evasive or vague. Trust and mutual respect help. Talk to other folks in your department and get them on board. Present a strong business case for why use of this software will permit you and your department to work more efficiently. Show them this book and underline the parts where I tell folk to be nice and respectful towards IT staff.
 
-* IT won't give you admin rights to your computer
+#### IT won't give you admin rights to your computer {-}
 
 In this case, you may ask them to install it for you. Pool your resources. Talk to other actuaries and analysts in your company. Talk to your boss.
 
-* IT won't install the software.
+#### IT won't install the software. {-}
 
 Solution? Install the software to a memory stick. Yes, it is often (but not always!) possible to do this. This is is obviously not a preferred option, but it will get you up and running and enable you to attend the workshop.
 
-* Memory sticks are locked down
+#### Memory sticks are locked down {-}
 
 In this case, your IT department really wants you all to be running terminals. OK. Suggest an install of RStudio Server. This enables R to run on a server with controlled user access. This is quite a lot more work for your IT staff and you'll need to make a strong use case for it. If you're a large organization which has a predictive modelling or analytics area, they'll likely want this software. This won't allow you to use R remotely, so getting the most out of the workshop will be tough. However, there's still one more option.
 
-* The nuclear option
+#### The nuclear option {-}
 
 Your IT staff won't run R on a server, won't give you a laptop with R installed. They're really against this software. I'd like to advise you to get another job, but that's defeatist. This is where we reach the nuclear option, which is to use your own computer. This will drive folks at your company nuts. Now you're transferring data from a secure machine to one which you use for personal e-mail, Facebook, sports, personal finance and other activities that we needn't dwell on here. This is an absolute last resort and the overheard of moving stuff from one device to another will obviate most of the efficiency gains that open source software will provide. Here's how to make it work: produce work that is ONLY POSSIBLE using R, or Python or any of the tools which we will discuss. Show a killer visual and then patiently explain to your boss why it can't be done in Excel and why you can't share it with other departments and why it can't be done every quarter. This is a tall order, but it just might get someone's attention.
+
+## Conclusion
+
+Beg, borrow or steal, make friends, vanquish enemies, do whatever you need to do and get the software installed. It may be easy and you'll wonder why I'm making such a fuss. I hope that's how it goes down. If it's difficult, just know that it'll all be worth it. There are a host of crazy issues that you may have to resolve that you'd never see with Excel or Outlook or whatever. Hang in there. With every problem that you solve, you're getting closer and closer to data/stats nirvana. If you emerge from installation with a few battle scars, wear them like badges of honor. One day, you'll be knocking back a beer with Brian Ripley, Hadley Wickham or Dirk Eddelbeutel and speaking their language.

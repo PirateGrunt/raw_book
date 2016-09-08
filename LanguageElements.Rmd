@@ -4,17 +4,17 @@ library(pander)
 
 # Elements of the Language
 
-There are certain concepts common to virtually all programming languages. Those elements are: variables, functions and operators. This chapter will discuss what those are and how they're implemented in R. By the end of this chapter, you will be able to answer the following:
+There are certain concepts common to virtually all programming languages, which tell the computer how to behave. Those elements are: variables, functions and operators. This chapter will discuss what those are and how they're implemented in R. By the end of this chapter, you will be able to answer the following:
 
 * What is a variable and how do I create and modify them?
 * How do functions work?
-* 
+* How can I use logic to control what commends get executed?
 
 If you're familiar with other languages like Visual Basic, Python or Java Script, you may be tempted to skip this section. If you do, you'll survive, but I'd suggest giving it a quick read. You may learn something about how R differs from those other languages.
 
 ## Variables
 
-Programming languages work by assigning values to space in you computer's memory. Those values are then available for computation. Because the value of what's stored in memory may change, we call these things "variables". Think of a cell in a spreadsheet. Before we put something in it, it's just an empty box. We can fill it with whatever we like, be it a person's name, their birthdate, their age, whatever. 
+Programming languages work by assigning values to space in your computer's memory. Those values are then available for computation. Because the value of what's stored in memory may "vary", we call these things "variables". Think of a cell in a spreadsheet. Before we put something in it, it's just an empty box. We can fill it with whatever we like, be it a person's name, their birthdate, their age, whatever. 
 
 ### Assignment
 
@@ -27,10 +27,6 @@ r + 2
 ```
 
 Both "<-" and "=" will work for assignment.
-
-### Data types
-
-To a human, the difference between something numeric- like a person's age- and something textual - like their name - isn't a big deal. To a computer, however, this matters a lot. In order to ensure that there is sufficient memory to store the information and to ensure that it may be used in an operation, the computer needs to know what type of data it's working with. In other words: 5 + "Steve" = Huh?
 
 ## Operators
 
@@ -83,7 +79,7 @@ sqrt(exp(sin(pi)))
 * cos, sin, tan (and many others)
 * lgamma, gamma, digamma, trigamma
 
-### Comments
+## Comments
 
 R uses the hash/pound character "#" to indicate comments.
 
@@ -93,7 +89,7 @@ Comment early and often!
 
 Comments should describe "why", not "what".
 
-#### Bad comment
+### Bad comment
 
 ```{r eval=FALSE}
 # Take the ratio of loss to premium to determine the loss ratio
@@ -101,7 +97,7 @@ Comments should describe "why", not "what".
 lossRatio <- Losses / Premium
 ```
 
-#### Good comment
+### Good comment
 
 ```{r eval=FALSE}
 # Because this is a retrospective view of 

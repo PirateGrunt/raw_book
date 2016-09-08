@@ -1,5 +1,5 @@
 
-# Vectors
+# Vectors {#chap-vectors}
 
 In this chapter, we're going to learn about vectors, which are one of the key building blocks of R programming. By the end of this chapter, you will know the following:
 
@@ -38,7 +38,7 @@ To generate 100 new values, I just applied a multiplication operation in a singl
 
 So, how will I know a vector when I see one? For starters, it will have the following basic properties:
 
-1. Every element in a vector must be the same basic data type. (Refer to {#chap-data-types} for a review of basic data types.)
+1. Every element in a vector must be the same basic data type. (Refer to [Chapter 4: Data Types](#chap-data-types) for a review of basic data types.)
 2. Vectors are ordered.
 3. Vectors have one dimension. Higher dimensions are possible via matrices and arrays.
 4. Vectors may have metadata like names for each element.
@@ -50,6 +50,14 @@ You needn't spend too much time sweating over that last paragraph. I'm just gett
 ## Vector construction
 
 So how do I create a vector? No real trick here. You'll be constructing vectors whether you want to or not. But let's talk about a few core functions for vector construction and manipulation. These are ones that you're likely to see and use often.
+
+### `vector`
+
+a
+
+```{r}
+x <- vector(mode = "numeric", length = 10)
+```
 
 ### `seq`
 
@@ -130,6 +138,18 @@ block_j
 
 block_k
 ```
+
+### `paste`
+
+Another gotcha: in many other languages, "concatenation" is an operation which joins multiple strings to generate a single string. However, in R, the `c` function will concatenate multiple vectors (or other objects) into one object. So, how do you concatenate a string? With the `paste` function and its close relative `paste0`. 
+
+```{r}
+firstName <- "Brian"
+lastName <- "Fannin"
+fullName <- paste(lastName, firstName, sep = ", ")
+```
+
+`paste0` is a shortcut for the common use case where we want to join characters together without anything separating them:
 
 ### `sample`
 
@@ -323,9 +343,13 @@ comment(j)
 attributes(i)
 ```
 
+### `length`, `dim`
+
+`length` will return the number of elements in a vector. 
+
 ## Summarization
 
-Loads of functions take vector input and return scalar output. Translation of a large set of numbers into a few, informative values is one of the cornerstones of statistics.
+There are loads of functions which take vector input and return scalar output. Translation of a large set of numbers into a few, informative values is one of the cornerstones of statistics.
 
 ```{r eval=FALSE}
 x = 1:50

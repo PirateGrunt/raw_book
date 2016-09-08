@@ -13,9 +13,24 @@ knit: "bookdown::render_book"
 cover-image: raw_cover.png
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  cache = TRUE, 
+  fig.align="center",
+  fig.pos="t"
+)
+```
+
+<!--img src="raw_cover.png" width="500" height="400" alt="Cover image" /-->
+
 # Introduction {-}
 
-<img src="raw_cover.png" width="500" height="400" alt="Cover image" />
+
+> "R isn't software. It's a community."
+> --- John Chambers
+
 
 Hello! Very happy to have you here and I hope you find this useful. This book is meant to serve as a companion to any of the R training sessions that I'm involved in. A few quick notes before we proceed.
 

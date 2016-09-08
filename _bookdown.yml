@@ -8,12 +8,10 @@ rmd_files: [
   "GettingStarted.Rmd",
   "LanguageElements.Rmd",
   
+  "DataTypes.Rmd",
   "Vectors.Rmd",
   "Lists.Rmd",
-  "Data.Rmd",
-  
-  "BasicVisualization.Rmd",
-  "LossDistributions.Rmd",
+  "DataFrames.Rmd",
   
   "References.Rmd",
   
