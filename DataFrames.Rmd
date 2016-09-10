@@ -76,7 +76,7 @@ dfC = dfA[, 1:2]
 cbind(dfA, dfC)
 ```
 
-`merge` is similar to a __JOIN__ operation in a relational database. If you're used to __VLOOKUP__ in Excel[^havent_used_vlookup], you'll love `merge`. It's possible to use multiple columns (i.e. state and effective date) when specifying how to join. If no columns are specified, `merge` will use whatever column names the two data frames have in common. Below, we merge a set of rate changes to our premium data.
+`merge` is similar to a __JOIN__ operation in a relational database. If you're used to __VLOOKUP__ in Excel[^havent_used_vlookup], you'll love `merge`. It's possible to use multiple columns (e.g. state and effective date) when specifying how to join. If no columns are specified, `merge` will use whatever column names the two data frames have in common. Below, we merge a set of rate changes to our premium data.
 
 ```{r }
 dfRateChange = data.frame(State = c("TX", "CA", "NY"), RateChange = c(.05, -.1, .2))
@@ -85,16 +85,18 @@ df = merge(df, dfRateChange)
 
 [^havent_used_vlookup]: If you've never used VLOOKUP, I can't imagine why you're reading this.
 
-Finally, consider `expand.grid`. This will create a data frame as the cartesian product (i.e. every combination of elements) of one or more vectors. Among the use cases are to check for missing data elements in another data frame.
+### `expand.grid`
+
+Consider `expand.grid`. This will create a data frame as the cartesian product (i.e. every combination of elements) of one or more vectors. Among the use cases are to check for missing data elements in another data frame.
 
 ```{r}
 dfStateClass <- expand.grid(State = c("TX", "CA", "NY")
-                  , Class = c(8810, 1066, 1492))
+                  , Class = c(1776, 1066, 1492))
 ```
 
 ## Access and Assignment
 
-Access and assignment will feel like a weird combination of matrices and lists, though with an emphasis on the mechanics of a 2D matrix. We'll often use the `[]` operator. The first arugment will refer to the row and the second will refer to the column. If either argument is left blank, it will refer to every element.
+Access and assignment will feel like a weird combination of matrices and lists, though with an emphasis on the mechanics of a 2D matrix. We'll often use the `[]` operator to specify which row and column we'd like. The first arugment will refer to the row and the second will refer to the column. If either argument is left blank, it will refer to every element.
 
 ```{r eval=FALSE}
 df[1, 2]
@@ -103,19 +105,19 @@ df[, 2]
 df[2, -1]
 ```
 
-If we want columns of the data frame, we can approach this one of two ways. The `$` operator works the same as a list (because a data frame _is_ a list) to access named columns. We can also pass character strings in as arguments to get columns by name, rather than by position.
+If we want columns of the data frame, we can approach this one of a few ways. For a single column, we can use either the `$`  or the `[[]]` operators. These work the same as a list (because a data frame _is_ a list). 
 
 ```{r eval=FALSE}
 df$EarnedPremium
-df[, "EarnedPremium"]
-df[, c("EarnedPremium", "State")]
-```
-
-If we're only interested in one column, we can use the `[[]]` operator to return it.
-
-```{r}
 head(df[[1]])
 head(df[["EarnedPremium"]])
+```
+
+For multiple columns, we can pass a character vector to get columns by name, rather than by position.
+
+```{r}
+df[, "EarnedPremium"]
+df[, c("EarnedPremium", "State")]
 ```
 
 Note the interesting case when we specify one argument but leave the other blank. I'll wrap it in a `head` function to minimize the output.
@@ -124,7 +126,7 @@ Note the interesting case when we specify one argument but leave the other blank
 head(df[2])
 ```
 
-Again, if you bear in mind that a data frame is a list, this makes a bit more sense. Without the additional comma, R will assume that we're dealing with a list and will respond accordingly. In this case, that means returning the second element of the list. You can extend this by requesting multiple elements of the list.
+Again, if you bear in mind that a data frame is a list, this should makes sense. Without the additional comma, R will assume that we're dealing with a list and will respond accordingly. In this case, that means returning the second element of the list. You can extend this by requesting multiple elements of the list.
 
 ```{r}
 head(df[1:2])
@@ -134,33 +136,61 @@ It'll probably be rare that you want this sort of behavior. It's not so rare tha
 
 ### Altering and adding columns
 
+We can add columns by using the same operators as for access[^also_cbind].
+
+[^also_cbind]: We can also use `cbind` to add columns.
+
 ```{r }
 df$Losses <- df$EarnedPremium * runif(nrow(df), 0.4, 1.2)
 df$LossRatio = df$Losses / df$EarnedPremium
 ```
 
-### Eliminating columns
+The `transform` and `within` functions will also create a new column.
 
-```{r }
-df$LossRatio = NULL
-df = df[, 1:2]
+```{r}
+df <- transform(df, LogLoss = log(Losses))
+df <- within(df, {LogLoss = log(Losses)})
 ```
 
-### Subsetting - The easy way
+
+### Eliminating columns
+
+We can eliminate columns in one of two ways. If we only want to remove one column, we can assign the value NULL to it. 
+
+```{r eval=FALSE}
+df$LossRatio <- NULL
+```
+
+If we want to eliminate more than one column, we may construct a new data frame which only includes the columns we'd like to keep.
+
+```{r eval = FALSE}
+df <- df[, 1:2]
+df <- df[, c("State", "EarnedPremium")]
+```
+
+If we'd like to remove specific columns, Hadley Wickham showed a nice means to do this by using set differences.
+
+```{r}
+df <- df[, setdiff(colnames(df), c("RateChange", "Losses"))]
+```
+
+### Subsetting
+
+There are at least three ways to subset. The easiest way would be to use the `subset` function. 
 
 ```{r }
 dfTX = subset(df, State == "TX")
 dfBigPolicies = subset(df, EarnedPremium >= 50000)
 ```
 
-### Subsetting - The hard(ish) way
+A slightly harder way would be to use logical access
 
 ```{r }
 dfTX = df[df$State == "TX", ]
 dfBigPolicies = df[df$EarnedPremium >= 50000, ]
 ```
 
-### Subsetting - Yet another way
+Finally, I could assign the results of a logical expression to a variable and then use this to subset the data frame.
 
 ```{r }
 whichState = df$State == "TX"
@@ -173,6 +203,8 @@ dfBigPolicies = df[whichEP, ]
 I use each of these three methods routinely. They're all good.
 
 ### Ordering
+
+For vectors, we can use `sort` to get a sorted vector. For a data frame, we'll need to use `order`. Remember that `order` functions a lot like `which`. It will return indices which may then be used to return specific contents.
 
 ```{r }
 order(df$EarnedPremium)
@@ -190,7 +222,7 @@ colnames(df)
 
 ### `with` and `attach`
 
-If the name of a data frame is long, continually typing it to access column elements might start to seem tedious. There are any number of texts that will use the `attach` function to alleviate this. This will attach the data frame onto something called the "search path" (which I might have described in the section on packages). What's the search path? Well, all evidence to the contrary, R will look high and low every time you refer to something. As soon as it finds a match, it'll proceed with whatever calculation you've asked it to do. Attaching the data frame to the search path means that the column names of the data frame will be added to the list of places where R will search.
+If the name of a data frame is long, typing it to access column elements might start to seem tedious. The `attach` function will alleviate this, by attaching the data frame onto something called the "search path" (which I might have described in the section on packages). What's the search path? Well, all evidence to the contrary, R will look high and low every time you refer to something. As soon as it finds a match, it'll proceed with whatever calculation you've asked it to do. Attaching the data frame to the search path means that the column names of the data frame will be added to the list of places where R will search.
 
 ```{r}
 attach(dfA)
@@ -198,13 +230,15 @@ attach(dfA)
 attach(dfB)
 ```
 
-So why is this a bad idea? If you add a number of similar data frames or packages it can quickly get hard to keep up. The worst case scenario comes when you add two data frames that share column names and you then proceed to carry out analysis.
+There are many references that suggest using `attach`. I don't. I'll actually advise against it. Why is `attach` a bad idea? If you add a number of similar data frames or packages it can quickly get hard to keep up. The worst case scenario comes when you add two data frames that share column names and you then proceed to carry out analysis.
 
 ```{r}
 mean(EarnedPremium)
 ```
 
-Which EarnedPremium am I talking about? In all the confusion, I lost track myself. Well, do you feel lucky punk?
+Which EarnedPremium am I talking about? "Well to tell you the truth in all this excitement I kinda lost track myself." [^dirty_harry] `attach` won't necessarily harm you. But it is a loaded gun.
+
+[^dirty_harry]: Copyright some film company.
 
 ## Summarizing
 
@@ -290,9 +324,10 @@ View(df)
 
 ## Exercises
 
-* 
-* Load the data from "StateData.csv" into a data frame.
-* Which state has the most premium?
+* Create a data frame with 500 rows. Include a column for policy effective date, policy expiration date and claim count. For claim count, consider using the `rpois` function to simulate from a poisson distribution.
+* Save this data to a .CSV file and then reload that file.
+* Which policy had the most claims? Which policy year?
+* Add a column for 
 
 ### Answer
 
