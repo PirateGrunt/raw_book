@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-09-07">
+<meta name="date" content="2016-09-11">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -94,7 +94,6 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -106,9 +105,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">raw - Raw Actuarial Workshops</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="first-steps.html"><a href="first-steps.html"><i class="fa fa-check"></i>First Steps</a></li>
 <li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
@@ -166,13 +162,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.1.1" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-properties"><i class="fa fa-check"></i><b>5.1.1</b> Vector properties</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-construction"><i class="fa fa-check"></i><b>5.2</b> Vector construction</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="chap-vectors.html"><a href="chap-vectors.html#vector"><i class="fa fa-check"></i><b>5.2.1</b> <code>vector</code></a></li>
-<li class="chapter" data-level="5.2.2" data-path="chap-vectors.html"><a href="chap-vectors.html#seq"><i class="fa fa-check"></i><b>5.2.2</b> <code>seq</code></a></li>
-<li class="chapter" data-level="5.2.3" data-path="chap-vectors.html"><a href="chap-vectors.html#rep"><i class="fa fa-check"></i><b>5.2.3</b> <code>rep</code></a></li>
-<li class="chapter" data-level="5.2.4" data-path="chap-vectors.html"><a href="chap-vectors.html#c"><i class="fa fa-check"></i><b>5.2.4</b> <code>c</code></a></li>
-<li class="chapter" data-level="5.2.5" data-path="chap-vectors.html"><a href="chap-vectors.html#paste"><i class="fa fa-check"></i><b>5.2.5</b> <code>paste</code></a></li>
-<li class="chapter" data-level="5.2.6" data-path="chap-vectors.html"><a href="chap-vectors.html#sample"><i class="fa fa-check"></i><b>5.2.6</b> <code>sample</code></a></li>
-<li class="chapter" data-level="5.2.7" data-path="chap-vectors.html"><a href="chap-vectors.html#sort"><i class="fa fa-check"></i><b>5.2.7</b> <code>sort</code></a></li>
+<li class="chapter" data-level="5.2.1" data-path="chap-vectors.html"><a href="chap-vectors.html#seq"><i class="fa fa-check"></i><b>5.2.1</b> <code>seq</code></a></li>
+<li class="chapter" data-level="5.2.2" data-path="chap-vectors.html"><a href="chap-vectors.html#rep"><i class="fa fa-check"></i><b>5.2.2</b> <code>rep</code></a></li>
+<li class="chapter" data-level="5.2.3" data-path="chap-vectors.html"><a href="chap-vectors.html#c"><i class="fa fa-check"></i><b>5.2.3</b> <code>c</code></a></li>
+<li class="chapter" data-level="5.2.4" data-path="chap-vectors.html"><a href="chap-vectors.html#paste"><i class="fa fa-check"></i><b>5.2.4</b> <code>paste</code></a></li>
+<li class="chapter" data-level="5.2.5" data-path="chap-vectors.html"><a href="chap-vectors.html#sample"><i class="fa fa-check"></i><b>5.2.5</b> <code>sample</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="chap-vectors.html"><a href="chap-vectors.html#sort"><i class="fa fa-check"></i><b>5.2.6</b> <code>sort</code></a></li>
+<li class="chapter" data-level="5.2.7" data-path="chap-vectors.html"><a href="chap-vectors.html#vector"><i class="fa fa-check"></i><b>5.2.7</b> <code>vector</code></a></li>
 <li class="chapter" data-level="5.2.8" data-path="chap-vectors.html"><a href="chap-vectors.html#recycling"><i class="fa fa-check"></i><b>5.2.8</b> Recycling</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-access"><i class="fa fa-check"></i><b>5.3</b> Vector access</a><ul>
@@ -202,53 +198,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Lists</a><ul>
 <li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#lists-overview"><i class="fa fa-check"></i><b>6.1</b> Lists Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#list-construction"><i class="fa fa-check"></i><b>6.2</b> List construction</a></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#list-construction"><i class="fa fa-check"></i><b>6.2</b> List construction</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.2.1</b> Recursive storage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.2.2</b> List metadata</a></li>
+</ul></li>
 <li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#access-and-assignment"><i class="fa fa-check"></i><b>6.3</b> Access and assignment</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.3.1</b> Recursive storage</a></li>
-<li class="chapter" data-level="6.3.2" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.3.2</b> List metadata</a></li>
+<li class="chapter" data-level="6.3.1" data-path="lists.html"><a href="lists.html#vs."><i class="fa fa-check"></i><b>6.3.1</b> [ vs. [[</a></li>
+<li class="chapter" data-level="6.3.2" data-path="lists.html"><a href="lists.html#assignment-2"><i class="fa fa-check"></i><b>6.3.2</b> Assignment</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#summary-functions"><i class="fa fa-check"></i><b>6.4</b> Summary functions</a></li>
-<li class="chapter" data-level="6.5" data-path="lists.html"><a href="lists.html#flotsam"><i class="fa fa-check"></i><b>6.5</b> Flotsam</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="lists.html"><a href="lists.html#split"><i class="fa fa-check"></i><b>6.5.1</b> <code>split</code></a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.6</b> Exercises</a></li>
-<li class="chapter" data-level="6.7" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.7</b> Answers</a></li>
+<li class="chapter" data-level="6.5" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.5</b> Exercises</a></li>
+<li class="chapter" data-level="6.6" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.6</b> Answers</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>7</b> Data Frames</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-frames.html"><a href="data-frames.html#whats-a-data-frame"><i class="fa fa-check"></i><b>7.1</b> What’s a data frame?</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="data-frames.html"><a href="data-frames.html#creating-a-data-frame"><i class="fa fa-check"></i><b>7.1.1</b> Creating a data frame</a></li>
 <li class="chapter" data-level="7.1.2" data-path="data-frames.html"><a href="data-frames.html#basic-properties-of-a-data-frame"><i class="fa fa-check"></i><b>7.1.2</b> Basic properties of a data frame</a></li>
-<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#merging"><i class="fa fa-check"></i><b>7.1.3</b> Merging</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#combining-data-frames"><i class="fa fa-check"></i><b>7.1.3</b> Combining data frames</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-frames.html"><a href="data-frames.html#expand.grid"><i class="fa fa-check"></i><b>7.1.4</b> <code>expand.grid</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-frames.html"><a href="data-frames.html#access-and-assignment-1"><i class="fa fa-check"></i><b>7.2</b> Access and Assignment</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.2.1</b> Altering and adding columns</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.2.2</b> Eliminating columns</a></li>
-<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-easy-way"><i class="fa fa-check"></i><b>7.2.3</b> Subsetting - The easy way</a></li>
-<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-hardish-way"><i class="fa fa-check"></i><b>7.2.4</b> Subsetting - The hard(ish) way</a></li>
-<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#subsetting---yet-another-way"><i class="fa fa-check"></i><b>7.2.5</b> Subsetting - Yet another way</a></li>
-<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.2.6</b> Ordering</a></li>
-<li class="chapter" data-level="7.2.7" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.2.7</b> Altering column names</a></li>
-<li class="chapter" data-level="7.2.8" data-path="data-frames.html"><a href="data-frames.html#with-and-attach"><i class="fa fa-check"></i><b>7.2.8</b> <code>with</code> and <code>attach</code></a></li>
+<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#subsetting"><i class="fa fa-check"></i><b>7.2.1</b> Subsetting</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.2.2</b> Altering and adding columns</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.2.3</b> Eliminating columns</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.2.4</b> Altering column names</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.2.5</b> Ordering</a></li>
+<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#attach"><i class="fa fa-check"></i><b>7.2.6</b> <code>attach</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.3</b> Summarizing</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---1"><i class="fa fa-check"></i><b>7.3.1</b> Summarizing visually - 1</a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---2"><i class="fa fa-check"></i><b>7.3.2</b> Summarizing visually - 2</a></li>
-<li class="chapter" data-level="7.3.3" data-path="data-frames.html"><a href="data-frames.html#advanced-data-frame-tools"><i class="fa fa-check"></i><b>7.3.3</b> Advanced data frame tools</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="data-frames.html"><a href="data-frames.html#reading-and-writing-external-data"><i class="fa fa-check"></i><b>7.4</b> Reading and writing external data</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="data-frames.html"><a href="data-frames.html#reading-from-excel"><i class="fa fa-check"></i><b>7.4.1</b> Reading from Excel</a></li>
-<li class="chapter" data-level="7.4.2" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web"><i class="fa fa-check"></i><b>7.4.2</b> Reading from the web</a></li>
-<li class="chapter" data-level="7.4.3" data-path="data-frames.html"><a href="data-frames.html#reading-from-a-database"><i class="fa fa-check"></i><b>7.4.3</b> Reading from a database</a></li>
-<li class="chapter" data-level="7.4.4" data-path="data-frames.html"><a href="data-frames.html#read-some-data"><i class="fa fa-check"></i><b>7.4.4</b> Read some data</a></li>
-</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.3</b> Summarizing</a></li>
+<li class="chapter" data-level="7.4" data-path="data-frames.html"><a href="data-frames.html#reading-and-writing-external-data"><i class="fa fa-check"></i><b>7.4</b> Reading and writing external data</a></li>
 <li class="chapter" data-level="7.5" data-path="data-frames.html"><a href="data-frames.html#exercises-4"><i class="fa fa-check"></i><b>7.5</b> Exercises</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="data-frames.html"><a href="data-frames.html#answer"><i class="fa fa-check"></i><b>7.5.1</b> Answer</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/PirateGrunt/raw_book" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -277,58 +260,95 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div id="whats-a-data-frame" class="section level2">
 <h2><span class="header-section-number">7.1</span> What’s a data frame?</h2>
-<p>Underneath the hood, a data frame is actually a mashup of lists and vectors. Every data frame is a list, but it’s constrained so that each list element is a vector with the same length. We can see how this exploits some of the fundamental properties of lists and vectors. Because each vector must have the same data type, there’s no danger that I’ll get character data when I only want dates or integers. At the same time, the list’s flexibility means that we can store different data types in one single data construct.</p>
+<p>Underneath the hood, a data frame is actually a mashup of lists and vectors. Every data frame is a list, but it’s constrained so that each list element is a vector with the same length. We can see how this exploits some of the fundamental properties of lists and vectors. Because each vector must have the same data type, there’s no danger that I’ll get character data when I only want dates or integers or whatever. At the same time, the list’s flexibility means that we can store different data types in a single data construct.</p>
 <div id="creating-a-data-frame" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> Creating a data frame</h3>
-<p>Although there are many functions that will return a data frame, let’s start by looking at the <code>data.frame</code> function. We’ll first create some vectors and then join them together.</p>
+<p>Although there are many functions that will return a data frame, let’s construct one from scratch with the <code>data.frame</code> function. We’ll first create some vectors and then join them together.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1234</span>)
 State &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;TX&quot;</span>, <span class="st">&quot;NY&quot;</span>, <span class="st">&quot;CA&quot;</span>), <span class="dv">10</span>)
 EarnedPremium &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="kw">length</span>(State), <span class="dt">meanlog =</span> <span class="kw">log</span>(<span class="dv">50000</span>), <span class="dt">sdlog=</span><span class="dv">1</span>)
+Loss &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="kw">length</span>(State), <span class="dt">meanlog =</span> <span class="kw">log</span>(<span class="dv">50000</span> *<span class="st"> </span><span class="fl">0.6</span>), <span class="dt">sdlog=</span><span class="dv">1</span>)
 
-df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(State, EarnedPremium, <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</code></pre></div>
-<p>We didn’t have to create the vectors first. If we wanted, we could pass them in as the result of function calls within the call to <code>data.frame</code>.</p>
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(State, EarnedPremium, Loss, <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p>Note that I’ve set the “stringsAsFactors” argument to FALSE. If I hadn’t, the column “State” would be a factor, rather than a character. See <a href="#Factors">Data Types: factors</a> for some reasons why we might not want our data to be a factor.</p>
+<p>We didn’t have to create the vectors before constructing the data frame. If we like, we can pass them in as the result of function calls within the call to <code>data.frame</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1234</span>)
 df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">State =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;TX&quot;</span>, <span class="st">&quot;NY&quot;</span>, <span class="st">&quot;CA&quot;</span>), <span class="dv">10</span>)
                  , <span class="dt">EarnedPremium =</span> <span class="kw">round</span>(<span class="kw">rlnorm</span>(<span class="kw">length</span>(State), <span class="dt">meanlog =</span> <span class="kw">log</span>(<span class="dv">50000</span>), <span class="dt">sdlog=</span><span class="dv">1</span>), <span class="dv">3</span>)
                  , <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
-<p>Note that I’ve set the “stringsAsFactors” argument to FALSE. If I hadn’t, the column “State” would be a factor, rather than a character. See <a href="#Factors">Data Types: factors</a> for some reasons why we might not want our data to be a factor.</p>
+<p>When constructing a data frame, there will always be some implicit metadata. For instance, every column must be named; if you don’t provide one, names will be provided for you. R will use variable names by default. If there aren’t any to be found, you’ll get the ugliness you see in the second example below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(State, EarnedPremium)
+<span class="kw">names</span>(df)
+<span class="co">#&gt; [1] &quot;State&quot;         &quot;EarnedPremium&quot;</span>
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;TX&quot;</span>, <span class="st">&quot;NY&quot;</span>, <span class="st">&quot;CA&quot;</span>), <span class="dv">10</span>)
+                 , <span class="kw">round</span>(<span class="kw">rlnorm</span>(<span class="kw">length</span>(State), <span class="dt">meanlog =</span> <span class="kw">log</span>(<span class="dv">50000</span>), <span class="dt">sdlog=</span><span class="dv">1</span>), <span class="dv">3</span>))
+<span class="kw">names</span>(df)
+<span class="co">#&gt; [1] &quot;rep.c..TX....NY....CA....10.&quot;                                  </span>
+<span class="co">#&gt; [2] &quot;round.rlnorm.length.State...meanlog...log.50000...sdlog...1...&quot;</span></code></pre></div>
+<p>Data frames will also have dimensional attributes set automatically.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(df)
+<span class="co">#&gt; [1] 30  2</span></code></pre></div>
+<p>This example is small, but it doesn’t have to be. We could have a lot more rows and lot more columns. I lose focus beyond about 50 columns (i.e. once we’ve moved past column “BA” in a spreadsheet), but I’ve worked with data frames having more than one million rows on a number of occasions. Is that big data? I couldn’t say, but I’m not all that fussed about whether my data is “big” or not. The basic concept of a data frame scales incredibly well. I’ll use the same code to construct a model whether my data has 10 observations or 10 million.</p>
 </div>
 <div id="basic-properties-of-a-data-frame" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Basic properties of a data frame</h3>
 <p>Once created, it’s straightforward to get some basic information about the data we have.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(df)
-<span class="co">#&gt;     State           EarnedPremium   </span>
-<span class="co">#&gt;  Length:30          Min.   :  4789  </span>
-<span class="co">#&gt;  Class :character   1st Qu.: 20811  </span>
-<span class="co">#&gt;  Mode  :character   Median : 30302  </span>
-<span class="co">#&gt;                     Mean   : 61457  </span>
-<span class="co">#&gt;                     3rd Qu.: 63784  </span>
-<span class="co">#&gt;                     Max.   :559956</span>
+<span class="co">#&gt;  rep.c..TX....NY....CA....10.</span>
+<span class="co">#&gt;  CA:10                       </span>
+<span class="co">#&gt;  NY:10                       </span>
+<span class="co">#&gt;  TX:10                       </span>
+<span class="co">#&gt;                              </span>
+<span class="co">#&gt;                              </span>
+<span class="co">#&gt;                              </span>
+<span class="co">#&gt;  round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt;  Min.   :  5652                                                </span>
+<span class="co">#&gt;  1st Qu.: 16503                                                </span>
+<span class="co">#&gt;  Median : 23835                                                </span>
+<span class="co">#&gt;  Mean   : 50519                                                </span>
+<span class="co">#&gt;  3rd Qu.: 35784                                                </span>
+<span class="co">#&gt;  Max.   :259781</span>
 <span class="kw">str</span>(df)
 <span class="co">#&gt; &#39;data.frame&#39;:    30 obs. of  2 variables:</span>
-<span class="co">#&gt;  $ State        : chr  &quot;TX&quot; &quot;NY&quot; &quot;CA&quot; &quot;TX&quot; ...</span>
-<span class="co">#&gt;  $ EarnedPremium: num  14954 65987 147889 4789 76796 ...</span>
+<span class="co">#&gt;  $ rep.c..TX....NY....CA....10.                                  : Factor w/ 3 levels &quot;CA&quot;,&quot;NY&quot;,&quot;TX&quot;: 3 2 1 3 2 1 3 2 1 3 ...</span>
+<span class="co">#&gt;  $ round.rlnorm.length.State...meanlog...log.50000...sdlog...1...: num  150554 31076 24596 30288 9805 ...</span>
 <span class="kw">head</span>(df)
-<span class="co">#&gt;   State EarnedPremium</span>
-<span class="co">#&gt; 1    TX     14953.677</span>
-<span class="co">#&gt; 2    NY     65986.637</span>
-<span class="co">#&gt; 3    CA    147889.324</span>
-<span class="co">#&gt; 4    TX      4789.018</span>
-<span class="co">#&gt; 5    NY     76795.627</span>
-<span class="co">#&gt; 6    CA     82936.802</span>
+<span class="co">#&gt;   rep.c..TX....NY....CA....10.</span>
+<span class="co">#&gt; 1                           TX</span>
+<span class="co">#&gt; 2                           NY</span>
+<span class="co">#&gt; 3                           CA</span>
+<span class="co">#&gt; 4                           TX</span>
+<span class="co">#&gt; 5                           NY</span>
+<span class="co">#&gt; 6                           CA</span>
+<span class="co">#&gt;   round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt; 1                                                     150553.808</span>
+<span class="co">#&gt; 2                                                      31075.817</span>
+<span class="co">#&gt; 3                                                      24595.979</span>
+<span class="co">#&gt; 4                                                      30288.404</span>
+<span class="co">#&gt; 5                                                       9805.364</span>
+<span class="co">#&gt; 6                                                      15555.336</span>
 <span class="kw">tail</span>(df)
-<span class="co">#&gt;    State EarnedPremium</span>
-<span class="co">#&gt; 25    TX      24985.68</span>
-<span class="co">#&gt; 26    NY      11749.59</span>
-<span class="co">#&gt; 27    CA      88834.82</span>
-<span class="co">#&gt; 28    TX      17963.96</span>
-<span class="co">#&gt; 29    NY      49248.79</span>
-<span class="co">#&gt; 30    CA      19610.68</span></code></pre></div>
-<p>We can also query metadata about our data frame. Note that, for a data frame, <code>names</code> and <code>colnames</code> will return the same result. <code>dim</code> will give the number of rows and columns, or you can use <code>nrow</code> and <code>ncol</code> directly. In particular, note what result is returned by the <code>length</code> function. If you think about the fact that a data frame is actually a list, you may be able to guess why <code>length</code> returns what the value it does.</p>
+<span class="co">#&gt;    rep.c..TX....NY....CA....10.</span>
+<span class="co">#&gt; 25                           TX</span>
+<span class="co">#&gt; 26                           NY</span>
+<span class="co">#&gt; 27                           CA</span>
+<span class="co">#&gt; 28                           TX</span>
+<span class="co">#&gt; 29                           NY</span>
+<span class="co">#&gt; 30                           CA</span>
+<span class="co">#&gt;    round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt; 25                                                       42508.90</span>
+<span class="co">#&gt; 26                                                       87801.52</span>
+<span class="co">#&gt; 27                                                      259781.39</span>
+<span class="co">#&gt; 28                                                       23073.15</span>
+<span class="co">#&gt; 29                                                      249119.48</span>
+<span class="co">#&gt; 30                                                       15708.70</span></code></pre></div>
+<p>We can also query metadata about our data frame. Note that, for a data frame, <code>names</code> and <code>colnames</code> will return the same result. <code>dim</code> will give the number of rows and columns, or you can use <code>nrow</code> and <code>ncol</code> directly. In particular, note what result is returned by the <code>length</code> function. If you think about the fact that a data frame is actually a list, you may be able to guess why <code>length</code> returns the value it does.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(df)
-<span class="co">#&gt; [1] &quot;State&quot;         &quot;EarnedPremium&quot;</span>
+<span class="co">#&gt; [1] &quot;rep.c..TX....NY....CA....10.&quot;                                  </span>
+<span class="co">#&gt; [2] &quot;round.rlnorm.length.State...meanlog...log.50000...sdlog...1...&quot;</span>
 <span class="kw">colnames</span>(df)
-<span class="co">#&gt; [1] &quot;State&quot;         &quot;EarnedPremium&quot;</span>
+<span class="co">#&gt; [1] &quot;rep.c..TX....NY....CA....10.&quot;                                  </span>
+<span class="co">#&gt; [2] &quot;round.rlnorm.length.State...meanlog...log.50000...sdlog...1...&quot;</span>
 <span class="kw">dim</span>(df)
 <span class="co">#&gt; [1] 30  2</span>
 <span class="kw">length</span>(df)
@@ -338,8 +358,8 @@ df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class=
 <span class="kw">ncol</span>(df)
 <span class="co">#&gt; [1] 2</span></code></pre></div>
 </div>
-<div id="merging" class="section level3">
-<h3><span class="header-section-number">7.1.3</span> Merging</h3>
+<div id="combining-data-frames" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Combining data frames</h3>
 <p>If you’ve got more than one data frame, it’s possible to combine them in several different ways: <code>rbind</code>, <code>cbind</code> and <code>merge</code>.</p>
 <p><code>rbind</code> will append rows to the data frame. New rows must have the same number of columns and data types.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfA =<span class="st"> </span>df[<span class="dv">1</span>:<span class="dv">10</span>,]
@@ -348,206 +368,278 @@ dfB =<span class="st"> </span>df[<span class="dv">11</span>:<span class="dv">20<
 <p><code>cbind</code> must have the same number of rows as the data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfC =<span class="st"> </span>dfA[, <span class="dv">1</span>:<span class="dv">2</span>]
 <span class="kw">cbind</span>(dfA, dfC)
-<span class="co">#&gt;    State EarnedPremium State EarnedPremium</span>
-<span class="co">#&gt; 1     TX     14953.677    TX     14953.677</span>
-<span class="co">#&gt; 2     NY     65986.637    NY     65986.637</span>
-<span class="co">#&gt; 3     CA    147889.324    CA    147889.324</span>
-<span class="co">#&gt; 4     TX      4789.018    TX      4789.018</span>
-<span class="co">#&gt; 5     NY     76795.627    NY     76795.627</span>
-<span class="co">#&gt; 6     CA     82936.802    CA     82936.802</span>
-<span class="co">#&gt; 7     TX     28142.561    TX     28142.561</span>
-<span class="co">#&gt; 8     NY     28944.817    NY     28944.817</span>
-<span class="co">#&gt; 9     CA     28433.585    CA     28433.585</span>
-<span class="co">#&gt; 10    TX     20532.011    TX     20532.011</span></code></pre></div>
-<p><code>merge</code> is similar to a <strong>JOIN</strong> operation in a relational database. If you’re used to <strong>VLOOKUP</strong> in Excel<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>, you’ll love <code>merge</code>. It’s possible to use multiple columns (i.e. state and effective date) when specifying how to join. If no columns are specified, <code>merge</code> will use whatever column names the two data frames have in common. Below, we merge a set of rate changes to our premium data.</p>
+<span class="co">#&gt;    rep.c..TX....NY....CA....10.</span>
+<span class="co">#&gt; 1                            TX</span>
+<span class="co">#&gt; 2                            NY</span>
+<span class="co">#&gt; 3                            CA</span>
+<span class="co">#&gt; 4                            TX</span>
+<span class="co">#&gt; 5                            NY</span>
+<span class="co">#&gt; 6                            CA</span>
+<span class="co">#&gt; 7                            TX</span>
+<span class="co">#&gt; 8                            NY</span>
+<span class="co">#&gt; 9                            CA</span>
+<span class="co">#&gt; 10                           TX</span>
+<span class="co">#&gt;    round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt; 1                                                      150553.808</span>
+<span class="co">#&gt; 2                                                       31075.817</span>
+<span class="co">#&gt; 3                                                       24595.979</span>
+<span class="co">#&gt; 4                                                       30288.404</span>
+<span class="co">#&gt; 5                                                        9805.364</span>
+<span class="co">#&gt; 6                                                       15555.336</span>
+<span class="co">#&gt; 7                                                        5651.852</span>
+<span class="co">#&gt; 8                                                       13079.287</span>
+<span class="co">#&gt; 9                                                       37252.876</span>
+<span class="co">#&gt; 10                                                      31378.579</span>
+<span class="co">#&gt;    rep.c..TX....NY....CA....10.</span>
+<span class="co">#&gt; 1                            TX</span>
+<span class="co">#&gt; 2                            NY</span>
+<span class="co">#&gt; 3                            CA</span>
+<span class="co">#&gt; 4                            TX</span>
+<span class="co">#&gt; 5                            NY</span>
+<span class="co">#&gt; 6                            CA</span>
+<span class="co">#&gt; 7                            TX</span>
+<span class="co">#&gt; 8                            NY</span>
+<span class="co">#&gt; 9                            CA</span>
+<span class="co">#&gt; 10                           TX</span>
+<span class="co">#&gt;    round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt; 1                                                      150553.808</span>
+<span class="co">#&gt; 2                                                       31075.817</span>
+<span class="co">#&gt; 3                                                       24595.979</span>
+<span class="co">#&gt; 4                                                       30288.404</span>
+<span class="co">#&gt; 5                                                        9805.364</span>
+<span class="co">#&gt; 6                                                       15555.336</span>
+<span class="co">#&gt; 7                                                        5651.852</span>
+<span class="co">#&gt; 8                                                       13079.287</span>
+<span class="co">#&gt; 9                                                       37252.876</span>
+<span class="co">#&gt; 10                                                      31378.579</span></code></pre></div>
+<p><code>merge</code> is similar to a <strong>JOIN</strong> operation in a relational database. If you’re used to <strong>VLOOKUP</strong> in Excel<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, you’ll love <code>merge</code>. It’s possible to use multiple columns (e.g. state and effective date) when specifying how to join. If no columns are specified, <code>merge</code> will use whatever column names the two data frames have in common. Below, we merge a set of rate changes to our premium data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfRateChange =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">State =</span> <span class="kw">c</span>(<span class="st">&quot;TX&quot;</span>, <span class="st">&quot;CA&quot;</span>, <span class="st">&quot;NY&quot;</span>), <span class="dt">RateChange =</span> <span class="kw">c</span>(.<span class="dv">05</span>, -.<span class="dv">1</span>, .<span class="dv">2</span>))
 df =<span class="st"> </span><span class="kw">merge</span>(df, dfRateChange)</code></pre></div>
-<p>Finally, consider <code>expand.grid</code>. This will create a data frame as the cartesian product (i.e. every combination of elements) of one or more vectors. Among the use cases are to check for missing data elements in another data frame.</p>
+</div>
+<div id="expand.grid" class="section level3">
+<h3><span class="header-section-number">7.1.4</span> <code>expand.grid</code></h3>
+<p>Consider <code>expand.grid</code>. This will create a data frame as the cartesian product (i.e. every combination of elements) of one or more vectors. Among the use cases are to check for missing data elements in another data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfStateClass &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">State =</span> <span class="kw">c</span>(<span class="st">&quot;TX&quot;</span>, <span class="st">&quot;CA&quot;</span>, <span class="st">&quot;NY&quot;</span>)
-                  , <span class="dt">Class =</span> <span class="kw">c</span>(<span class="dv">8810</span>, <span class="dv">1066</span>, <span class="dv">1492</span>))</code></pre></div>
+                  , <span class="dt">Class =</span> <span class="kw">c</span>(<span class="dv">1776</span>, <span class="dv">1066</span>, <span class="dv">1492</span>))</code></pre></div>
 </div>
 </div>
 <div id="access-and-assignment-1" class="section level2">
 <h2><span class="header-section-number">7.2</span> Access and Assignment</h2>
-<p>Access and assignment will feel like a weird combination of matrices and lists, though with an emphasis on the mechanics of a 2D matrix. We’ll often use the <code>[]</code> operator. The first arugment will refer to the row and the second will refer to the column. If either argument is left blank, it will refer to every element.</p>
+<p>Access and assignment will feel like a weird combination of matrices and lists, though with an emphasis on the mechanics of a 2D matrix. We’ll often use the <code>[ ]</code> operator to specify which row and column we’d like. The first arugment will refer to the row and the second will refer to the column. If either argument is left blank, it will refer to every element.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df[<span class="dv">1</span>, <span class="dv">2</span>]
 df[<span class="dv">2</span>, ]
 df[, <span class="dv">2</span>]
 df[<span class="dv">2</span>, -<span class="dv">1</span>]</code></pre></div>
-<p>If we want columns of the data frame, we can approach this one of two ways. The <code>$</code> operator works the same as a list (because a data frame <em>is</em> a list) to access named columns. We can also pass character strings in as arguments to get columns by name, rather than by position.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$EarnedPremium
-df[, <span class="st">&quot;EarnedPremium&quot;</span>]
-df[, <span class="kw">c</span>(<span class="st">&quot;EarnedPremium&quot;</span>, <span class="st">&quot;State&quot;</span>)]</code></pre></div>
-<p>If we’re only interested in one column, we can use the <code>[[]]</code> operator to return it.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(df[[<span class="dv">1</span>]])
-<span class="co">#&gt; [1] &quot;CA&quot; &quot;CA&quot; &quot;CA&quot; &quot;CA&quot; &quot;CA&quot; &quot;CA&quot;</span>
-<span class="kw">head</span>(df[[<span class="st">&quot;EarnedPremium&quot;</span>]])
-<span class="co">#&gt; [1] 147889.32  82936.80 130518.77  18423.68  28433.58  20102.17</span></code></pre></div>
 <p>Note the interesting case when we specify one argument but leave the other blank. I’ll wrap it in a <code>head</code> function to minimize the output.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(df[<span class="dv">2</span>])
-<span class="co">#&gt;   EarnedPremium</span>
-<span class="co">#&gt; 1     147889.32</span>
-<span class="co">#&gt; 2      82936.80</span>
-<span class="co">#&gt; 3     130518.77</span>
-<span class="co">#&gt; 4      18423.68</span>
-<span class="co">#&gt; 5      28433.58</span>
-<span class="co">#&gt; 6      20102.17</span></code></pre></div>
-<p>Again, if you bear in mind that a data frame is a list, this makes a bit more sense. Without the additional comma, R will assume that we’re dealing with a list and will respond accordingly. In this case, that means returning the second element of the list. You can extend this by requesting multiple elements of the list.</p>
+<span class="co">#&gt;   round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt; 1                                                     150553.808</span>
+<span class="co">#&gt; 2                                                      31075.817</span>
+<span class="co">#&gt; 3                                                      24595.979</span>
+<span class="co">#&gt; 4                                                      30288.404</span>
+<span class="co">#&gt; 5                                                       9805.364</span>
+<span class="co">#&gt; 6                                                      15555.336</span></code></pre></div>
+<p>Once again, if you bear in mind that a data frame is a list, this should makes sense. Without the additional comma, R will assume that we’re dealing with a list and will respond accordingly. In this case, that means returning the second element of the list. You can extend this by requesting multiple elements of the list.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(df[<span class="dv">1</span>:<span class="dv">2</span>])
-<span class="co">#&gt;   State EarnedPremium</span>
-<span class="co">#&gt; 1    CA     147889.32</span>
-<span class="co">#&gt; 2    CA      82936.80</span>
-<span class="co">#&gt; 3    CA     130518.77</span>
-<span class="co">#&gt; 4    CA      18423.68</span>
-<span class="co">#&gt; 5    CA      28433.58</span>
-<span class="co">#&gt; 6    CA      20102.17</span></code></pre></div>
-<p>It’ll probably be rare that you want this sort of behavior. It’s not so rare that you’ll want to return a single vector from a data frame, but in these cases, I’d recommend either using the <code>$</code> or the <code>[[]]</code> operator.</p>
-<div id="altering-and-adding-columns" class="section level3">
-<h3><span class="header-section-number">7.2.1</span> Altering and adding columns</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$Losses &lt;-<span class="st"> </span>df$EarnedPremium *<span class="st"> </span><span class="kw">runif</span>(<span class="kw">nrow</span>(df), <span class="fl">0.4</span>, <span class="fl">1.2</span>)
-df$LossRatio =<span class="st"> </span>df$Losses /<span class="st"> </span>df$EarnedPremium</code></pre></div>
-</div>
-<div id="eliminating-columns" class="section level3">
-<h3><span class="header-section-number">7.2.2</span> Eliminating columns</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$LossRatio =<span class="st"> </span><span class="ot">NULL</span>
-df =<span class="st"> </span>df[, <span class="dv">1</span>:<span class="dv">2</span>]</code></pre></div>
-</div>
-<div id="subsetting---the-easy-way" class="section level3">
-<h3><span class="header-section-number">7.2.3</span> Subsetting - The easy way</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfTX =<span class="st"> </span><span class="kw">subset</span>(df, State ==<span class="st"> &quot;TX&quot;</span>)
-dfBigPolicies =<span class="st"> </span><span class="kw">subset</span>(df, EarnedPremium &gt;=<span class="st"> </span><span class="dv">50000</span>)</code></pre></div>
-</div>
-<div id="subsetting---the-hardish-way" class="section level3">
-<h3><span class="header-section-number">7.2.4</span> Subsetting - The hard(ish) way</h3>
+<span class="co">#&gt;   rep.c..TX....NY....CA....10.</span>
+<span class="co">#&gt; 1                           TX</span>
+<span class="co">#&gt; 2                           NY</span>
+<span class="co">#&gt; 3                           CA</span>
+<span class="co">#&gt; 4                           TX</span>
+<span class="co">#&gt; 5                           NY</span>
+<span class="co">#&gt; 6                           CA</span>
+<span class="co">#&gt;   round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span>
+<span class="co">#&gt; 1                                                     150553.808</span>
+<span class="co">#&gt; 2                                                      31075.817</span>
+<span class="co">#&gt; 3                                                      24595.979</span>
+<span class="co">#&gt; 4                                                      30288.404</span>
+<span class="co">#&gt; 5                                                       9805.364</span>
+<span class="co">#&gt; 6                                                      15555.336</span></code></pre></div>
+<p>It’ll probably be rare that you want this sort of behavior. There are many times that you’ll want to return a single vector from a data frame, but in these cases, I’d recommend either using the <code>$</code> or the <code>[[ ]]</code> operator. It’s common to use <code>$</code> to return a single column from a data frame. This will force you to use the name of the column and so provides a more expressive way to work with your data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$EarnedPremium
+<span class="kw">head</span>(df[[<span class="dv">1</span>]])
+<span class="kw">head</span>(df[[<span class="st">&quot;EarnedPremium&quot;</span>]])</code></pre></div>
+<p>For multiple columns, we can pass a character vector to get columns by name, rather than by position.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(df[, <span class="st">&quot;EarnedPremium&quot;</span>])
+<span class="co">#&gt; [1]  14953.677  65986.637 147889.324   4789.018  76795.627  82936.802</span>
+<span class="kw">head</span>(df[, <span class="kw">c</span>(<span class="st">&quot;EarnedPremium&quot;</span>, <span class="st">&quot;State&quot;</span>)])
+<span class="co">#&gt;   EarnedPremium State</span>
+<span class="co">#&gt; 1     14953.677    TX</span>
+<span class="co">#&gt; 2     65986.637    NY</span>
+<span class="co">#&gt; 3    147889.324    CA</span>
+<span class="co">#&gt; 4      4789.018    TX</span>
+<span class="co">#&gt; 5     76795.627    NY</span>
+<span class="co">#&gt; 6     82936.802    CA</span></code></pre></div>
+<div id="subsetting" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Subsetting</h3>
+<p>Remember that we can use the same logical and ordinal access functions which apply to vectors to access a data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfTX =<span class="st"> </span>df[df$State ==<span class="st"> &quot;TX&quot;</span>, ]
-dfBigPolicies =<span class="st"> </span>df[df$EarnedPremium &gt;=<span class="st"> </span><span class="dv">50000</span>, ]</code></pre></div>
-</div>
-<div id="subsetting---yet-another-way" class="section level3">
-<h3><span class="header-section-number">7.2.5</span> Subsetting - Yet another way</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">whichState =<span class="st"> </span>df$State ==<span class="st"> &quot;TX&quot;</span>
+dfBigPolicies =<span class="st"> </span>df[df$EarnedPremium &gt;=<span class="st"> </span><span class="dv">50000</span>, ]
+
+whichState =<span class="st"> </span>(df$State ==<span class="st"> &quot;TX&quot;</span>)  
 dfTX =<span class="st"> </span>df[whichState, ]
 
-whichEP =<span class="st"> </span>df$EarnedPremium &gt;=<span class="st"> </span><span class="dv">50000</span>
-dfBigPolicies =<span class="st"> </span>df[whichEP, ]</code></pre></div>
-<p>I use each of these three methods routinely. They’re all good.</p>
+df10 &lt;-<span class="st"> </span>df[<span class="dv">1</span>:<span class="dv">10</span>, ]</code></pre></div>
+<p>If I’m only looking to filter rows, an easier way would be to use the <code>subset</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfTX =<span class="st"> </span><span class="kw">subset</span>(df, State ==<span class="st"> &quot;TX&quot;</span>)
+dfBigPolicies =<span class="st"> </span><span class="kw">subset</span>(df, EarnedPremium &gt;=<span class="st"> </span><span class="dv">50000</span>)</code></pre></div>
+<p>Bringing that all together, we can combine row and colum access in crazy ways. Here, we’ll get the premium and state for the rows which have losses greater than some value. Let’s say we want everything above the 80th percentile, but rounded to the nearest thousand.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">minLoss &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">quantile</span>(df$Loss, <span class="fl">0.8</span>), -<span class="dv">3</span>)
+myDF &lt;-<span class="st"> </span>df[df$Loss &gt;=<span class="st"> </span>minLoss, <span class="kw">c</span>(<span class="st">&quot;EarnedPremium&quot;</span>, <span class="st">&quot;State&quot;</span>)]</code></pre></div>
 </div>
-<div id="ordering" class="section level3">
-<h3><span class="header-section-number">7.2.6</span> Ordering</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">order</span>(df$EarnedPremium)
-<span class="co">#&gt;  [1] 24 18 21 30  4 10  6 22 27 25 29 23  5 16 17 26 12 15 28 20 14  9 11</span>
-<span class="co">#&gt; [24] 13  8  2  7  3  1 19</span>
-df =<span class="st"> </span>df[<span class="kw">order</span>(df$EarnedPremium), ]</code></pre></div>
+<div id="altering-and-adding-columns" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Altering and adding columns</h3>
+<p>We can add columns by using the same operators as for access<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>, though it’s common practice to use <code>$</code> and the name of our new column.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$LossRatio =<span class="st"> </span>df$Loss /<span class="st"> </span>df$EarnedPremium</code></pre></div>
+<p>The <code>transform</code> will return a new data frame with transformed columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">transform</span>(df, <span class="dt">LogLoss =</span> <span class="kw">log</span>(Loss), <span class="dt">LogPremium =</span> <span class="kw">log</span>(EarnedPremium))</code></pre></div>
+<p>I find <code>with</code> to be a bit easier than <code>transform</code>, however it can’t (easily) be used to create more than one column at a time. <code>with</code> will refer to the columns of a data frame in the statement where it’s called. We typically use this to return a single vector which we then assign as a new column to a data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$LogLoss =<span class="st"> </span><span class="kw">with</span>(df, <span class="kw">log</span>(Loss))</code></pre></div>
+</div>
+<div id="eliminating-columns" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> Eliminating columns</h3>
+<p>We can eliminate columns in one of two ways. If we only want to remove one column, we can assign the value NULL to it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$LossRatio &lt;-<span class="st"> </span><span class="ot">NULL</span></code></pre></div>
+<p>If we want to eliminate more than one column, we may construct a new data frame which only includes the columns we’d like to keep.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span>df[, <span class="dv">1</span>:<span class="dv">2</span>]
+df &lt;-<span class="st"> </span>df[, <span class="kw">c</span>(<span class="st">&quot;State&quot;</span>, <span class="st">&quot;EarnedPremium&quot;</span>)]</code></pre></div>
+<p>If we’d like to remove specific columns, Hadley Wickham <span class="citation">(Wickham, n.d.)</span> showed a nice means to do this by using set differences.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span>df[, <span class="kw">setdiff</span>(<span class="kw">colnames</span>(df), <span class="kw">c</span>(<span class="st">&quot;RateChange&quot;</span>, <span class="st">&quot;Losses&quot;</span>))]</code></pre></div>
 </div>
 <div id="altering-column-names" class="section level3">
-<h3><span class="header-section-number">7.2.7</span> Altering column names</h3>
+<h3><span class="header-section-number">7.2.4</span> Altering column names</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df$LossRation =<span class="st"> </span><span class="kw">with</span>(df, Losses /<span class="st"> </span>EarnedPremium)
-<span class="kw">names</span>(df)
 <span class="kw">colnames</span>(df)[<span class="dv">4</span>] =<span class="st"> &quot;Loss Ratio&quot;</span>
 <span class="kw">colnames</span>(df)</code></pre></div>
+<!-- 
+### Altering, adding and removing rows
+
+Removing rows is effectively subsetting. Alteration of particular elements of a row is 
+
+
+-->
 </div>
-<div id="with-and-attach" class="section level3">
-<h3><span class="header-section-number">7.2.8</span> <code>with</code> and <code>attach</code></h3>
-<p>If the name of a data frame is long, continually typing it to access column elements might start to seem tedious. There are any number of texts that will use the <code>attach</code> function to alleviate this. This will attach the data frame onto something called the “search path” (which I might have described in the section on packages). What’s the search path? Well, all evidence to the contrary, R will look high and low every time you refer to something. As soon as it finds a match, it’ll proceed with whatever calculation you’ve asked it to do. Attaching the data frame to the search path means that the column names of the data frame will be added to the list of places where R will search.</p>
+<div id="ordering" class="section level3">
+<h3><span class="header-section-number">7.2.5</span> Ordering</h3>
+<p>For vectors, we can use <code>sort</code> to get a sorted vector. For a data frame, we’ll need to use <code>order</code>. Remember that <code>order</code> functions a lot like <code>which</code>. It will return indices which may then be used to return specific contents.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">order</span>(df$EarnedPremium)
+<span class="co">#&gt;  [1]  4 26  1 28 12 30 18 10 19 13 25  7  9  8 17 22 11 23 16 29 14 21  2</span>
+<span class="co">#&gt; [24]  5 24  6 27 15  3 20</span>
+df =<span class="st"> </span>df[<span class="kw">order</span>(df$EarnedPremium), ]</code></pre></div>
+</div>
+<div id="attach" class="section level3">
+<h3><span class="header-section-number">7.2.6</span> <code>attach</code></h3>
+<p>If the name of a data frame is long, typing it to access column elements might start to seem tedious. The <code>attach</code> function will alleviate this, by attaching the data frame onto something called the “search path” (which I might have described in the section on packages). What’s the search path? Well, all evidence to the contrary, R will look high and low every time you refer to something. As soon as it finds a match, it’ll proceed with whatever calculation you’ve asked it to do. Attaching the data frame to the search path means that the column names of the data frame will be added to the list of places where R will search.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(dfA)
-<span class="co">#&gt; The following objects are masked _by_ .GlobalEnv:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     EarnedPremium, State</span>
 <span class="co"># do some stuff</span>
 <span class="kw">attach</span>(dfB)
-<span class="co">#&gt; The following objects are masked _by_ .GlobalEnv:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     EarnedPremium, State</span>
 <span class="co">#&gt; The following objects are masked from dfA:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;     EarnedPremium, State</span></code></pre></div>
-<p>So why is this a bad idea? If you add a number of similar data frames or packages it can quickly get hard to keep up. The worst case scenario comes when you add two data frames that share column names and you then proceed to carry out analysis.</p>
+<span class="co">#&gt;     rep.c..TX....NY....CA....10.,</span>
+<span class="co">#&gt;     round.rlnorm.length.State...meanlog...log.50000...sdlog...1...</span></code></pre></div>
+<p>There are many references that suggest using <code>attach</code>. I don’t. I’ll actually advise against it. Why is <code>attach</code> a bad idea? If you add a number of similar data frames or packages it can quickly get hard to keep up. The worst case scenario comes when you add two data frames that share column names and you then proceed to carry out analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(EarnedPremium)
 <span class="co">#&gt; [1] 61457.34</span></code></pre></div>
-<p>Which EarnedPremium am I talking about? In all the confusion, I lost track myself. Well, do you feel lucky punk?</p>
+<p>Which EarnedPremium am I talking about? “Well to tell you the truth in all this excitement I kinda lost track myself.”<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a> <code>attach</code> won’t necessarily harm you. But it is a loaded gun. If you get tired of typing the name of a data frame, consider using <code>with</code>.</p>
 </div>
 </div>
 <div id="summarizing" class="section level2">
 <h2><span class="header-section-number">7.3</span> Summarizing</h2>
+<p>We can use the standard suite of aggregation functions to summarize a single column of a data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(df$EarnedPremium)
 <span class="co">#&gt; [1] 1843720</span>
-<span class="kw">sum</span>(df$EarnedPremium[df$State ==<span class="st"> &quot;TX&quot;</span>])
-<span class="co">#&gt; [1] 231409.1</span>
-
-<span class="kw">aggregate</span>(df[,-<span class="dv">1</span>], <span class="kw">list</span>(df$State), sum)
-<span class="co">#&gt;   Group.1        x</span>
-<span class="co">#&gt; 1      CA 673095.7</span>
-<span class="co">#&gt; 2      NY 939215.3</span>
-<span class="co">#&gt; 3      TX 231409.1</span></code></pre></div>
-<div id="summarizing-visually---1" class="section level3">
-<h3><span class="header-section-number">7.3.1</span> Summarizing visually - 1</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dfByState =<span class="st"> </span><span class="kw">aggregate</span>(df$EarnedPremium, <span class="kw">list</span>(df$State), sum)
-<span class="kw">colnames</span>(dfByState) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;State&quot;</span>, <span class="st">&quot;EarnedPremium&quot;</span>)
-<span class="kw">barplot</span>(dfByState$EarnedPremium, <span class="dt">names.arg=</span>dfByState$State, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-106-1.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="summarizing-visually---2" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> Summarizing visually - 2</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotchart</span>(dfByState$EarnedPremium, dfByState$State, <span class="dt">pch=</span><span class="dv">19</span>)</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-107-1.png" width="672" style="display: block; margin: auto;" /></p>
-</div>
-<div id="advanced-data-frame-tools" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> Advanced data frame tools</h3>
-<ul>
-<li>dplyr</li>
-<li>tidyr</li>
-<li>reshape2</li>
-<li>data.table</li>
-</ul>
-<p>Roughly 90% of your work in R will involve manipulation of data frames. There are truckloads of packages designed to make manipulation of data frames easier. Take your time getting to learn these tools. They’re all powerful, but they’re all a little different. I’d suggest learning the functions in <code>base</code> R first, then moving on to tools like <code>dplyr</code> and <code>data.table</code>. There’s a lot to be gained from understanding the problems those packages were created to solve.</p>
-</div>
+<span class="kw">max</span>(df$EarnedPremium)
+<span class="co">#&gt; [1] 559956</span></code></pre></div>
+<p>For multiple columns, base R comes with the <code>aggregate</code> function. Its easiest implementation uses a formula which shows how we want the variable split. In the function below, we’re splitting earned premium by state.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(EarnedPremium ~<span class="st"> </span>State, <span class="dt">data =</span> df, <span class="dt">FUN =</span> sum)
+<span class="co">#&gt;   State EarnedPremium</span>
+<span class="co">#&gt; 1    CA      673095.7</span>
+<span class="co">#&gt; 2    NY      939215.3</span>
+<span class="co">#&gt; 3    TX      231409.1</span></code></pre></div>
+<p>That’s easy to type, but will only give me one column at a time. If I want multiple columns, I’ll ned to do something like the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(df[, <span class="kw">c</span>(<span class="st">&quot;EarnedPremium&quot;</span>, <span class="st">&quot;Loss&quot;</span>)], <span class="dt">by =</span> df[<span class="st">&quot;State&quot;</span>], <span class="dt">FUN =</span> sum)
+<span class="co">#&gt;   State EarnedPremium     Loss</span>
+<span class="co">#&gt; 1    CA      673095.7 257519.6</span>
+<span class="co">#&gt; 2    NY      939215.3 423081.7</span>
+<span class="co">#&gt; 3    TX      231409.1 228745.6</span></code></pre></div>
+<p>Although <code>aggregate</code> gets the job done, I often find it cumbersome for anything complex. Ever since I started using it, I’ve been hooked on the <code>dplyr</code> package. We’ll not go into it here, but I’ll recommend checking it out. Hover, spend a bit of time playing with <code>aggregate</code> first. There are truckloads of packages designed to make manipulation of data frames easier. They’re all powerful and they’re all a little different. I’d suggest learning the functions in base R first, then moving on to tools like <code>dplyr</code> and <code>data.table</code>. There’s a lot to be gained from understanding the problems those packages were created to solve.</p>
+<!-- 
+### Advanced data frame tools
+  
+* dplyr
+* tidyr
+* reshape2
+* data.table
+-->
 </div>
 <div id="reading-and-writing-external-data" class="section level2">
 <h2><span class="header-section-number">7.4</span> Reading and writing external data</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myData =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;SomeFile.csv&quot;</span>)</code></pre></div>
-<div id="reading-from-excel" class="section level3">
-<h3><span class="header-section-number">7.4.1</span> Reading from Excel</h3>
-<p>Actually there are several ways: * XLConnect * xlsx * Excelsi-r</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(XLConnect)
-wbk =<span class="st"> </span><span class="kw">loadWorkbook</span>(<span class="st">&quot;myWorkbook.xlsx&quot;</span>)
-df =<span class="st"> </span><span class="kw">readWorksheet</span>(wbk, someSheet)</code></pre></div>
-</div>
-<div id="reading-from-the-web" class="section level3">
-<h3><span class="header-section-number">7.4.2</span> Reading from the web</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">URL =<span class="st"> &quot;http://www.casact.org/research/reserve_data/ppauto_pos.csv&quot;</span>
-df =<span class="st"> </span><span class="kw">read.csv</span>(URL, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(XML)
-URL =<span class="st"> &quot;http://www.pro-football-reference.com/teams/nyj/2012_games.htm&quot;</span>
-games =<span class="st"> </span><span class="kw">readHTMLTable</span>(URL, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
-</div>
-<div id="reading-from-a-database" class="section level3">
-<h3><span class="header-section-number">7.4.3</span> Reading from a database</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RODBC)
-myChannel =<span class="st"> </span><span class="kw">odbcConnect</span>(<span class="dt">dsn =</span> <span class="st">&quot;MyDSN_Name&quot;</span>)
-df =<span class="st"> </span><span class="kw">sqlQuery</span>(myChannel, <span class="st">&quot;SELECT stuff FROM myTable&quot;</span>)</code></pre></div>
-</div>
-<div id="read-some-data" class="section level3">
-<h3><span class="header-section-number">7.4.4</span> Read some data</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../data-raw/StateData.csv&quot;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(df)</code></pre></div>
-</div>
+<p>First, we’ll write out some data. Then we’ll read it back in. The comma separated value (CSV) format is one of the easiest to work with.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(df, <span class="st">&quot;SomeFile.csv&quot;</span>)</code></pre></div>
+<p>To read data back in, we use the (wait for it) <code>read.csv</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myDF &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;SomeFile.csv&#39;</span>)</code></pre></div>
+<p>We can use this same function to read data from the web. If it’s accessible and we’ve provided a proper URL, we can treat it the same as anything on our local file system.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">URL &lt;-<span class="st"> &quot;http://www.casact.org/research/reserve_data/ppauto_pos.csv&quot;</span>
+df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(URL, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<!--
+
+```r
+library(XML)
+URL = "http://www.pro-football-reference.com/teams/nyj/2012_games.htm"
+games = readHTMLTable(URL, stringsAsFactors = FALSE)
+```
+-->
+<!-- 
+### Reading from Excel
+
+Actually there are several ways:
+* XLConnect
+* xlsx
+* Excelsi-r
+
+
+```r
+library(XLConnect)
+wbk = loadWorkbook("myWorkbook.xlsx")
+df = readWorksheet(wbk, someSheet)
+```
+
+### Reading from a database 
+
+
+```r
+library(RODBC)
+myChannel = odbcConnect(dsn = "MyDSN_Name")
+df = sqlQuery(myChannel, "SELECT stuff FROM myTable")
+```
+
+-->
 </div>
 <div id="exercises-4" class="section level2">
 <h2><span class="header-section-number">7.5</span> Exercises</h2>
 <ul>
-<li></li>
-<li>Load the data from “StateData.csv” into a data frame.</li>
-<li>Which state has the most premium?</li>
+<li>Create a data frame with 500 rows. Include a column for policy effective date, policy expiration date and claim count. For claim count, consider using the <code>rpois</code> function to simulate from a poisson distribution.</li>
+<li>Save this data to a .CSV file and then reload that file.</li>
+<li>Which policy had the most claims? Which policy year?</li>
+<li>Add a column for</li>
 </ul>
 <div id="answer" class="section level3">
 <h3><span class="header-section-number">7.5.1</span> Answer</h3>
+<!--
+## Conclusion
+
+Roughly 90% of your work in R will involve manipulation of data frames. 
+-->
 
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="11">
-<li id="fn11"><p>If you’ve never used VLOOKUP, I can’t imagine why you’re reading this.<a href="data-frames.html#fnref11">↩</a></p></li>
+<ol start="10">
+<li id="fn10"><p>If you’ve never used VLOOKUP, I can’t imagine why you’re reading this.<a href="data-frames.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>We can also use <code>cbind</code> to add columns.<a href="data-frames.html#fnref11">↩</a></p></li>
+<li id="fn12"><p>Copyright some film company.<a href="data-frames.html#fnref12">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -583,7 +675,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/PirateGrunt/raw_book/edit/master/DataFrames.Rmd",
+"link": null,
 "text": null
 },
 "download": ["raw.pdf"],

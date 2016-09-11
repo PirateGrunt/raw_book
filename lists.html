@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-09-07">
+<meta name="date" content="2016-09-11">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -94,7 +94,6 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -106,9 +105,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">raw - Raw Actuarial Workshops</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="first-steps.html"><a href="first-steps.html"><i class="fa fa-check"></i>First Steps</a></li>
 <li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
@@ -166,13 +162,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.1.1" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-properties"><i class="fa fa-check"></i><b>5.1.1</b> Vector properties</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-construction"><i class="fa fa-check"></i><b>5.2</b> Vector construction</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="chap-vectors.html"><a href="chap-vectors.html#vector"><i class="fa fa-check"></i><b>5.2.1</b> <code>vector</code></a></li>
-<li class="chapter" data-level="5.2.2" data-path="chap-vectors.html"><a href="chap-vectors.html#seq"><i class="fa fa-check"></i><b>5.2.2</b> <code>seq</code></a></li>
-<li class="chapter" data-level="5.2.3" data-path="chap-vectors.html"><a href="chap-vectors.html#rep"><i class="fa fa-check"></i><b>5.2.3</b> <code>rep</code></a></li>
-<li class="chapter" data-level="5.2.4" data-path="chap-vectors.html"><a href="chap-vectors.html#c"><i class="fa fa-check"></i><b>5.2.4</b> <code>c</code></a></li>
-<li class="chapter" data-level="5.2.5" data-path="chap-vectors.html"><a href="chap-vectors.html#paste"><i class="fa fa-check"></i><b>5.2.5</b> <code>paste</code></a></li>
-<li class="chapter" data-level="5.2.6" data-path="chap-vectors.html"><a href="chap-vectors.html#sample"><i class="fa fa-check"></i><b>5.2.6</b> <code>sample</code></a></li>
-<li class="chapter" data-level="5.2.7" data-path="chap-vectors.html"><a href="chap-vectors.html#sort"><i class="fa fa-check"></i><b>5.2.7</b> <code>sort</code></a></li>
+<li class="chapter" data-level="5.2.1" data-path="chap-vectors.html"><a href="chap-vectors.html#seq"><i class="fa fa-check"></i><b>5.2.1</b> <code>seq</code></a></li>
+<li class="chapter" data-level="5.2.2" data-path="chap-vectors.html"><a href="chap-vectors.html#rep"><i class="fa fa-check"></i><b>5.2.2</b> <code>rep</code></a></li>
+<li class="chapter" data-level="5.2.3" data-path="chap-vectors.html"><a href="chap-vectors.html#c"><i class="fa fa-check"></i><b>5.2.3</b> <code>c</code></a></li>
+<li class="chapter" data-level="5.2.4" data-path="chap-vectors.html"><a href="chap-vectors.html#paste"><i class="fa fa-check"></i><b>5.2.4</b> <code>paste</code></a></li>
+<li class="chapter" data-level="5.2.5" data-path="chap-vectors.html"><a href="chap-vectors.html#sample"><i class="fa fa-check"></i><b>5.2.5</b> <code>sample</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="chap-vectors.html"><a href="chap-vectors.html#sort"><i class="fa fa-check"></i><b>5.2.6</b> <code>sort</code></a></li>
+<li class="chapter" data-level="5.2.7" data-path="chap-vectors.html"><a href="chap-vectors.html#vector"><i class="fa fa-check"></i><b>5.2.7</b> <code>vector</code></a></li>
 <li class="chapter" data-level="5.2.8" data-path="chap-vectors.html"><a href="chap-vectors.html#recycling"><i class="fa fa-check"></i><b>5.2.8</b> Recycling</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-access"><i class="fa fa-check"></i><b>5.3</b> Vector access</a><ul>
@@ -202,53 +198,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Lists</a><ul>
 <li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#lists-overview"><i class="fa fa-check"></i><b>6.1</b> Lists Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#list-construction"><i class="fa fa-check"></i><b>6.2</b> List construction</a></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#list-construction"><i class="fa fa-check"></i><b>6.2</b> List construction</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.2.1</b> Recursive storage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.2.2</b> List metadata</a></li>
+</ul></li>
 <li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#access-and-assignment"><i class="fa fa-check"></i><b>6.3</b> Access and assignment</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.3.1</b> Recursive storage</a></li>
-<li class="chapter" data-level="6.3.2" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.3.2</b> List metadata</a></li>
+<li class="chapter" data-level="6.3.1" data-path="lists.html"><a href="lists.html#vs."><i class="fa fa-check"></i><b>6.3.1</b> [ vs. [[</a></li>
+<li class="chapter" data-level="6.3.2" data-path="lists.html"><a href="lists.html#assignment-2"><i class="fa fa-check"></i><b>6.3.2</b> Assignment</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#summary-functions"><i class="fa fa-check"></i><b>6.4</b> Summary functions</a></li>
-<li class="chapter" data-level="6.5" data-path="lists.html"><a href="lists.html#flotsam"><i class="fa fa-check"></i><b>6.5</b> Flotsam</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="lists.html"><a href="lists.html#split"><i class="fa fa-check"></i><b>6.5.1</b> <code>split</code></a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.6</b> Exercises</a></li>
-<li class="chapter" data-level="6.7" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.7</b> Answers</a></li>
+<li class="chapter" data-level="6.5" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.5</b> Exercises</a></li>
+<li class="chapter" data-level="6.6" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.6</b> Answers</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>7</b> Data Frames</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-frames.html"><a href="data-frames.html#whats-a-data-frame"><i class="fa fa-check"></i><b>7.1</b> What’s a data frame?</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="data-frames.html"><a href="data-frames.html#creating-a-data-frame"><i class="fa fa-check"></i><b>7.1.1</b> Creating a data frame</a></li>
 <li class="chapter" data-level="7.1.2" data-path="data-frames.html"><a href="data-frames.html#basic-properties-of-a-data-frame"><i class="fa fa-check"></i><b>7.1.2</b> Basic properties of a data frame</a></li>
-<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#merging"><i class="fa fa-check"></i><b>7.1.3</b> Merging</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#combining-data-frames"><i class="fa fa-check"></i><b>7.1.3</b> Combining data frames</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-frames.html"><a href="data-frames.html#expand.grid"><i class="fa fa-check"></i><b>7.1.4</b> <code>expand.grid</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-frames.html"><a href="data-frames.html#access-and-assignment-1"><i class="fa fa-check"></i><b>7.2</b> Access and Assignment</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.2.1</b> Altering and adding columns</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.2.2</b> Eliminating columns</a></li>
-<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-easy-way"><i class="fa fa-check"></i><b>7.2.3</b> Subsetting - The easy way</a></li>
-<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-hardish-way"><i class="fa fa-check"></i><b>7.2.4</b> Subsetting - The hard(ish) way</a></li>
-<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#subsetting---yet-another-way"><i class="fa fa-check"></i><b>7.2.5</b> Subsetting - Yet another way</a></li>
-<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.2.6</b> Ordering</a></li>
-<li class="chapter" data-level="7.2.7" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.2.7</b> Altering column names</a></li>
-<li class="chapter" data-level="7.2.8" data-path="data-frames.html"><a href="data-frames.html#with-and-attach"><i class="fa fa-check"></i><b>7.2.8</b> <code>with</code> and <code>attach</code></a></li>
+<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#subsetting"><i class="fa fa-check"></i><b>7.2.1</b> Subsetting</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.2.2</b> Altering and adding columns</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.2.3</b> Eliminating columns</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.2.4</b> Altering column names</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.2.5</b> Ordering</a></li>
+<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#attach"><i class="fa fa-check"></i><b>7.2.6</b> <code>attach</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.3</b> Summarizing</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---1"><i class="fa fa-check"></i><b>7.3.1</b> Summarizing visually - 1</a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---2"><i class="fa fa-check"></i><b>7.3.2</b> Summarizing visually - 2</a></li>
-<li class="chapter" data-level="7.3.3" data-path="data-frames.html"><a href="data-frames.html#advanced-data-frame-tools"><i class="fa fa-check"></i><b>7.3.3</b> Advanced data frame tools</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="data-frames.html"><a href="data-frames.html#reading-and-writing-external-data"><i class="fa fa-check"></i><b>7.4</b> Reading and writing external data</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="data-frames.html"><a href="data-frames.html#reading-from-excel"><i class="fa fa-check"></i><b>7.4.1</b> Reading from Excel</a></li>
-<li class="chapter" data-level="7.4.2" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web"><i class="fa fa-check"></i><b>7.4.2</b> Reading from the web</a></li>
-<li class="chapter" data-level="7.4.3" data-path="data-frames.html"><a href="data-frames.html#reading-from-a-database"><i class="fa fa-check"></i><b>7.4.3</b> Reading from a database</a></li>
-<li class="chapter" data-level="7.4.4" data-path="data-frames.html"><a href="data-frames.html#read-some-data"><i class="fa fa-check"></i><b>7.4.4</b> Read some data</a></li>
-</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.3</b> Summarizing</a></li>
+<li class="chapter" data-level="7.4" data-path="data-frames.html"><a href="data-frames.html#reading-and-writing-external-data"><i class="fa fa-check"></i><b>7.4</b> Reading and writing external data</a></li>
 <li class="chapter" data-level="7.5" data-path="data-frames.html"><a href="data-frames.html#exercises-4"><i class="fa fa-check"></i><b>7.5</b> Exercises</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="data-frames.html"><a href="data-frames.html#answer"><i class="fa fa-check"></i><b>7.5.1</b> Answer</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/PirateGrunt/raw_book" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -277,7 +260,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div id="lists-overview" class="section level2">
 <h2><span class="header-section-number">6.1</span> Lists Overview</h2>
-<p>A list is a bit like a vector in that it is a container for many elements of data. However, unlike a vector, the elements of a list may have different data types. In addition, lists may store data <em>recursively</em>. This means that a list may contain list, which contains another list and so on. Partially for this reason, access and assignment will use a new operator: <code>[[]]</code>. Confusing? Sorta. But don’t worry, we’ll walk through why and how you’ll work with lists.</p>
+<p>A list is a bit like a vector in that it is a container for many elements of data. However, unlike a vector, the elements of a list may have different data types. In addition, lists may store data <em>recursively</em>. This means that a list may contain list, which contains another list and so on. Partially for this reason, access and assignment will use two new operators: <code>[[]]</code> and <code>$</code>. Confusing? Sorta. But don’t worry, we’ll walk through why and how you’ll work with lists.</p>
+<p>The table below outlines some of the similarities and differences between vectors and lists.</p>
 <table>
 <caption><span id="tab:unnamed-chunk-73">Table 6.1: </span>Key similarities and differences between vectors and lists</caption>
 <thead>
@@ -325,47 +309,68 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&gt; List of 2</span>
 <span class="co">#&gt;  $ : chr [1:4] &quot;This&quot; &quot;is&quot; &quot;a&quot; &quot;list&quot;</span>
 <span class="co">#&gt;  $ : num [1:2] 3.14 2.72</span></code></pre></div>
-<p>Note that, weirdly - and confusingly - you can create a list by using the <code>vector</code> function.</p>
+<p>Visually, here’s what that looks like:</p>
+<p><img src="raw_files/figure-html/unnamed-chunk-75-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>We said earlier that the concept of dimension doesn’t really apply to lists. We mean it and so does R. If you ask for the dimension of a list, you’ll get <code>NULL</code>. I’m not mathy enough to have anything intelligent to say abouut the dimensionality of a single construct composed of elements which each have their own dimension.</p>
+<p>Note that you <em>can</em> ask for the length. This will return the number of top-most elements in the list.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(x)
-<span class="co">#&gt; NULL</span></code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-77-1.png" width="672" style="display: block; margin: auto;" /></p>
+<span class="co">#&gt; NULL</span>
+<span class="kw">length</span>(x)
+<span class="co">#&gt; [1] 2</span></code></pre></div>
+<p>Note that, weirdly - and a little confusingly - you can create a list by using the <code>vector</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myList &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">5</span>)</code></pre></div>
+<p>As we said in the Vectors chapter, you’ll likely only do this to improve memory management performance. Don’t worry about that at this stage. However, if you’d like to play with access and assignment, <code>vector</code> may be useful.</p>
+<div id="recursive-storage" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Recursive storage</h3>
+<p>Lists can contain other lists as elements. And these lists may contain other lists and so on. It sounds complex, but it’s no stranger than your file system, e.g. a folder contains a folder, which contains another folder.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">trey &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;Trey Anastasio&quot;</span>, <span class="st">&quot;guitar&quot;</span>, <span class="dv">1964</span>)
+page &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;Page McConnell&quot;</span>, <span class="st">&quot;piano&quot;</span>, <span class="dv">1963</span>)
+jon &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;Jon Fishman&quot;</span>, <span class="st">&quot;drums&quot;</span>, <span class="dv">1965</span>)
+mike &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="st">&quot;Mike Gordon&quot;</span>, <span class="st">&quot;bass&quot;</span>, <span class="dv">1965</span>)
+phish_members &lt;-<span class="st"> </span><span class="kw">list</span>(trey, page, jon, mike)
+phish_albums &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Junta&quot;</span>, <span class="st">&quot;Rift&quot;</span>, <span class="st">&quot;Hoist&quot;</span>)
+phish &lt;-<span class="st"> </span><span class="kw">list</span>(phish_members, phish_albums)</code></pre></div>
+<p>This will be familiar to anyone who uses XML, JSON or YAML.</p>
+</div>
+<div id="list-metadata" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> List metadata</h3>
+<p>Again, metadata will typically be names. However, these become very important for lists as names are handled with the special <code>$</code> operator. We’ll talk about <code>$</code> shortly. We can also assign a name as the list is being constructed.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(phish) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Members&quot;</span>, <span class="st">&quot;Albums&quot;</span>)
+phish &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">Members =</span> phish_members, <span class="dt">Albums =</span> phish_albums)</code></pre></div>
+</div>
 </div>
 <div id="access-and-assignment" class="section level2">
 <h2><span class="header-section-number">6.3</span> Access and assignment</h2>
-<p>Because list elements can be arbitrarily complex, access and assignment gets a bit stranger. This</p>
-<p>[ vs. [[</p>
-<p><code>[</code> is (almost always) used to set and return an element of the same type as the <em>containing</em> object.</p>
-<p><code>[[</code> is used to set and return an element of the same type as the <em>contained</em> object.</p>
-<p>This is why we use <code>[[</code> to set an item in a list. Note that <code>[[</code> will drop names<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.</p>
+<p>Because list elements can be arbitrarily complex, access and assignment get new operators. We’ll use the <code>[[ ]]</code> operator when we want to access a single element of a list by name or position. <code>$</code> will work for named arguments only.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">phish[[<span class="st">&quot;Albums&quot;</span>]]
+<span class="co">#&gt; [1] &quot;Junta&quot; &quot;Rift&quot;  &quot;Hoist&quot;</span>
+phish[[<span class="dv">2</span>]]
+<span class="co">#&gt; [1] &quot;Junta&quot; &quot;Rift&quot;  &quot;Hoist&quot;</span>
+phish$Albums
+<span class="co">#&gt; [1] &quot;Junta&quot; &quot;Rift&quot;  &quot;Hoist&quot;</span></code></pre></div>
+<div id="vs." class="section level3">
+<h3><span class="header-section-number">6.3.1</span> [ vs. [[</h3>
+<p><code>[ ]</code> may also be used to access elements of a list. When first learning R, I found the distinction betwee <code>[ ]</code> and <code>[[ ]]</code> particularly vexing. After using lists for a while, I finally decided that this was the best way to distinguish between them:</p>
+<ul>
+<li><code>[</code> is used to set and return an element of the same type as the <em>containing</em> object.</li>
+<li><code>[[</code> is used to set and return an element of the same type as the <em>contained</em> object.</li>
+</ul>
+<p>This is why <code>[ ]</code> will return a list when applied to a list. This is also why it may be used to return more than one element of list. Have a look at the code snippet below:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(phish[<span class="st">&quot;Albums&quot;</span>])
+<span class="co">#&gt; [1] &quot;list&quot;</span>
+<span class="kw">typeof</span>(phish[[<span class="st">&quot;Albums&quot;</span>]])
+<span class="co">#&gt; [1] &quot;character&quot;</span></code></pre></div>
 <p>Don’t worry if this doesn’t make sense yet. It’s difficult for most R programmers.</p>
-<div id="recursive-storage" class="section level3">
-<h3><span class="header-section-number">6.3.1</span> Recursive storage</h3>
-<p>Lists can contain other lists as elements.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y &lt;-<span class="st"> </span><span class="kw">list</span>()
-y[[<span class="dv">1</span>]] &lt;-<span class="st"> &quot;Lou Reed&quot;</span>
-y[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="dv">45</span>
-
-x[[<span class="dv">3</span>]] &lt;-<span class="st"> </span>y</code></pre></div>
-<p><img src="raw_files/figure-html/unnamed-chunk-79-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="list-metadata" class="section level3">
-<h3><span class="header-section-number">6.3.2</span> List metadata</h3>
-<p>Again, typically names. However, these become very important for lists. Names are handled with the special <code>$</code> operator. <code>$</code> permits access to a single element. (A single element of a list can be a vector!)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y[[<span class="dv">1</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Lou Reed&quot;</span>, <span class="st">&quot;Patti Smith&quot;</span>)
-y[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">45</span>, <span class="dv">63</span>)
-
-<span class="kw">names</span>(y) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Artist&quot;</span>, <span class="st">&quot;Age&quot;</span>)
-
-y$Artist
-<span class="co">#&gt; [1] &quot;Lou Reed&quot;    &quot;Patti Smith&quot;</span>
-y$Age
-<span class="co">#&gt; [1] 45 63</span></code></pre></div>
+<div id="assignment-2" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Assignment</h3>
+<p>As with vectors, assignment may be thought of as access in reverse.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">phish[[<span class="st">&quot;Albums&quot;</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Lawn Boy&quot;</span>, <span class="st">&quot;A Picture of Nectar&quot;</span>)</code></pre></div>
 </div>
 </div>
 <div id="summary-functions" class="section level2">
 <h2><span class="header-section-number">6.4</span> Summary functions</h2>
-<p>Because lists are arbitrary, we can’t expect functions like <code>sum</code> or <code>mean</code> to work. Instead, we use functions like <code>lapply</code> to summarize particular list elements.</p>
-<p><code>lapply</code> is one of many functions which may be applied to lists. They may not be intuitive at first, but they’re very powerful. <code>lapply</code> will apply the same function to each element of a list. In the example below, we’ll generate some statistics for three different vectors stored in a list.</p>
+<p>Because lists are arbitrary, we can’t expect functions like <code>sum</code> or <code>mean</code> to work. Instead, we use functions like <code>lapply</code> to summarize particular list elements. <code>lapply</code> will apply the same function to each element of a list. In the example below, we’ll generate some statistics for three different vectors stored in a list.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myList &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">firstVector =</span> <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">10</span>)
                , <span class="dt">secondVector =</span> <span class="kw">c</span>(<span class="dv">89</span>, <span class="dv">56</span>, <span class="dv">84</span>, <span class="dv">298</span>, <span class="dv">56</span>)
                , <span class="dt">thirdVector =</span> <span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>))
@@ -398,26 +403,25 @@ y$Age
 <span class="co">#&gt; [1] 29</span></code></pre></div>
 <p>Why <code>lapply</code>? Two reasons:</p>
 <ol style="list-style-type: decimal">
-<li>It’s expressive. A loop is a lot of code which does little to clarify intent. <code>lapply</code> indicates that we want to apply the same function to each element of a list. Think of a formula that exists as a column in a spreadsheet.</li>
+<li>It’s expressive. A loop is a lot of code which does little to clarify intent. <code>lapply</code> indicates that we want to apply the same function to each element of a list and it does it in only one line of code. Think of a formula that exists as a column in a spreadsheet.</li>
 <li>It’s easier to type at an interactive console. In its very early days, <code>S</code> was fully interactive. Typing a <code>for</code> loop at the console is a tedius and unnecessary task.</li>
 </ol>
 <p>Note that we can also use <code>lapply</code> on structures like a vector.</p>
-</div>
-<div id="flotsam" class="section level2">
-<h2><span class="header-section-number">6.5</span> Flotsam</h2>
-<div id="split" class="section level3">
-<h3><span class="header-section-number">6.5.1</span> <code>split</code></h3>
-</div>
+<!--
+## Flotsam
+
+### `split`
+-->
 </div>
 <div id="exercises-3" class="section level2">
-<h2><span class="header-section-number">6.6</span> Exercises</h2>
+<h2><span class="header-section-number">6.5</span> Exercises</h2>
 <ul>
 <li>Create a list with two elements. Have the first element be a vector with 100 numbers. Have the second element be a vector with 100 dates. Give your list the names: “Claim” and “AccidentDate”.</li>
 <li>What is the average value of a claim?</li>
 </ul>
 </div>
 <div id="answers-2" class="section level2">
-<h2><span class="header-section-number">6.7</span> Answers</h2>
+<h2><span class="header-section-number">6.6</span> Answers</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myList &lt;-<span class="st"> </span><span class="kw">list</span>()
 myList$Claims &lt;-<span class="st"> </span><span class="kw">rlnorm</span>(<span class="dv">100</span>, <span class="kw">log</span>(<span class="dv">10000</span>))
 myList$AccidentDate &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="kw">seq.Date</span>(<span class="kw">as.Date</span>(<span class="st">&#39;2000-01-01&#39;</span>), <span class="kw">as.Date</span>(<span class="st">&#39;2009-12-31&#39;</span>), <span class="dt">length.out =</span> <span class="dv">1000</span>), <span class="dv">100</span>)
@@ -425,12 +429,6 @@ myList$AccidentDate &lt;-<span class="st"> </span><span class="kw">sample</span>
 <span class="co">#&gt; [1] 16349.04</span></code></pre></div>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="10">
-<li id="fn10"><p>I have no idea why it does this.<a href="lists.html#fnref10">↩</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -465,7 +463,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/PirateGrunt/raw_book/edit/master/Lists.Rmd",
+"link": null,
 "text": null
 },
 "download": ["raw.pdf"],

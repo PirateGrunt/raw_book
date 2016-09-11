@@ -25,7 +25,7 @@
 
 <meta name="author" content="Brian A. Fannin, ACAS">
 
-<meta name="date" content="2016-09-07">
+<meta name="date" content="2016-09-11">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -94,7 +94,6 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -106,9 +105,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">raw - Raw Actuarial Workshops</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="first-steps.html"><a href="first-steps.html"><i class="fa fa-check"></i>First Steps</a></li>
 <li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
@@ -166,13 +162,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.1.1" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-properties"><i class="fa fa-check"></i><b>5.1.1</b> Vector properties</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-construction"><i class="fa fa-check"></i><b>5.2</b> Vector construction</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="chap-vectors.html"><a href="chap-vectors.html#vector"><i class="fa fa-check"></i><b>5.2.1</b> <code>vector</code></a></li>
-<li class="chapter" data-level="5.2.2" data-path="chap-vectors.html"><a href="chap-vectors.html#seq"><i class="fa fa-check"></i><b>5.2.2</b> <code>seq</code></a></li>
-<li class="chapter" data-level="5.2.3" data-path="chap-vectors.html"><a href="chap-vectors.html#rep"><i class="fa fa-check"></i><b>5.2.3</b> <code>rep</code></a></li>
-<li class="chapter" data-level="5.2.4" data-path="chap-vectors.html"><a href="chap-vectors.html#c"><i class="fa fa-check"></i><b>5.2.4</b> <code>c</code></a></li>
-<li class="chapter" data-level="5.2.5" data-path="chap-vectors.html"><a href="chap-vectors.html#paste"><i class="fa fa-check"></i><b>5.2.5</b> <code>paste</code></a></li>
-<li class="chapter" data-level="5.2.6" data-path="chap-vectors.html"><a href="chap-vectors.html#sample"><i class="fa fa-check"></i><b>5.2.6</b> <code>sample</code></a></li>
-<li class="chapter" data-level="5.2.7" data-path="chap-vectors.html"><a href="chap-vectors.html#sort"><i class="fa fa-check"></i><b>5.2.7</b> <code>sort</code></a></li>
+<li class="chapter" data-level="5.2.1" data-path="chap-vectors.html"><a href="chap-vectors.html#seq"><i class="fa fa-check"></i><b>5.2.1</b> <code>seq</code></a></li>
+<li class="chapter" data-level="5.2.2" data-path="chap-vectors.html"><a href="chap-vectors.html#rep"><i class="fa fa-check"></i><b>5.2.2</b> <code>rep</code></a></li>
+<li class="chapter" data-level="5.2.3" data-path="chap-vectors.html"><a href="chap-vectors.html#c"><i class="fa fa-check"></i><b>5.2.3</b> <code>c</code></a></li>
+<li class="chapter" data-level="5.2.4" data-path="chap-vectors.html"><a href="chap-vectors.html#paste"><i class="fa fa-check"></i><b>5.2.4</b> <code>paste</code></a></li>
+<li class="chapter" data-level="5.2.5" data-path="chap-vectors.html"><a href="chap-vectors.html#sample"><i class="fa fa-check"></i><b>5.2.5</b> <code>sample</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="chap-vectors.html"><a href="chap-vectors.html#sort"><i class="fa fa-check"></i><b>5.2.6</b> <code>sort</code></a></li>
+<li class="chapter" data-level="5.2.7" data-path="chap-vectors.html"><a href="chap-vectors.html#vector"><i class="fa fa-check"></i><b>5.2.7</b> <code>vector</code></a></li>
 <li class="chapter" data-level="5.2.8" data-path="chap-vectors.html"><a href="chap-vectors.html#recycling"><i class="fa fa-check"></i><b>5.2.8</b> Recycling</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="chap-vectors.html"><a href="chap-vectors.html#vector-access"><i class="fa fa-check"></i><b>5.3</b> Vector access</a><ul>
@@ -202,53 +198,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>6</b> Lists</a><ul>
 <li class="chapter" data-level="6.1" data-path="lists.html"><a href="lists.html#lists-overview"><i class="fa fa-check"></i><b>6.1</b> Lists Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#list-construction"><i class="fa fa-check"></i><b>6.2</b> List construction</a></li>
+<li class="chapter" data-level="6.2" data-path="lists.html"><a href="lists.html#list-construction"><i class="fa fa-check"></i><b>6.2</b> List construction</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.2.1</b> Recursive storage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.2.2</b> List metadata</a></li>
+</ul></li>
 <li class="chapter" data-level="6.3" data-path="lists.html"><a href="lists.html#access-and-assignment"><i class="fa fa-check"></i><b>6.3</b> Access and assignment</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="lists.html"><a href="lists.html#recursive-storage"><i class="fa fa-check"></i><b>6.3.1</b> Recursive storage</a></li>
-<li class="chapter" data-level="6.3.2" data-path="lists.html"><a href="lists.html#list-metadata"><i class="fa fa-check"></i><b>6.3.2</b> List metadata</a></li>
+<li class="chapter" data-level="6.3.1" data-path="lists.html"><a href="lists.html#vs."><i class="fa fa-check"></i><b>6.3.1</b> [ vs. [[</a></li>
+<li class="chapter" data-level="6.3.2" data-path="lists.html"><a href="lists.html#assignment-2"><i class="fa fa-check"></i><b>6.3.2</b> Assignment</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="lists.html"><a href="lists.html#summary-functions"><i class="fa fa-check"></i><b>6.4</b> Summary functions</a></li>
-<li class="chapter" data-level="6.5" data-path="lists.html"><a href="lists.html#flotsam"><i class="fa fa-check"></i><b>6.5</b> Flotsam</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="lists.html"><a href="lists.html#split"><i class="fa fa-check"></i><b>6.5.1</b> <code>split</code></a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.6</b> Exercises</a></li>
-<li class="chapter" data-level="6.7" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.7</b> Answers</a></li>
+<li class="chapter" data-level="6.5" data-path="lists.html"><a href="lists.html#exercises-3"><i class="fa fa-check"></i><b>6.5</b> Exercises</a></li>
+<li class="chapter" data-level="6.6" data-path="lists.html"><a href="lists.html#answers-2"><i class="fa fa-check"></i><b>6.6</b> Answers</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="data-frames.html"><a href="data-frames.html"><i class="fa fa-check"></i><b>7</b> Data Frames</a><ul>
 <li class="chapter" data-level="7.1" data-path="data-frames.html"><a href="data-frames.html#whats-a-data-frame"><i class="fa fa-check"></i><b>7.1</b> What’s a data frame?</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="data-frames.html"><a href="data-frames.html#creating-a-data-frame"><i class="fa fa-check"></i><b>7.1.1</b> Creating a data frame</a></li>
 <li class="chapter" data-level="7.1.2" data-path="data-frames.html"><a href="data-frames.html#basic-properties-of-a-data-frame"><i class="fa fa-check"></i><b>7.1.2</b> Basic properties of a data frame</a></li>
-<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#merging"><i class="fa fa-check"></i><b>7.1.3</b> Merging</a></li>
+<li class="chapter" data-level="7.1.3" data-path="data-frames.html"><a href="data-frames.html#combining-data-frames"><i class="fa fa-check"></i><b>7.1.3</b> Combining data frames</a></li>
+<li class="chapter" data-level="7.1.4" data-path="data-frames.html"><a href="data-frames.html#expand.grid"><i class="fa fa-check"></i><b>7.1.4</b> <code>expand.grid</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="data-frames.html"><a href="data-frames.html#access-and-assignment-1"><i class="fa fa-check"></i><b>7.2</b> Access and Assignment</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.2.1</b> Altering and adding columns</a></li>
-<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.2.2</b> Eliminating columns</a></li>
-<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-easy-way"><i class="fa fa-check"></i><b>7.2.3</b> Subsetting - The easy way</a></li>
-<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#subsetting---the-hardish-way"><i class="fa fa-check"></i><b>7.2.4</b> Subsetting - The hard(ish) way</a></li>
-<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#subsetting---yet-another-way"><i class="fa fa-check"></i><b>7.2.5</b> Subsetting - Yet another way</a></li>
-<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.2.6</b> Ordering</a></li>
-<li class="chapter" data-level="7.2.7" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.2.7</b> Altering column names</a></li>
-<li class="chapter" data-level="7.2.8" data-path="data-frames.html"><a href="data-frames.html#with-and-attach"><i class="fa fa-check"></i><b>7.2.8</b> <code>with</code> and <code>attach</code></a></li>
+<li class="chapter" data-level="7.2.1" data-path="data-frames.html"><a href="data-frames.html#subsetting"><i class="fa fa-check"></i><b>7.2.1</b> Subsetting</a></li>
+<li class="chapter" data-level="7.2.2" data-path="data-frames.html"><a href="data-frames.html#altering-and-adding-columns"><i class="fa fa-check"></i><b>7.2.2</b> Altering and adding columns</a></li>
+<li class="chapter" data-level="7.2.3" data-path="data-frames.html"><a href="data-frames.html#eliminating-columns"><i class="fa fa-check"></i><b>7.2.3</b> Eliminating columns</a></li>
+<li class="chapter" data-level="7.2.4" data-path="data-frames.html"><a href="data-frames.html#altering-column-names"><i class="fa fa-check"></i><b>7.2.4</b> Altering column names</a></li>
+<li class="chapter" data-level="7.2.5" data-path="data-frames.html"><a href="data-frames.html#ordering"><i class="fa fa-check"></i><b>7.2.5</b> Ordering</a></li>
+<li class="chapter" data-level="7.2.6" data-path="data-frames.html"><a href="data-frames.html#attach"><i class="fa fa-check"></i><b>7.2.6</b> <code>attach</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.3</b> Summarizing</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---1"><i class="fa fa-check"></i><b>7.3.1</b> Summarizing visually - 1</a></li>
-<li class="chapter" data-level="7.3.2" data-path="data-frames.html"><a href="data-frames.html#summarizing-visually---2"><i class="fa fa-check"></i><b>7.3.2</b> Summarizing visually - 2</a></li>
-<li class="chapter" data-level="7.3.3" data-path="data-frames.html"><a href="data-frames.html#advanced-data-frame-tools"><i class="fa fa-check"></i><b>7.3.3</b> Advanced data frame tools</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="data-frames.html"><a href="data-frames.html#reading-and-writing-external-data"><i class="fa fa-check"></i><b>7.4</b> Reading and writing external data</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="data-frames.html"><a href="data-frames.html#reading-from-excel"><i class="fa fa-check"></i><b>7.4.1</b> Reading from Excel</a></li>
-<li class="chapter" data-level="7.4.2" data-path="data-frames.html"><a href="data-frames.html#reading-from-the-web"><i class="fa fa-check"></i><b>7.4.2</b> Reading from the web</a></li>
-<li class="chapter" data-level="7.4.3" data-path="data-frames.html"><a href="data-frames.html#reading-from-a-database"><i class="fa fa-check"></i><b>7.4.3</b> Reading from a database</a></li>
-<li class="chapter" data-level="7.4.4" data-path="data-frames.html"><a href="data-frames.html#read-some-data"><i class="fa fa-check"></i><b>7.4.4</b> Read some data</a></li>
-</ul></li>
+<li class="chapter" data-level="7.3" data-path="data-frames.html"><a href="data-frames.html#summarizing"><i class="fa fa-check"></i><b>7.3</b> Summarizing</a></li>
+<li class="chapter" data-level="7.4" data-path="data-frames.html"><a href="data-frames.html#reading-and-writing-external-data"><i class="fa fa-check"></i><b>7.4</b> Reading and writing external data</a></li>
 <li class="chapter" data-level="7.5" data-path="data-frames.html"><a href="data-frames.html#exercises-4"><i class="fa fa-check"></i><b>7.5</b> Exercises</a><ul>
 <li class="chapter" data-level="7.5.1" data-path="data-frames.html"><a href="data-frames.html#answer"><i class="fa fa-check"></i><b>7.5.1</b> Answer</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/PirateGrunt/raw_book" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -273,8 +256,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div>
 <p>Matloff, Norman. 2011. <em>The Art of R Programming</em>. no starch press.</p>
 </div>
+<div>
+<p>Wickham, Hadley. n.d. <em>Advanced R</em>.</p>
 </div>
 </div>
+</div>
+
 
 
 
@@ -324,7 +311,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/PirateGrunt/raw_book/edit/master/References.Rmd",
+"link": null,
 "text": null
 },
 "download": ["raw.pdf"],
